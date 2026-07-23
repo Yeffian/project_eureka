@@ -74,6 +74,36 @@ body { font-family: 'Karla', sans-serif; }
 }
 .doodle-check:checked + label { text-decoration: line-through; opacity: .55; }
 
+.doodle-input, .doodle-textarea, .doodle-select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  color: #3E4C54;
+  background: #E0F2F4;
+  border: 2.5px solid #3E4C54;
+  border-radius: 12px 14px 11px 13px / 13px 11px 14px 12px;
+  outline: none;
+  transition: background .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.doodle-input:focus, .doodle-textarea:focus, .doodle-select:focus {
+  background: #FFE797;
+  box-shadow: 3px 3px 0 0 rgba(62, 76, 84, 0.2);
+}
+.doodle-input::placeholder, .doodle-textarea::placeholder { 
+  color: rgba(62, 76, 84, 0.45); 
+}
+.doodle-textarea { 
+  resize: vertical; min-height: 140px; line-height: 1.5; 
+}
+.doodle-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath d='M1 2 C 4 5 5 7 7 8 C 9 7 10 5 13 2' fill='none' stroke='%233E4C54' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.6rem;
+}
+
 :root {
   --sidebar-w: 244px;
   --sidebar-w-collapsed: 68px;
