@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 10:47+0000\n"
+"POT-Creation-Date: 2026-07-23 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Project Eureka — About Us"
 msgstr "Project Eureka — About Us"
 
-#: core/templates/core/about.html:10
+#: core/templates/core/about.html:10 core/templates/core/faq.html:103
 msgid "About us"
 msgstr "About us"
 
@@ -303,6 +303,82 @@ msgstr "ashley@projecteureka.org"
 #: core/templates/core/contact.html:99
 msgid "directly."
 msgstr "directly."
+
+#: core/templates/core/faq.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — FAQ"
+msgstr "Project Eureka — FAQ"
+
+#: core/templates/core/faq.html:9 core/templates/core/faq.html:104
+msgid "FAQ"
+msgstr "FAQ"
+
+#: core/templates/core/faq.html:10
+msgid "Questions, answered."
+msgstr "Questions, answered."
+
+#: core/templates/core/faq.html:12
+msgid ""
+"The things people ask us most. Can't find what you're looking for? <a "
+"href=\"mailto:ashley@projecteureka.org\" class=\"squiggle-link font-"
+"bold\">Send us a note</a>."
+msgstr ""
+"The things people ask us most. Can't find what you're looking for? <a "
+"href=\"mailto:ashley@projecteureka.org\" class=\"squiggle-link font-"
+"bold\">Send us a note</a>."
+
+#: core/templates/core/faq.html:28
+#, fuzzy
+#| msgid "Get started"
+msgid "Getting started"
+msgstr "Getting started"
+
+#: core/templates/core/faq.html:35
+msgid "What is Project Eureka?"
+msgstr "What is Project Eureka?"
+
+#: core/templates/core/faq.html:38
+msgid ""
+"Project Eureka is a volunteer-run learning community that connects teachers "
+"with refugee students, offering free lessons, a shared curriculum library, "
+"and a friendly place to ask for help."
+msgstr ""
+"Project Eureka is a volunteer-run learning community that connects teachers "
+"with refugee students, offering free lessons, a shared curriculum library, "
+"and a friendly place to ask for help."
+
+#: core/templates/core/faq.html:51
+msgid "For teachers"
+msgstr "For teachers"
+
+#: core/templates/core/faq.html:60
+#, fuzzy
+#| msgid "Student or family"
+msgid "For students and families"
+msgstr "For students and families"
+
+#: core/templates/core/faq.html:69
+msgid "Privacy and safety"
+msgstr "Privacy and safety"
+
+#: core/templates/core/faq.html:83
+msgid "Still stuck?"
+msgstr "Still stuck?"
+
+#: core/templates/core/faq.html:84
+msgid "Ashley reads every message and usually replies within a day or two."
+msgstr "Ashley reads every message and usually replies within a day or two."
+
+#: core/templates/core/faq.html:86
+msgid "Email us"
+msgstr "Email us"
+
+#: core/templates/core/faq.html:105
+#, fuzzy
+#| msgid "Contact us"
+msgid "Contact"
+msgstr "Contact"
 
 #: core/templates/core/home.html:12
 msgid ""

@@ -1,15 +1,18 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Project Eureka — FAQ{% endblock %}
+{% block title %}{% translate "Project Eureka — FAQ" %}{% endblock %}
 
 {% block content %}
 <section class="mx-auto max-w-3xl px-5 pt-10 pb-6 text-center">
   <div class="reveal">
-    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">FAQ</p>
-    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-4">Questions, answered.</h1>
+    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">{% translate "FAQ" %}</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-4">{% translate "Questions, answered." %}</h1>
     <p class="text-inksoft text-lg leading-relaxed">
-      The things people ask us most. Can't find what you're looking for?
-      <a href="mailto:ashley@projecteureka.org" class="squiggle-link font-bold">Send us a note</a>.
+      {% blocktranslate trimmed %}
+        The things people ask us most. Can't find what you're looking for?
+        <a href="mailto:ashley@projecteureka.org" class="squiggle-link font-bold">Send us a note</a>.
+      {% endblocktranslate %}
     </p>
   </div>
   <svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block mt-10" aria-hidden="true">
@@ -22,18 +25,20 @@
   <div class="reveal">
     <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-butter border-2 border-ink"></span>
-      Getting started
+      {% translate "Getting started" %}
     </h2>
     <ul class="space-y-3">
       <li>
         <details class="faq-item rounded-blob bg-cream border-2 border-ink/15 shadow-[4px_4px_0_0_rgba(62,76,84,0.15)] overflow-hidden">
           <summary class="flex items-center gap-4 px-5 py-4 font-display font-bold text-lg">
             <span class="plus text-2xl leading-none text-butter">+</span>
-            <span class="flex-1">What is Project Eureka?</span>
+            <span class="flex-1">{% translate "What is Project Eureka?" %}</span>
           </summary>
           <div class="answer px-5 pb-5 pl-14 text-ink/80 leading-relaxed">
-            Project Eureka is a volunteer-run learning community that connects teachers with refugee students, offering
-            free lessons, a shared curriculum library, and a friendly place to ask for help.
+            {% blocktranslate trimmed %}
+              Project Eureka is a volunteer-run learning community that connects teachers with refugee students, offering
+              free lessons, a shared curriculum library, and a friendly place to ask for help.
+            {% endblocktranslate %}
           </div>
         </details>
       </li>
@@ -43,7 +48,7 @@
   <div class="reveal">
     <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-mint border-2 border-ink"></span>
-      For teachers
+      {% translate "For teachers" %}
     </h2>
     <ul class="space-y-3">
     </ul>
@@ -52,7 +57,7 @@
   <div class="reveal">
     <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-blush border-2 border-ink"></span>
-      For students &amp; families
+      {% translate "For students and families" %}
     </h2>
     <ul class="space-y-3">
     </ul>
@@ -61,7 +66,7 @@
   <div class="reveal">
     <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-lilac border-2 border-ink"></span>
-      Privacy &amp; safety
+      {% translate "Privacy and safety" %}
     </h2>
     <ul class="space-y-3">
     </ul>
@@ -75,10 +80,10 @@
 <section class="bg-sky -mt-px">
   <div class="mx-auto max-w-3xl px-5 py-16 text-center">
     <div class="reveal">
-      <h2 class="font-display text-3xl md:text-4xl font-bold mb-3">Still stuck?</h2>
-      <p class="text-ink/80 mb-6">Ashley reads every message and usually replies within a day or two.</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-3">{% translate "Still stuck?" %}</h2>
+      <p class="text-ink/80 mb-6">{% translate "Ashley reads every message and usually replies within a day or two." %}</p>
       <a href="mailto:ashley@projecteureka.org" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
-        Email us
+        {% translate "Email us" %}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -95,9 +100,9 @@
   <div class="mx-auto max-w-6xl px-5 flex flex-wrap items-center justify-between gap-3 text-sm text-cream/80">
     <p>© 2026 Project Eureka</p>
     <div class="flex gap-5">
-      <a href="{% url 'core:about' %}" class="squiggle-link squiggle-light text-cream">About us</a>
-      <a href="{% url 'core:faq' %}" class="squiggle-link squiggle-light squiggle-on text-cream">FAQ</a>
-      <a href="{% url 'core:home' %}#contact" class="squiggle-link squiggle-light text-cream">Contact</a>
+      <a href="{% url 'core:about' %}" class="squiggle-link squiggle-light text-cream">{% translate "About us" %}</a>
+      <a href="{% url 'core:faq' %}" class="squiggle-link squiggle-light squiggle-on text-cream">{% translate "FAQ" %}</a>
+      <a href="{% url 'core:home' %}#contact" class="squiggle-link squiggle-light text-cream">{% translate "Contact" %}</a>
     </div>
   </div>
 </footer>

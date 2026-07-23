@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 10:47+0000\n"
+"POT-Creation-Date: 2026-07-23 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Project Eureka — About Us"
 msgstr "尤里卡计划 — 关于我们"
 
-#: core/templates/core/about.html:10
+#: core/templates/core/about.html:10 core/templates/core/faq.html:103
 msgid "About us"
 msgstr "关于我们"
 
@@ -303,6 +303,78 @@ msgstr "ashley@projecteureka.org"
 #: core/templates/core/contact.html:99
 msgid "directly."
 msgstr "直接地。"
+
+#: core/templates/core/faq.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — FAQ"
+msgstr "尤里卡计划 — 常见问题解答"
+
+#: core/templates/core/faq.html:9 core/templates/core/faq.html:104
+msgid "FAQ"
+msgstr "常问问题"
+
+#: core/templates/core/faq.html:10
+msgid "Questions, answered."
+msgstr "有问题，有答案。"
+
+#: core/templates/core/faq.html:12
+msgid ""
+"The things people ask us most. Can't find what you're looking for? <a "
+"href=\"mailto:ashley@projecteureka.org\" class=\"squiggle-link font-"
+"bold\">Send us a note</a>."
+msgstr ""
+"人们问我们最多的事情。找不到您要找的东西？ <a href=\"mailto:ashley@projecteureka.org\" "
+"class=\"squiggle-link font-bold\">给我们留言</a>。"
+
+#: core/templates/core/faq.html:28
+#, fuzzy
+#| msgid "Get started"
+msgid "Getting started"
+msgstr "入门"
+
+#: core/templates/core/faq.html:35
+msgid "What is Project Eureka?"
+msgstr "什么是尤里卡计划？"
+
+#: core/templates/core/faq.html:38
+msgid ""
+"Project Eureka is a volunteer-run learning community that connects teachers "
+"with refugee students, offering free lessons, a shared curriculum library, "
+"and a friendly place to ask for help."
+msgstr "Project Eureka 是一个由志愿者运营的学习社区，将教师与难民学生联系起来，提供免费课程、共享课程库以及友好的寻求帮助的地方。"
+
+#: core/templates/core/faq.html:51
+msgid "For teachers"
+msgstr "对于教师"
+
+#: core/templates/core/faq.html:60
+#, fuzzy
+#| msgid "- Student 1"
+msgid "For students and families"
+msgstr "对于学生和家庭"
+
+#: core/templates/core/faq.html:69
+msgid "Privacy and safety"
+msgstr "隐私和安全"
+
+#: core/templates/core/faq.html:83
+msgid "Still stuck?"
+msgstr "还卡住了吗？"
+
+#: core/templates/core/faq.html:84
+msgid "Ashley reads every message and usually replies within a day or two."
+msgstr "阿什利会阅读每条消息，通常会在一两天内回复。"
+
+#: core/templates/core/faq.html:86
+msgid "Email us"
+msgstr "给我们发电子邮件"
+
+#: core/templates/core/faq.html:105
+#, fuzzy
+#| msgid "Contact us"
+msgid "Contact"
+msgstr "接触"
 
 #: core/templates/core/home.html:12
 msgid ""
