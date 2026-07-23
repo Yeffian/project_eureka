@@ -1,0 +1,55 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Project Eureka{% endblock %}</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,100,1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          /* pastel 6-colour palette */
+          cream:  '#E0F2F4', /* pale cyan — page background & light surfaces */
+          butter: '#FFE797', /* soft yellow — CTAs, badges, sun */
+          mint:   '#DDDD7B', /* olive — bands, mountain, cards */
+          lilac:  '#F791A9', /* pink — main coloured bands */
+          blush:  '#FFDBDF', /* pale pink — soft accents */
+          sky:    '#BAD6DA', /* dusty blue — testimonial/CTA bands */
+          ink:    '#3E4C54', /* dark slate for text & strokes */
+          inksoft:'#6E7B7A', /* softened slate for secondary text */
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Karla', 'sans-serif'],
+        },
+        borderRadius: { blob: '2rem' },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="{% static 'css/eureka.css' %}">
+{% block extra_head %}{% endblock %}
+</head>
+<body class="bg-white text-ink antialiased">
+{% block body %}
+  {% block header %}{% include "partials/header.html" %}{% endblock %}
+
+  <main class="pt-32">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer %}{% include "partials/footer.html" %}{% endblock %}
+{% endblock %}
+
+<script src="{% static 'js/reveals.js' %}"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Top bar for home / about / faq. `current_page` drives the active-link state. -->
+<header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
+  <div class="mx-auto max-w-6xl px-5">
+
+    <!-- Row 1: brand + utility nav -->
+    <div class="flex items-center py-3 border-b border-ink/10 bg-sky/30">
+      <a href="{% url 'core:home' %}" class="font-display text-2xl font-bold tracking-tight flex items-center gap-2">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M2.5 20 C 5 16 7.5 12 9.5 8.5 C 10.5 6.5 11.2 4.6 12.2 4 C 13 3.6 13.8 4 14.4 5 C 16.5 8.5 19.5 15 21.5 20 C 21.8 20.7 21.3 21 20.7 21 H 3.3 C 2.7 21 2.2 20.6 2.5 20 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M12.2 4 c.8-.4 1.6 0 2.2 1 l1.1 1.9 c-.8 1.3-1.5-.7-2.4.5 c-.9 1.2-1.6-.7-2.5.4 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        Project Eureka
+      </a>
+
+      <nav class="ml-auto flex items-center gap-5 text-sm" aria-label="Utility">
+        <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">Home</a>
+        <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
+        <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
+        <a href="#signin" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign in</a>
+      </nav>
+    </div>
+
+    <!-- Row 2: audience pills -->
+    <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
+      <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
+      <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
+      <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
+    </nav>
+  </div>
+</header>

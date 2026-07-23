@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Project Eureka — FAQ{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-3xl px-5 pt-10 pb-6 text-center">
+  <div class="reveal">
+    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">FAQ</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-4">Questions, answered.</h1>
+    <p class="text-inksoft text-lg leading-relaxed">
+      The things people ask us most. Can't find what you're looking for?
+      <a href="mailto:ashley@projecteureka.org" class="squiggle-link font-bold">Send us a note</a>.
+    </p>
+  </div>
+  <svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block mt-10" aria-hidden="true">
+    <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
+  </svg>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 pb-16 space-y-10">
+
+  <div class="reveal">
+    <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-butter border-2 border-ink"></span>
+      Getting started
+    </h2>
+    <ul class="space-y-3">
+      <li>
+        <details class="faq-item rounded-blob bg-cream border-2 border-ink/15 shadow-[4px_4px_0_0_rgba(62,76,84,0.15)] overflow-hidden">
+          <summary class="flex items-center gap-4 px-5 py-4 font-display font-bold text-lg">
+            <span class="plus text-2xl leading-none text-butter">+</span>
+            <span class="flex-1">What is Project Eureka?</span>
+          </summary>
+          <div class="answer px-5 pb-5 pl-14 text-ink/80 leading-relaxed">
+            Project Eureka is a volunteer-run learning community that connects teachers with refugee students, offering
+            free lessons, a shared curriculum library, and a friendly place to ask for help.
+          </div>
+        </details>
+      </li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-mint border-2 border-ink"></span>
+      For teachers
+    </h2>
+    <ul class="space-y-3">
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-blush border-2 border-ink"></span>
+      For students &amp; families
+    </h2>
+    <ul class="space-y-3">
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2 class="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-lilac border-2 border-ink"></span>
+      Privacy &amp; safety
+    </h2>
+    <ul class="space-y-3">
+    </ul>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 70" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 40 C 240 70 480 10 720 35 C 960 60 1200 15 1440 45 L1440 70 L0 70 Z" fill="#BAD6DA"/>
+</svg>
+
+<section class="bg-sky -mt-px">
+  <div class="mx-auto max-w-3xl px-5 py-16 text-center">
+    <div class="reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-3">Still stuck?</h2>
+      <p class="text-ink/80 mb-6">Ashley reads every message and usually replies within a day or two.</p>
+      <a href="mailto:ashley@projecteureka.org" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
+        Email us
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{# The FAQ page has its own footer wave (sky → slate) since the CTA section is bg-sky. #}
+{% block footer %}
+<svg viewBox="0 0 1440 60" class="w-full block -mt-px" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 20 C 220 50 440 -2 680 20 C 920 42 1160 2 1440 28 L1440 60 L0 60 Z" fill="#3E4C54"/>
+</svg>
+<footer class="bg-ink -mt-px py-6">
+  <div class="mx-auto max-w-6xl px-5 flex flex-wrap items-center justify-between gap-3 text-sm text-cream/80">
+    <p>© 2026 Project Eureka</p>
+    <div class="flex gap-5">
+      <a href="{% url 'core:about' %}" class="squiggle-link squiggle-light text-cream">About us</a>
+      <a href="{% url 'core:faq' %}" class="squiggle-link squiggle-light squiggle-on text-cream">FAQ</a>
+      <a href="{% url 'core:home' %}#contact" class="squiggle-link squiggle-light text-cream">Contact</a>
+    </div>
+  </div>
+</footer>
+{% endblock %}

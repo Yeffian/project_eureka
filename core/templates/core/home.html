@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Project Eureka — Home{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-6xl px-5 grid md:grid-cols-2 gap-10 items-center pt-10 pb-4">
+  <div class="reveal">
+    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">Learning, together</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-5">Every student deserves a <span class="italic">eureka</span> moment.</h1>
+    <p class="text-inksoft text-lg leading-relaxed max-w-md mb-8">
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
+    <a href="{% url 'teachers:landing' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      Get started
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="reveal flex justify-center" aria-hidden="true">
+    <svg viewBox="0 0 400 340" class="w-full max-w-md font-display">
+      <defs>
+        <path id="slopePath" d="M36 282 C 74 260 82 226 108 202 C 136 176 138 140 166 112 C 180 98 182 74 192 56" fill="none"/>
+      </defs>
+      <path d="M330 38 c18-2 30 12 31 27 c1 16-12 30-29 30 c-17 1-31-12-31-28 c0-15 13-27 29-29 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="3.5" stroke-linecap="round"/>
+      <g class="drift" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M62 86 c-2-9 6-16 15-16 c2-8 10-14 19-13 c11 0 19 8 21 18 c7 0 13 5 13 11 c0 1-1 2-2 2 H66 c-2 0-4-1-4-2 Z"/>
+      </g>
+      <g class="drift-slow" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M256 130 c-1-7 5-13 12-13 c2-6 8-10 15-10 c9 0 16 6 17 14 c5 1 9 5 8 9 c0 1-1 1-2 1 h-48 c-1 0-2 0-2-1 Z"/>
+      </g>
+      <path d="M118 314 C 128 268 152 224 184 196 C 198 184 212 186 224 198 C 258 232 300 268 322 314 Z" fill="#F791A9" stroke="#3E4C54" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M40 312 C 66 284 86 252 106 222 C 128 190 142 156 164 122 C 178 100 188 74 202 62 C 212 54 222 58 230 70 C 252 104 268 140 292 174 C 314 206 344 264 366 312 C 368 316 364 318 360 318 H 46 C 42 318 38 316 40 312 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M202 62 C 212 54 222 58 230 70 L 244 92 c-6 12-14-8-22 4 c-8 12-16-8-24 4 c-6 9-12-4-18 0 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <text font-size="26" font-weight="700" fill="#3E4C54" letter-spacing="1">
+        <textPath href="#slopePath" startOffset="6%"><tspan dy="-8">Project Eureka</tspan></textPath>
+      </text>
+      <path d="M330 306 C 292 288 312 260 278 242 C 248 226 270 200 242 184 C 224 174 236 152 220 136" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 10"/>
+      <g>
+        <path d="M212 60 C 211 48 213 36 212 26" stroke="#3E4C54" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M212 26 C 222 24 234 30 244 32 C 234 38 222 42 213 44 Z" fill="#F791A9" stroke="#3E4C54" stroke-width="3.5" stroke-linejoin="round"/>
+      </g>
+      <g>
+        <circle cx="34" cy="140" r="4" fill="#3E4C54"/>
+        <path d="M368 176l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.5"/>
+        <path d="M56 36l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#FFDBDF" stroke="#3E4C54" stroke-width="2.5"/>
+      </g>
+      <path d="M16 318 C 60 314 100 322 150 318 C 200 314 250 322 300 318 C 340 315 366 320 386 317" fill="none" stroke="#3E4C54" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 90" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 45 C 180 90 360 0 540 40 C 720 80 900 10 1080 45 C 1260 80 1350 30 1440 50 L1440 90 L0 90 Z" fill="#F791A9"/>
+</svg>
+
+<section id="vision" class="bg-lilac -mt-px">
+  <div class="mx-auto max-w-6xl px-5 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <h2 class="font-display text-4xl font-bold mb-5">Our vision</h2>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p class="text-ink/80 leading-relaxed">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] aspect-[4/3] flex items-center justify-center overflow-hidden">
+        <svg viewBox="0 0 200 150" class="w-2/3" aria-hidden="true">
+          <rect x="30" y="40" width="140" height="90" rx="10" fill="#DDDD7B" stroke="#3E4C54" stroke-width="3"/>
+          <path d="M30 65h140" stroke="#3E4C54" stroke-width="3"/>
+          <circle cx="45" cy="53" r="4" fill="#F791A9"/><circle cx="60" cy="53" r="4" fill="#FFE797"/><circle cx="75" cy="53" r="4" fill="#FFDBDF"/>
+          <path d="M55 100c8-14 24-14 32 0M113 100c8-14 24-14 32 0" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="71" cy="86" r="8" fill="#FFE797" stroke="#3E4C54" stroke-width="3"/>
+          <circle cx="129" cy="86" r="8" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3"/>
+        </svg>
+      </div>
+      <p class="mt-3 text-center text-sm text-inksoft">Lessons happen wherever students are.</p>
+    </div>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 80" class="w-full block -mt-px" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V30 C 1260 70 1080 5 900 40 C 720 75 540 15 360 45 C 200 70 90 30 0 50 Z" fill="#F791A9"/>
+</svg>
+
+<section class="mx-auto max-w-6xl px-5 py-20">
+  <div class="reveal max-w-2xl">
+    <h2 class="font-display text-4xl font-bold mb-5">Our impact</h2>
+    <p class="text-inksoft leading-relaxed mb-6">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <div class="reveal mt-10 grid sm:grid-cols-3 gap-5">
+    <div class="rounded-blob bg-mint/60 p-6 border-2 border-ink/10">
+      <p class="font-display text-4xl font-bold">500+</p>
+      <p class="text-sm mt-1 text-ink/70">lesson hours taught by volunteers</p>
+    </div>
+    <div class="rounded-blob bg-butter/70 p-6 border-2 border-ink/10">
+      <p class="font-display text-4xl font-bold">40</p>
+      <p class="text-sm mt-1 text-ink/70">teachers &amp; volunteer partners</p>
+    </div>
+    <div class="rounded-blob bg-blush/50 p-6 border-2 border-ink/10">
+      <p class="font-display text-4xl font-bold">120</p>
+      <p class="text-sm mt-1 text-ink/70">students learning with us</p>
+    </div>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 70" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 40 C 240 70 480 10 720 35 C 960 60 1200 15 1440 45 L1440 70 L0 70 Z" fill="#BAD6DA"/>
+</svg>
+
+<section class="bg-sky -mt-px">
+  <div class="mx-auto max-w-6xl px-5 pb-20 pt-14">
+    <h2 class="reveal font-display text-4xl font-bold mb-10 text-center">What our members &amp; refugee students say</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
+        <blockquote class="text-lg leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
+        <figcaption class="font-bold text-sm">— Student 1</figcaption>
+      </figure>
+      <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
+        <blockquote class="text-lg leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
+        <figcaption class="font-bold text-sm">— Student 2</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 80" class="w-full block -mt-px" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V35 C 1240 75 1060 10 880 40 C 700 70 520 20 340 45 C 190 66 80 35 0 55 Z" fill="#BAD6DA"/>
+</svg>
+
+<section id="contact" class="mx-auto max-w-6xl px-5 py-20 text-center">
+  <div class="reveal">
+    <h2 class="font-display text-4xl font-bold mb-4">Contact us</h2>
+    <p class="text-inksoft mb-6 max-w-md mx-auto">Questions, ideas, or want to volunteer?</p>
+    <a href="mailto:ashley@projecteureka.org" class="inline-block rounded-full bg-butter border-2 border-ink px-6 py-3 font-bold hover:bg-blush/70 transition-colors">Email us</a>
+  </div>
+</section>
+{% endblock %}

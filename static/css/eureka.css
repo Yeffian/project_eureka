@@ -1,0 +1,111 @@
+html { scroll-behavior: smooth; }
+body { font-family: 'Karla', sans-serif; }
+.font-display { font-family: 'Fraunces', serif; }
+
+.squiggle-link { position: relative; text-decoration: none; }
+.squiggle-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 T30 3 T45 3 T60 3' fill='none' stroke='%233E4C54' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-size: 60px 6px;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.squiggle-link:hover::after,
+.squiggle-link:focus-visible::after { opacity: 1; }
+
+.squiggle-on::after { opacity: 1; }
+
+.squiggle-light::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 T30 3 T45 3 T60 3' fill='none' stroke='%23E0F2F4' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-size: 60px 6px;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(14px); }
+}
+.drift      { animation: drift 7s ease-in-out infinite; }
+.drift-slow { animation: drift 11s ease-in-out infinite; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drift, .drift-slow { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+.faq-item { list-style: none; }
+.faq-item summary { list-style: none; cursor: pointer; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item .plus { transition: transform .25s ease; }
+.faq-item[open] .plus { transform: rotate(45deg); }
+.faq-item[open] summary { background-color: rgba(228, 164, 137, 0.35); }
+.faq-item .answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .35s ease, padding .35s ease, opacity .3s ease;
+}
+.faq-item[open] .answer { max-height: 500px; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-item .plus, .faq-item .answer { transition: none; }
+}
+
+.doodle-check {
+  appearance: none;
+  width: 22px; height: 22px; flex: none;
+  cursor: pointer;
+  border: 2.5px solid #3E4C54;
+  border-radius: 7px 9px 6px 8px / 8px 6px 9px 7px;
+  background: #E0F2F4;
+  position: relative;
+}
+.doodle-check:checked { background: #FFE797; }
+.doodle-check:checked::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M5 12 C 7 14 8 16 9 16 C 11 12 14 8 18 5' fill='none' stroke='%233E4C54' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.doodle-check:checked + label { text-decoration: line-through; opacity: .55; }
+
+:root {
+  --sidebar-w: 244px;
+  --sidebar-w-collapsed: 68px;
+}
+#sidebar {
+  position: fixed;
+  top: 132px; left: 12px; bottom: 12px;
+  z-index: 40;
+  width: var(--sidebar-w);
+  transition: width .28s ease;
+}
+#main-shell {
+  margin-left: calc(var(--sidebar-w) + 24px);
+  padding-right: 12px;
+  transition: margin-left .28s ease;
+}
+
+html[data-sidebar="collapsed"] #sidebar { width: var(--sidebar-w-collapsed); }
+html[data-sidebar="collapsed"] #main-shell { margin-left: calc(var(--sidebar-w-collapsed) + 24px); }
+html[data-sidebar="collapsed"] .sb-label,
+html[data-sidebar="collapsed"] .sb-title,
+html[data-sidebar="collapsed"] .sb-sub { display: none; }
+html[data-sidebar="collapsed"] #sidebar nav ul li a {
+  justify-content: center;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+html[data-sidebar="collapsed"] #sidebar-toggle svg { transform: rotate(180deg); }
+#sidebar-toggle svg { transition: transform .25s ease; }
+
+@media (max-width: 640px) {
+  :root { --sidebar-w: 210px; }
+  #sidebar { left: 8px; bottom: 8px; }
+  #main-shell { padding-right: 8px; }
+}
