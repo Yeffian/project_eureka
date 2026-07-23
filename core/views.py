@@ -17,3 +17,6 @@ def about(request):
 
 def faq(request):
     return render(request, "core/faq.html", {"current_page": "faq"})
+
+def contact(request):
+    return render(request, "core/contact.html", {"current_page": "contact"})
