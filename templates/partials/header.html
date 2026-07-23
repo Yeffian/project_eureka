@@ -16,7 +16,8 @@
         <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">Home</a>
         <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
         <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
-        <a href="#signin" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign in</a>
+        <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign up</a>
+        <a href="{% url 'core:login' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
       </nav>
     </div>
 
