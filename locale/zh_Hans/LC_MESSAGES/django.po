@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 08:01+0000\n"
+"POT-Creation-Date: 2026-07-23 10:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,292 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: core/templates/core/about.html:4
+msgid "Project Eureka — About Us"
+msgstr "尤里卡计划 — 关于我们"
+
+#: core/templates/core/about.html:10
+msgid "About us"
+msgstr "关于我们"
+
+#: core/templates/core/about.html:11
+msgid "The people behind the"
+msgstr "背后的人"
+
+#: core/templates/core/about.html:11
+msgid "eureka."
+msgstr "尤里卡。"
+
+#: core/templates/core/about.html:13
+msgid ""
+"We're a small group of teachers, students, and organisers who believe "
+"learning shouldn't stop at a border."
+msgstr "我们是由教师、学生和组织者组成的一小群人，他们相信学习不应该止步于国界。"
+
+#: core/templates/core/about.html:14
+msgid "This is our story so far — and how you can join it."
+msgstr "这是我们迄今为止的故事——以及您如何加入它。"
+
+#: core/templates/core/about.html:49
+#, fuzzy
+#| msgid "Our vision"
+msgid "Our story"
+msgstr "我们的故事"
+
+#: core/templates/core/about.html:51
+msgid ""
+"Project Eureka began at a kitchen table in 2023, with one teacher, one "
+"student, and a stack of borrowed textbooks."
+msgstr "尤里卡计划于 2023 年在厨房的餐桌上启动，当时只有一名老师、一名学生和一堆借来的教科书。"
+
+#: core/templates/core/about.html:52
+msgid ""
+"What started as weekly lessons for a single family has grown into a global "
+"volunteer community — but the spirit is the same."
+msgstr "最初是为一个家庭提供每周一次的课程，现已发展成为一个全球志愿者社区——但精神是一样的。"
+
+#: core/templates/core/about.html:55
+msgid ""
+"Every classroom we've built stands on the shoulders of the last. Every "
+"lesson plan has been rewritten by the teacher who came after."
+msgstr "我们建造的每一间教室都站在前一教室的肩膀上。每个教案都被后来的老师重写了。"
+
+#: core/templates/core/about.html:56
+msgid "That collaboration is the whole point."
+msgstr "这种合作才是重点。"
+
+#: core/templates/core/about.html:65
+msgid "The kitchen table"
+msgstr "厨房的桌子"
+
+#: core/templates/core/about.html:66
+msgid "Our first lessons — one teacher, one family, one whiteboard."
+msgstr "我们的第一堂课——一位老师，一个家庭，一块白板。"
+
+#: core/templates/core/about.html:72
+msgid "Ten teachers, three cities"
+msgstr "十位老师，三个城市"
+
+#: core/templates/core/about.html:73
+msgid "Volunteers begin sharing lesson plans across borders."
+msgstr "志愿者开始跨境分享课程计划。"
+
+#: core/templates/core/about.html:79
+msgid "The shared library opens"
+msgstr "共享库打开"
+
+#: core/templates/core/about.html:80
+msgid "A hundred lessons published and remixed by the community."
+msgstr "由社区发布和重新混合的一百个课程。"
+
+#: core/templates/core/about.html:86
+msgid "Reaching a summit — and the next one"
+msgstr "登上顶峰——以及下一个顶峰"
+
+#: core/templates/core/about.html:87
+msgid "120 students, 40 volunteers, and a lot more to come."
+msgstr "120 名学生、40 名志愿者以及更多其他人。"
+
+#: core/templates/core/about.html:102
+msgid "What we believe"
+msgstr "我们相信什么"
+
+#: core/templates/core/about.html:104
+msgid ""
+"Three ideas keep us honest — the north stars we come back to when we're "
+"deciding what to build next."
+msgstr "三个想法让我们保持诚实——当我们决定下一步要建造什么时，我们会回到北极星。"
+
+#: core/templates/core/about.html:114
+msgid "Learning is a right."
+msgstr "学习是一种权利。"
+
+#: core/templates/core/about.html:115
+msgid "Displacement should never mean the end of an education."
+msgstr "流离失所绝不意味着教育的结束。"
+
+#: core/templates/core/about.html:123
+msgid "Community over hierarchy."
+msgstr "社区高于等级制度。"
+
+#: core/templates/core/about.html:124
+msgid "Every lesson gets better because someone else improved it."
+msgstr "每节课都会变得更好，因为其他人改进了它。"
+
+#: core/templates/core/about.html:131
+msgid "Small steps, big summits."
+msgstr "小台阶，大顶峰。"
+
+#: core/templates/core/about.html:132
+msgid "Two hours a week from many people goes a very long way."
+msgstr "对于很多人来说，每周两个小时已经大有帮助了。"
+
+#: core/templates/core/about.html:144
+msgid "The team"
+msgstr "团队"
+
+#: core/templates/core/about.html:146
+msgid ""
+"A tiny core team keeps the lights on, but the real work happens across "
+"dozens of volunteer teachers around the world."
+msgstr "一个很小的核心团队负责维持工作，但真正的工作是由世界各地的数十名志愿者教师承担的。"
+
+#: core/templates/core/about.html:153
+msgid "Founder"
+msgstr "创始人"
+
+#: core/templates/core/about.html:154
+msgid "Started it all at that kitchen table. Still teaches Sunday mornings."
+msgstr "一切都是从厨房的桌子开始的。周日早上仍然上课。"
+
+#: core/templates/core/about.html:159
+msgid "Curriculum lead"
+msgstr "课程主导"
+
+#: core/templates/core/about.html:160
+msgid "Keeps the lesson library growing and the community close."
+msgstr "保持课程库的不断增长和社区的紧密联系。"
+
+#: core/templates/core/about.html:165
+#, fuzzy
+#| msgid "- Student 1"
+msgid "Student liaison"
+msgstr "学生联络员"
+
+#: core/templates/core/about.html:166
+msgid "Was a student first. Now she helps others find their way in."
+msgstr "首先是学生。现在她帮助其他人找到进入的方法。"
+
+#: core/templates/core/about.html:171
+#, fuzzy
+#| msgid "Tech &amp; tools"
+msgid "Tech and tools"
+msgstr "技术和工具"
+
+#: core/templates/core/about.html:172
+msgid "Builds the quiet things — the drive, the dashboards, the pipes."
+msgstr "建造安静的东西——驱动器、仪表板、管道。"
+
+#: core/templates/core/about.html:184
+#, fuzzy
+#| msgid "Partners &amp; friends"
+msgid "Partners and friends"
+msgstr "合作伙伴和朋友"
+
+#: core/templates/core/about.html:186
+msgid ""
+"We couldn't do this alone. These organisations help us with classroom space,"
+" translation, and getting textbooks where they're needed."
+msgstr "我们无法独自完成这件事。这些组织帮助我们提供教室空间、翻译以及将教科书送到需要的地方。"
+
+#: core/templates/core/about.html:190
+msgid "Partner 1"
+msgstr "伙伴1"
+
+#: core/templates/core/about.html:191
+msgid "Partner 2"
+msgstr "伙伴2"
+
+#: core/templates/core/about.html:192
+msgid "Partner 3"
+msgstr "伙伴3"
+
+#: core/templates/core/about.html:193
+msgid "Partner 4"
+msgstr "伙伴4"
+
+#: core/templates/core/about.html:199
+msgid "Want to be part of the next chapter?"
+msgstr "想成为下一章的一部分吗？"
+
+#: core/templates/core/about.html:200
+msgid ""
+"Whether you can teach an hour a week or just point us to someone who can — "
+"we'd love to hear from you."
+msgstr "无论您可以每周教一个小时，还是只是向我们推荐可以教课的人，我们都很乐意听取您的意见。"
+
+#: core/templates/core/about.html:203
+#, fuzzy
+#| msgid "students learning with us"
+msgid "Volunteer with us"
+msgstr "和我们一起做志愿者"
+
+#: core/templates/core/about.html:206
+msgid "Say hello"
+msgstr "问好"
+
+#: core/templates/core/contact.html:11
+msgid ""
+"\n"
+"      Questions about volunteering, joining a class, or partnering with us?\n"
+"      Drop us a note below — Ashley reads every message and usually replies within a day or two.\n"
+"      "
+msgstr ""
+"对志愿服务、参加课程或与我们合作有疑问吗？\n"
+"      请在下面给我们留言——阿什利会阅读每条消息，通常会在一两天内回复。"
+
+#: core/templates/core/contact.html:62
+msgid "Send us a note"
+msgstr "给我们留言"
+
+#: core/templates/core/contact.html:63
+msgid "All fields are optional except email — we'll use it to reply."
+msgstr "除了电子邮件之外，所有字段都是可选的 - 我们将用它来回复。"
+
+#: core/templates/core/contact.html:69
+msgid "Your name"
+msgstr "你的名字"
+
+#: core/templates/core/contact.html:79
+msgid "I'm reaching out as a…"
+msgstr "我正在以……的身份伸出援手。"
+
+#: core/templates/core/contact.html:81
+msgid "Choose one"
+msgstr "选择一个"
+
+#: core/templates/core/contact.html:82
+#, fuzzy
+#| msgid "teachers &amp; volunteer partners"
+msgid "Teacher or volunteer"
+msgstr "老师或志愿者"
+
+#: core/templates/core/contact.html:83
+#, fuzzy
+#| msgid "- Student 1"
+msgid "Student or family"
+msgstr "学生或家庭"
+
+#: core/templates/core/contact.html:84
+#, fuzzy
+#| msgid "Partners &amp; friends"
+msgid "Partner organisation"
+msgstr "合作伙伴组织"
+
+#: core/templates/core/contact.html:85
+msgid "Something else"
+msgstr "其他的东西"
+
+#: core/templates/core/contact.html:90
+msgid "Your message"
+msgstr "您的留言"
+
+#: core/templates/core/contact.html:96
+msgid "Send message"
+msgstr "发送消息"
+
+#: core/templates/core/contact.html:99
+msgid "Or email"
+msgstr "或发送电子邮件"
+
+#: core/templates/core/contact.html:99
+msgid "ashley@projecteureka.org"
+msgstr "ashley@projecteureka.org"
+
+#: core/templates/core/contact.html:99
+msgid "directly."
+msgstr "直接地。"
 
 #: core/templates/core/home.html:12
 msgid ""
@@ -109,10 +395,34 @@ msgstr "联系我们"
 msgid "Questions, ideas, or want to volunteer?"
 msgstr "有问题、想法或想成为志愿者吗？"
 
-#: project_eureka/settings.py:83
+#: project_eureka/settings.py:86
 msgid "English"
 msgstr "英语"
 
-#: project_eureka/settings.py:84
+#: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
 msgstr "中文（简体）"
+
+#~ msgid "2023"
+#~ msgstr "2023年"
+
+#~ msgid "2024"
+#~ msgstr "2024年"
+
+#~ msgid "2025"
+#~ msgstr "2025年"
+
+#~ msgid "2026"
+#~ msgstr "2026年"
+
+#~ msgid "Ashley"
+#~ msgstr "阿什利"
+
+#~ msgid "Daniel"
+#~ msgstr "丹尼尔"
+
+#~ msgid "Maya"
+#~ msgstr "玛雅人"
+
+#~ msgid "Jonah"
+#~ msgstr "约拿"

@@ -8,8 +8,10 @@
     <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">Contact</p>
     <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-5">Say <span class="italic">hello.</span></h1>
     <p class="text-inksoft text-lg leading-relaxed max-w-md">
+      {% blocktranslate %}
       Questions about volunteering, joining a class, or partnering with us?
       Drop us a note below — Ashley reads every message and usually replies within a day or two.
+      {% endblocktranslate %}
     </p>
   </div>
 
@@ -57,14 +59,14 @@
 
 <section class="mx-auto max-w-2xl px-5 pb-20">
   <div class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-8 md:p-10">
-    <h2 class="font-display text-3xl font-bold mb-2">Send us a note</h2>
-    <p class="text-inksoft mb-8">All fields are optional except email — we'll use it to reply.</p>
+    <h2 class="font-display text-3xl font-bold mb-2">{% translate "Send us a note" %}</h2>
+    <p class="text-inksoft mb-8">{% translate "All fields are optional except email — we'll use it to reply." %}</p>
     
     <form class="space-y-5" novalidate>
       {% csrf_token %}
 
       <div>
-        <label for="name" class="block text-sm font-bold mb-1.5">Your name</label>
+        <label for="name" class="block text-sm font-bold mb-1.5">{% translate "Your name" %}</label>
         <input type="text" id="name" name="name" class="doodle-input" placeholder="Ashley">
       </div>
 
@@ -74,27 +76,27 @@
       </div>
 
       <div>
-        <label for="role" class="block text-sm font-bold mb-1.5">I'm reaching out as a…</label>
+        <label for="role" class="block text-sm font-bold mb-1.5">{% translate "I'm reaching out as a…" %}</label>
         <select id="role" name="role" class="doodle-select">
-          <option value="">Choose one</option>
-          <option value="teacher">Teacher or volunteer</option>
-          <option value="student">Student or family</option>
-          <option value="partner">Partner organisation</option>
-          <option value="other">Something else</option>
+          <option value="">{% translate "Choose one" %}</option>
+          <option value="teacher">{% translate "Teacher or volunteer" %}</option>
+          <option value="student">{% translate "Student or family" %}</option>
+          <option value="partner">{% translate "Partner organisation" %}</option>
+          <option value="other">{% translate "Something else" %}</option>
         </select>
       </div>
 
       <div>
-        <label for="message" class="block text-sm font-bold mb-1.5">Your message</label>
+        <label for="message" class="block text-sm font-bold mb-1.5">{% translate "Your message" %}</label>
         <textarea id="message" name="message" rows="5" class="doodle-textarea" placeholder="Tell us what's on your mind…"></textarea>
       </div>
 
       <div class="flex flex-wrap items-center gap-4 pt-2">
         <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-          Send message
+          {% translate "Send message" %}
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <p class="text-xs text-inksoft">Or email <a href="mailto:ashley@projecteureka.org" class="squiggle-link font-bold">ashley@projecteureka.org</a> directly.</p>
+        <p class="text-xs text-inksoft">{% translate "Or email" %} <a href="mailto:ashley@projecteureka.org" class="squiggle-link font-bold">{% translate "ashley@projecteureka.org" %}</a> {% translate "directly." %}</p>
       </div>
     </form>
   </div>

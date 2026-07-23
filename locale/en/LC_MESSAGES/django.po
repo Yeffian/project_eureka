@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 07:33+0000\n"
+"POT-Creation-Date: 2026-07-23 10:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,50 +17,399 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/templates/core/about.html:4
+msgid "Project Eureka — About Us"
+msgstr "Project Eureka — About Us"
+
+#: core/templates/core/about.html:10
+msgid "About us"
+msgstr "About us"
+
+#: core/templates/core/about.html:11
+msgid "The people behind the"
+msgstr "The people behind the"
+
+#: core/templates/core/about.html:11
+msgid "eureka."
+msgstr "eureka."
+
+#: core/templates/core/about.html:13
+msgid ""
+"We're a small group of teachers, students, and organisers who believe "
+"learning shouldn't stop at a border."
+msgstr ""
+"We're a small group of teachers, students, and organisers who believe "
+"learning shouldn't stop at a border."
+
+#: core/templates/core/about.html:14
+msgid "This is our story so far — and how you can join it."
+msgstr "This is our story so far — and how you can join it."
+
+#: core/templates/core/about.html:49
+msgid "Our story"
+msgstr "Our story"
+
+#: core/templates/core/about.html:51
+msgid ""
+"Project Eureka began at a kitchen table in 2023, with one teacher, one "
+"student, and a stack of borrowed textbooks."
+msgstr ""
+"Project Eureka began at a kitchen table in 2023, with one teacher, one "
+"student, and a stack of borrowed textbooks."
+
+#: core/templates/core/about.html:52
+msgid ""
+"What started as weekly lessons for a single family has grown into a global "
+"volunteer community — but the spirit is the same."
+msgstr ""
+"What started as weekly lessons for a single family has grown into a global "
+"volunteer community — but the spirit is the same."
+
+#: core/templates/core/about.html:55
+msgid ""
+"Every classroom we've built stands on the shoulders of the last. Every "
+"lesson plan has been rewritten by the teacher who came after."
+msgstr ""
+"Every classroom we've built stands on the shoulders of the last. Every "
+"lesson plan has been rewritten by the teacher who came after."
+
+#: core/templates/core/about.html:56
+msgid "That collaboration is the whole point."
+msgstr "That collaboration is the whole point."
+
+#: core/templates/core/about.html:65
+msgid "The kitchen table"
+msgstr "The kitchen table"
+
+#: core/templates/core/about.html:66
+msgid "Our first lessons — one teacher, one family, one whiteboard."
+msgstr "Our first lessons — one teacher, one family, one whiteboard."
+
+#: core/templates/core/about.html:72
+msgid "Ten teachers, three cities"
+msgstr "Ten teachers, three cities"
+
+#: core/templates/core/about.html:73
+msgid "Volunteers begin sharing lesson plans across borders."
+msgstr "Volunteers begin sharing lesson plans across borders."
+
+#: core/templates/core/about.html:79
+msgid "The shared library opens"
+msgstr "The shared library opens"
+
+#: core/templates/core/about.html:80
+msgid "A hundred lessons published and remixed by the community."
+msgstr "A hundred lessons published and remixed by the community."
+
+#: core/templates/core/about.html:86
+msgid "Reaching a summit — and the next one"
+msgstr "Reaching a summit — and the next one"
+
+#: core/templates/core/about.html:87
+msgid "120 students, 40 volunteers, and a lot more to come."
+msgstr "120 students, 40 volunteers, and a lot more to come."
+
+#: core/templates/core/about.html:102
+msgid "What we believe"
+msgstr "What we believe"
+
+#: core/templates/core/about.html:104
+msgid ""
+"Three ideas keep us honest — the north stars we come back to when we're "
+"deciding what to build next."
+msgstr ""
+"Three ideas keep us honest — the north stars we come back to when we're "
+"deciding what to build next."
+
+#: core/templates/core/about.html:114
+msgid "Learning is a right."
+msgstr "Learning is a right."
+
+#: core/templates/core/about.html:115
+msgid "Displacement should never mean the end of an education."
+msgstr "Displacement should never mean the end of an education."
+
+#: core/templates/core/about.html:123
+msgid "Community over hierarchy."
+msgstr "Community over hierarchy."
+
+#: core/templates/core/about.html:124
+msgid "Every lesson gets better because someone else improved it."
+msgstr "Every lesson gets better because someone else improved it."
+
+#: core/templates/core/about.html:131
+msgid "Small steps, big summits."
+msgstr "Small steps, big summits."
+
+#: core/templates/core/about.html:132
+msgid "Two hours a week from many people goes a very long way."
+msgstr "Two hours a week from many people goes a very long way."
+
+#: core/templates/core/about.html:144
+msgid "The team"
+msgstr "The team"
+
+#: core/templates/core/about.html:146
+msgid ""
+"A tiny core team keeps the lights on, but the real work happens across "
+"dozens of volunteer teachers around the world."
+msgstr ""
+"A tiny core team keeps the lights on, but the real work happens across "
+"dozens of volunteer teachers around the world."
+
+#: core/templates/core/about.html:153
+msgid "Founder"
+msgstr "Founder"
+
+#: core/templates/core/about.html:154
+msgid "Started it all at that kitchen table. Still teaches Sunday mornings."
+msgstr "Started it all at that kitchen table. Still teaches Sunday mornings."
+
+#: core/templates/core/about.html:159
+msgid "Curriculum lead"
+msgstr "Curriculum lead"
+
+#: core/templates/core/about.html:160
+msgid "Keeps the lesson library growing and the community close."
+msgstr "Keeps the lesson library growing and the community close."
+
+#: core/templates/core/about.html:165
+msgid "Student liaison"
+msgstr "Student liaison"
+
+#: core/templates/core/about.html:166
+msgid "Was a student first. Now she helps others find their way in."
+msgstr "Was a student first. Now she helps others find their way in."
+
+#: core/templates/core/about.html:171
+msgid "Tech and tools"
+msgstr "Tech and tools"
+
+#: core/templates/core/about.html:172
+msgid "Builds the quiet things — the drive, the dashboards, the pipes."
+msgstr "Builds the quiet things — the drive, the dashboards, the pipes."
+
+#: core/templates/core/about.html:184
+msgid "Partners and friends"
+msgstr "Partners and friends"
+
+#: core/templates/core/about.html:186
+msgid ""
+"We couldn't do this alone. These organisations help us with classroom space,"
+" translation, and getting textbooks where they're needed."
+msgstr ""
+"We couldn't do this alone. These organisations help us with classroom space,"
+" translation, and getting textbooks where they're needed."
+
+#: core/templates/core/about.html:190
+msgid "Partner 1"
+msgstr "Partner 1"
+
+#: core/templates/core/about.html:191
+msgid "Partner 2"
+msgstr "Partner 2"
+
+#: core/templates/core/about.html:192
+msgid "Partner 3"
+msgstr "Partner 3"
+
+#: core/templates/core/about.html:193
+msgid "Partner 4"
+msgstr "Partner 4"
+
+#: core/templates/core/about.html:199
+msgid "Want to be part of the next chapter?"
+msgstr "Want to be part of the next chapter?"
+
+#: core/templates/core/about.html:200
+msgid ""
+"Whether you can teach an hour a week or just point us to someone who can — "
+"we'd love to hear from you."
+msgstr ""
+"Whether you can teach an hour a week or just point us to someone who can — "
+"we'd love to hear from you."
+
+#: core/templates/core/about.html:203
+msgid "Volunteer with us"
+msgstr "Volunteer with us"
+
+#: core/templates/core/about.html:206
+msgid "Say hello"
+msgstr "Say hello"
+
+#: core/templates/core/contact.html:11
+msgid ""
+"\n"
+"      Questions about volunteering, joining a class, or partnering with us?\n"
+"      Drop us a note below — Ashley reads every message and usually replies within a day or two.\n"
+"      "
+msgstr ""
+"Questions about volunteering, joining a class, or partnering with us?\n"
+"      Drop us a note below — Ashley reads every message and usually replies within a day or two."
+
+#: core/templates/core/contact.html:62
+msgid "Send us a note"
+msgstr "Send us a note"
+
+#: core/templates/core/contact.html:63
+msgid "All fields are optional except email — we'll use it to reply."
+msgstr "All fields are optional except email — we'll use it to reply."
+
+#: core/templates/core/contact.html:69
+msgid "Your name"
+msgstr "Your name"
+
+#: core/templates/core/contact.html:79
+msgid "I'm reaching out as a…"
+msgstr "I'm reaching out as a…"
+
+#: core/templates/core/contact.html:81
+msgid "Choose one"
+msgstr "Choose one"
+
+#: core/templates/core/contact.html:82
+msgid "Teacher or volunteer"
+msgstr "Teacher or volunteer"
+
+#: core/templates/core/contact.html:83
+msgid "Student or family"
+msgstr "Student or family"
+
+#: core/templates/core/contact.html:84
+msgid "Partner organisation"
+msgstr "Partner organisation"
+
+#: core/templates/core/contact.html:85
+msgid "Something else"
+msgstr "Something else"
+
+#: core/templates/core/contact.html:90
+msgid "Your message"
+msgstr "Your message"
+
+#: core/templates/core/contact.html:96
+msgid "Send message"
+msgstr "Send message"
+
+#: core/templates/core/contact.html:99
+msgid "Or email"
+msgstr "Or email"
+
+#: core/templates/core/contact.html:99
+msgid "ashley@projecteureka.org"
+msgstr "ashley@projecteureka.org"
+
+#: core/templates/core/contact.html:99
+msgid "directly."
+msgstr "directly."
+
 #: core/templates/core/home.html:12
 msgid ""
 "\n"
-"        Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
-"accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab "
-"illo inventore veritatis et quasi architecto beatae vitae dicta sunt "
-"explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit "
-"aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem "
-"sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit "
-"amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora "
-"incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n"
+"        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n"
 "      "
 msgstr ""
+"But in order that you may see whence all this born error of those who accuse"
+" pleasure and praise pain, I will open the whole matter, and explain the "
+"very things which were said by that discoverer of truth and, as it were, the"
+" architect of a happy life. For no one despises or hates or runs away from "
+"pleasure because it is pleasure, but because great pains result to those who"
+" do not know how to follow pleasure with reason. Nor, moreover, is there any"
+" one who, because he likes pain, pursues it, wants to gain it, but because "
+"such times never occur in which he seeks some great pleasure through labor "
+"and pain."
+
+#: core/templates/core/home.html:17
+msgid "Get started"
+msgstr "Get started"
+
+#: core/templates/core/home.html:62
+msgid "Our vision"
+msgstr "Our vision"
 
 #: core/templates/core/home.html:64
 msgid ""
 "\n"
-"          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do "
-"eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+"          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
 "        "
 msgstr ""
+"It is important to take care of the patient, the patient will be followed by"
+" the patient, but it will happen at such a time that there is a lot of work "
+"and pain."
 
 #: core/templates/core/home.html:69
 msgid ""
 "\n"
-"          Duis aute irure dolor in reprehenderit in voluptate velit esse "
-"cillum dolore eu fugiat nulla pariatur.\n"
+"          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
 "        "
 msgstr ""
+"Do not be angry with the pain in the reprimand in the pleasure he wants to "
+"be a hair from the pain in the hope that there is no breeding."
+
+#: core/templates/core/home.html:85
+msgid "Lessons happen wherever students are."
+msgstr "Lessons happen wherever students are."
+
+#: core/templates/core/home.html:96
+msgid "Our impact"
+msgstr "Our impact"
 
 #: core/templates/core/home.html:98
 msgid ""
 "\n"
-"        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do "
-"eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
-"        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris "
-"nisi ut aliquip ex ea commodo consequat.\n"
+"        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+"        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n"
 "      "
 msgstr ""
+"It is important to take care of the patient, the patient will be followed by the patient, but it will happen at such a time that there is a lot of work and pain.\n"
+"        For to come to the smallest detail, no one should practice any kind of work unless he derives some benefit from it."
 
-#: project_eureka/settings.py:83
+#: core/templates/core/home.html:107
+msgid "lesson hours taught by volunteers"
+msgstr "lesson hours taught by volunteers"
+
+#: core/templates/core/home.html:111
+msgid "teachers &amp; volunteer partners"
+msgstr "teachers &amp; volunteer partners"
+
+#: core/templates/core/home.html:115
+msgid "students learning with us"
+msgstr "students learning with us"
+
+#: core/templates/core/home.html:126
+msgid "What our members &amp; refugee students say"
+msgstr "What our members &amp; refugee students say"
+
+#: core/templates/core/home.html:130 core/templates/core/home.html:135
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua."
+msgstr ""
+"It is important to take care of the patient, the patient will be followed by"
+" the patient, but it will happen at such a time that there is a lot of work "
+"and pain."
+
+#: core/templates/core/home.html:131
+msgid "- Student 1"
+msgstr "- Student 1"
+
+#: core/templates/core/home.html:136
+msgid "- Student 2"
+msgstr "- Student 2"
+
+#: core/templates/core/home.html:148
+msgid "Contact us"
+msgstr "Contact us"
+
+#: core/templates/core/home.html:149
+msgid "Questions, ideas, or want to volunteer?"
+msgstr "Questions, ideas, or want to volunteer?"
+
+#: project_eureka/settings.py:86
 msgid "English"
-msgstr ""
+msgstr "English"
 
-#: project_eureka/settings.py:84
+#: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
-msgstr ""
+msgstr "Chinese (Simplified)"
