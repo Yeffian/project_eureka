@@ -123,8 +123,7 @@ body { font-family: 'Karla', sans-serif; }
 
 html[data-sidebar="collapsed"] #sidebar { width: var(--sidebar-w-collapsed); }
 html[data-sidebar="collapsed"] #main-shell { margin-left: calc(var(--sidebar-w-collapsed) + 24px); }
-html[data-sidebar="collapsed"] .sb-label,
-html[data-sidebar="collapsed"] .sb-title,
+html[data-sidebar="collapsed"] .sb-label, html[data-sidebar="collapsed"] .sb-title,
 html[data-sidebar="collapsed"] .sb-sub { display: none; }
 html[data-sidebar="collapsed"] #sidebar nav ul li a {
   justify-content: center;

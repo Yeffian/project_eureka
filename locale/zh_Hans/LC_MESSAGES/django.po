@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-23 08:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: core/templates/core/home.html:12
+msgid ""
+"\n"
+"        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n"
+"      "
+msgstr ""
+"但是，为了让你们明白那些指责快乐、赞扬痛苦的人的所有这些天生的错误是从何而来，我将揭开整个问题，并解释那位真理的发现者、可以说是幸福生活的建筑师所说的那些话。因为没有人会因为快乐本身而轻视、憎恨或逃避快乐，而是因为那些不知道如何用理性追随快乐的人会遭受巨大的痛苦。此外，也没有人因为喜欢痛苦而追求痛苦、想要获得痛苦，而是因为从未有过这样的时刻，他通过劳动和痛苦来寻求某种巨大的快乐。"
+
+#: core/templates/core/home.html:17
+msgid "Get started"
+msgstr "开始使用"
+
+#: core/templates/core/home.html:62
+msgid "Our vision"
+msgstr "我们的愿景"
+
+#: core/templates/core/home.html:64
+msgid ""
+"\n"
+"          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+"        "
+msgstr "照顾病人很重要，病人会跟着病人，但它会发生在这样一个有很多工作和痛苦的时候。"
+
+#: core/templates/core/home.html:69
+msgid ""
+"\n"
+"          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
+"        "
+msgstr "不要在痛中怒，在训斥中在快感中，他要从痛中做一根毛，希望没有滋生。"
+
+#: core/templates/core/home.html:85
+msgid "Lessons happen wherever students are."
+msgstr "无论学生在哪里，课程都会发生。"
+
+#: core/templates/core/home.html:96
+msgid "Our impact"
+msgstr "我们的影响"
+
+#: core/templates/core/home.html:98
+msgid ""
+"\n"
+"        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+"        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n"
+"      "
+msgstr ""
+"照顾病人很重要，病人会跟着病人，但它会发生在这样一个有很多工作和痛苦的时候。\n"
+"        细究起来，任何人都不应该从事任何一种工作，除非他能从中得到一些好处。"
+
+#: core/templates/core/home.html:107
+msgid "lesson hours taught by volunteers"
+msgstr "志愿者授课时数"
+
+#: core/templates/core/home.html:111
+msgid "teachers &amp; volunteer partners"
+msgstr "教师与志愿者伙伴"
+
+#: core/templates/core/home.html:115
+msgid "students learning with us"
+msgstr "学生和我们一起学习"
+
+#: core/templates/core/home.html:126
+msgid "What our members &amp; refugee students say"
+msgstr "我们的会员和会员是什么？难民学生说"
+
+#: core/templates/core/home.html:130 core/templates/core/home.html:135
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+#| "        "
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua."
+msgstr "照顾病人很重要，病人会跟着病人，但它会发生在这样一个有很多工作和痛苦的时候。"
+
+#: core/templates/core/home.html:131
+msgid "- Student 1"
+msgstr "- 学生1"
+
+#: core/templates/core/home.html:136
+msgid "- Student 2"
+msgstr "- 学生2"
+
+#: core/templates/core/home.html:148
+msgid "Contact us"
+msgstr "联系我们"
+
+#: core/templates/core/home.html:149
+msgid "Questions, ideas, or want to volunteer?"
+msgstr "有问题、想法或想成为志愿者吗？"
+
+#: project_eureka/settings.py:83
+msgid "English"
+msgstr "英语"
+
+#: project_eureka/settings.py:84
+msgid "Chinese (Simplified)"
+msgstr "中文（简体）"

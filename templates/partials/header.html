@@ -1,9 +1,8 @@
-<!-- Top bar for home / about / faq. `current_page` drives the active-link state. -->
-<header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
-  <div class="mx-auto max-w-6xl px-5">
+{% load i18n %}
 
-    <!-- Row 1: brand + utility nav -->
-    <div class="flex items-center py-3 border-b border-ink/10 bg-sky/30">
+<header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
+  <div class="bg-sky/60 border-b border-ink/10">
+    <div class="mx-auto max-w-6xl px-5 flex items-center py-3">
       <a href="{% url 'core:home' %}" class="font-display text-2xl font-bold tracking-tight flex items-center gap-2">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M2.5 20 C 5 16 7.5 12 9.5 8.5 C 10.5 6.5 11.2 4.6 12.2 4 C 13 3.6 13.8 4 14.4 5 C 16.5 8.5 19.5 15 21.5 20 C 21.8 20.7 21.3 21 20.7 21 H 3.3 C 2.7 21 2.2 20.6 2.5 20 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="1.8" stroke-linejoin="round"/>
@@ -17,14 +16,103 @@
         <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
         <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
         <a href="#signin" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign in</a>
+
+        <div class="relative inline-block text-left">
+
+
+  <form action="{% url 'set_language' %}" method="post" id="lang-form" class="relative inline-block text-left">
+    {% csrf_token %}
+    <!-- Tells Django where to redirect the user after switching languages -->
+    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+    <!-- The hidden input that will hold the selected language code -->
+    <input name="language" type="hidden" id="selected-lang" value="">
+
+  <button id="lang-btn" type="button" class="inline-flex items-center gap-x-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-600" aria-expanded="false" aria-haspopup="true">
+    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-500">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-.11-7.843-.418m15.686 0a8.953 8.953 0 0 1-1.286 4.728A11.97 11.97 0 0 1 12 16.5c-2.43 0-4.696-.282-6.557-.79A8.952 8.952 0 0 1 4.157 10.12" />
+    </svg>
+    <span>English</span>
+    <!-- Chevron Down Arrow -->
+    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-gray-400">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu (Hidden by default) -->
+  <div id="lang-menu" class="hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="lang-btn" tabindex="-1">
+    <div class="py-1" role="none">
+      <a href="#" class="lang-opt block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+        data-lang="en" role="menuitem" tabindex="-1">English</a>
+      <a href="#" class="lang-opt block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+        data-lang="zh-hans" role="menuitem" tabindex="-1">Chinese</a>
+    </div>
+  </div>
+  </form>
+</div>
+
+<!-- JavaScript Toggle Logic -->
+<script>
+  const btn = document.getElementById('lang-btn');
+  const menu = document.getElementById('lang-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('lang-btn');
+    const menu = document.getElementById('lang-menu');
+    const form = document.getElementById('lang-form');
+    const input = document.getElementById('selected-lang');
+    const options = document.querySelectorAll('.lang-opt');
+
+    // Toggle dropdown visibility
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', isHidden);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+
+    // Handle language selection and auto-submit
+    options.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const langCode = opt.getAttribute('data-lang');
+        input.value = langCode;
+        form.submit(); // Sends POST request natively to Django
+      });
+    });
+  });
+</script>
       </nav>
     </div>
+  </div>
 
-    <!-- Row 2: audience pills -->
-    <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
-      <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
-      <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
-      <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
-    </nav>
+  <div class="bg-sky/20">
+    <div class="mx-auto max-w-6xl px-5">
+      <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
+        <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
+        <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
+        <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
+      </nav>
+    </div>
   </div>
 </header>
