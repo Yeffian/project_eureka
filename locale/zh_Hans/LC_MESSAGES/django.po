@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 05:28+0000\n"
+"POT-Creation-Date: 2026-07-24 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -475,11 +475,11 @@ msgstr "登入"
 msgid "Good to see you again."
 msgstr "很高兴再次见到你。"
 
-#: core/templates/core/login.html:31
+#: core/templates/core/login.html:31 core/templates/core/register.html:31
 msgid "Username"
 msgstr "用户名"
 
-#: core/templates/core/login.html:36
+#: core/templates/core/login.html:36 core/templates/core/register.html:41
 msgid "Password"
 msgstr "密码"
 
@@ -490,6 +490,43 @@ msgstr "没有帐户？"
 #: core/templates/core/login.html:51
 msgid "Register here"
 msgstr "在此注册"
+
+#: core/templates/core/register.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — Register"
+msgstr "尤里卡计划 — 注册"
+
+#: core/templates/core/register.html:10
+msgid "New here?"
+msgstr "新来的？"
+
+#: core/templates/core/register.html:11 core/templates/core/register.html:52
+msgid "Create account"
+msgstr "创建账户"
+
+#: core/templates/core/register.html:12
+msgid "Two minutes and you're in."
+msgstr "两分钟，你就进去了。"
+
+#: core/templates/core/register.html:36
+#, fuzzy
+#| msgid "Email us"
+msgid "Email"
+msgstr "电子邮件"
+
+#: core/templates/core/register.html:46
+msgid "Confirm password"
+msgstr "确认密码"
+
+#: core/templates/core/register.html:61
+#, python-format
+msgid ""
+"Already have an account? <a href=\"%(login_url)s\" class=\"squiggle-link "
+"font-bold text-ink\">Sign in here</a>."
+msgstr ""
+"已经有帐户？ <a href=\"%(login_url)s\" class=\"squiggle-link font-bold text-"
+"ink\">在此处登录</a>。"
 
 #: project_eureka/settings.py:86
 msgid "English"

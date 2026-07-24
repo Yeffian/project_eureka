@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 05:28+0000\n"
+"POT-Creation-Date: 2026-07-24 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -490,11 +490,11 @@ msgstr "Sign in"
 msgid "Good to see you again."
 msgstr "Good to see you again."
 
-#: core/templates/core/login.html:31
+#: core/templates/core/login.html:31 core/templates/core/register.html:31
 msgid "Username"
 msgstr "Username"
 
-#: core/templates/core/login.html:36
+#: core/templates/core/login.html:36 core/templates/core/register.html:41
 msgid "Password"
 msgstr "Password"
 
@@ -505,6 +505,43 @@ msgstr "Don't have an account?"
 #: core/templates/core/login.html:51
 msgid "Register here"
 msgstr "Register here"
+
+#: core/templates/core/register.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — Register"
+msgstr "Project Eureka — Register"
+
+#: core/templates/core/register.html:10
+msgid "New here?"
+msgstr "New here?"
+
+#: core/templates/core/register.html:11 core/templates/core/register.html:52
+msgid "Create account"
+msgstr "Create account"
+
+#: core/templates/core/register.html:12
+msgid "Two minutes and you're in."
+msgstr "Two minutes and you're in."
+
+#: core/templates/core/register.html:36
+#, fuzzy
+#| msgid "Email us"
+msgid "Email"
+msgstr "Email"
+
+#: core/templates/core/register.html:46
+msgid "Confirm password"
+msgstr "Confirm password"
+
+#: core/templates/core/register.html:61
+#, python-format
+msgid ""
+"Already have an account? <a href=\"%(login_url)s\" class=\"squiggle-link "
+"font-bold text-ink\">Sign in here</a>."
+msgstr ""
+"Already have an account? <a href=\"%(login_url)s\" class=\"squiggle-link "
+"font-bold text-ink\">Sign in here</a>."
 
 #: project_eureka/settings.py:86
 msgid "English"
