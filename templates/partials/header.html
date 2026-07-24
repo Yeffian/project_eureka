@@ -24,7 +24,12 @@
         <div class="relative inline-block text-left">
  
 
-  {% load i18n %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as current_lang %}
+{% get_available_languages as LANGUAGES %}
+
+{% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info for LANGUAGE_CODE as current_lang %}
 {% get_available_languages as LANGUAGES %}
@@ -35,32 +40,36 @@
   <input name="language" type="hidden" id="selected-lang" value="">
 
   <button id="lang-btn" type="button"
-          class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-1.5 text-sm font-bold text-ink hover:bg-butter transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-          aria-expanded="false" aria-haspopup="true">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-.11-7.843-.418m15.686 0a8.953 8.953 0 0 1-1.286 4.728A11.97 11.97 0 0 1 12 16.5c-2.43 0-4.696-.282-6.557-.79A8.952 8.952 0 0 1 4.157 10.12" />
-    </svg>
-    <span>{{ current_lang.name_local }}</span>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10" class="h-3 w-3.5" fill="none">
+          class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-3 py-1.5 text-sm font-bold text-ink hover:bg-butter transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          aria-expanded="false" aria-haspopup="true"
+          aria-label="{% blocktranslate with lang=current_lang.name_local %}Change language, currently {{ lang }}{% endblocktranslate %}">
+    <span class="text-lg leading-none" aria-hidden="true">
+      {% if current_lang.code == 'en' %}🇺🇸{% elif current_lang.code == 'zh-hans' %}🇨🇳{% else %}🌐{% endif %}
+    </span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10" class="h-3 w-3.5" fill="none" aria-hidden="true">
       <path d="M1 2 C 4 5 5 7 7 8 C 9 7 10 5 13 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
 
+  <!-- Dropdown menu -->
   <div id="lang-menu"
-       class="hidden absolute right-0 z-10 mt-3 min-w-44 rounded-2xl border-2 border-ink/15 bg-cream shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden"
+       class="hidden absolute right-0 z-10 mt-3 min-w-24 rounded-2xl border-2 border-ink/15 bg-cream shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden"
        role="menu" aria-orientation="vertical" aria-labelledby="lang-btn" tabindex="-1">
     <div class="py-1" role="none">
       {% for lang_code, lang_name in LANGUAGES %}
         {% get_language_info for lang_code as lang %}
         <a href="#"
-           class="lang-opt flex items-center justify-between gap-3 px-4 py-2.5 text-sm text-ink hover:bg-butter/60 transition-colors {% if lang_code == LANGUAGE_CODE %}bg-butter/40 font-bold{% endif %}"
+           class="lang-opt flex items-center justify-between gap-3 px-4 py-2.5 hover:bg-butter/60 transition-colors {% if lang_code == LANGUAGE_CODE %}bg-butter/40{% endif %}"
            data-lang="{{ lang_code }}"
            role="menuitem"
            tabindex="-1"
            {% if lang_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>
-          <span>{{ lang.name_local }}</span>
+          <span class="text-xl leading-none" aria-hidden="true">
+            {% if lang_code == 'en' %}🇺🇸{% elif lang_code == 'zh-hans' %}🇨🇳{% else %}🌐{% endif %}
+          </span>
+          <span class="sr-only">{{ lang.name_local }}</span>
           {% if lang_code == LANGUAGE_CODE %}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" class="h-4 w-4" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" class="h-4 w-4 text-ink" fill="none" aria-hidden="true">
               <path d="M5 12 C 7 14 8 16 9 16 C 11 12 14 8 18 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           {% endif %}
