@@ -1,4 +1,7 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as current_lang %}
+{% get_available_languages as LANGUAGES %}
 
 <header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
   <div class="bg-sky/60 border-b border-ink/10">
@@ -19,36 +22,49 @@
         <a href="{% url 'core:login' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
 
         <div class="relative inline-block text-left">
-
+ 
 
   <form action="{% url 'set_language' %}" method="post" id="lang-form" class="relative inline-block text-left">
-    {% csrf_token %}
-    <!-- Tells Django where to redirect the user after switching languages -->
-    <input name="next" type="hidden" value="{{ request.get_full_path }}">
-    <!-- The hidden input that will hold the selected language code -->
-    <input name="language" type="hidden" id="selected-lang" value="">
-
+  {% csrf_token %}
+  <!-- Tells Django where to redirect the user after switching languages -->
+  <input name="next" type="hidden" value="{{ request.get_full_path }}">
+  <!-- The hidden input that will hold the selected language code -->
+  <input name="language" type="hidden" id="selected-lang" value="">
+ 
   <button id="lang-btn" type="button" class="inline-flex items-center gap-x-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-600" aria-expanded="false" aria-haspopup="true">
-    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-500">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-500">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-.11-7.843-.418m15.686 0a8.953 8.953 0 0 1-1.286 4.728A11.97 11.97 0 0 1 12 16.5c-2.43 0-4.696-.282-6.557-.79A8.952 8.952 0 0 1 4.157 10.12" />
     </svg>
-    <span>English</span>
+    <span>{{ current_lang.name_local }}</span>
     <!-- Chevron Down Arrow -->
-    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-gray-400">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-gray-400">
       <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
   </button>
-
+ 
   <!-- Dropdown Menu (Hidden by default) -->
   <div id="lang-menu" class="hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="lang-btn" tabindex="-1">
     <div class="py-1" role="none">
-      <a href="#" class="lang-opt block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-        data-lang="en" role="menuitem" tabindex="-1">English</a>
-      <a href="#" class="lang-opt block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-        data-lang="zh-hans" role="menuitem" tabindex="-1">Chinese</a>
+      {% for lang_code, lang_name in LANGUAGES %}
+        {% get_language_info for lang_code as lang %}
+        <a href="#"
+           class="lang-opt flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 {% if lang_code == LANGUAGE_CODE %}font-bold text-gray-900{% else %}text-gray-700{% endif %}"
+           data-lang="{{ lang_code }}"
+           role="menuitem"
+           tabindex="-1"
+           {% if lang_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>
+          <span>{{ lang.name_local }}</span>
+          {% if lang_code == LANGUAGE_CODE %}
+            <!-- Checkmark for currently active language -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-4 w-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          {% endif %}
+        </a>
+      {% endfor %}
     </div>
   </div>
-  </form>
+</form>
 </div>
 
 <!-- JavaScript Toggle Logic -->
