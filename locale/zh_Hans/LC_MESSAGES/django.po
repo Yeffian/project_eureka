@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 11:00+0000\n"
+"POT-Creation-Date: 2026-07-24 05:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Project Eureka — About Us"
 msgstr "尤里卡计划 — 关于我们"
 
-#: core/templates/core/about.html:10 core/templates/core/faq.html:103
+#: core/templates/core/about.html:10 core/templates/core/faq.html:102
 msgid "About us"
 msgstr "关于我们"
 
@@ -232,7 +232,7 @@ msgstr "和我们一起做志愿者"
 msgid "Say hello"
 msgstr "问好"
 
-#: core/templates/core/contact.html:11
+#: core/templates/core/contact.html:12
 msgid ""
 "\n"
 "      Questions about volunteering, joining a class, or partnering with us?\n"
@@ -242,65 +242,65 @@ msgstr ""
 "对志愿服务、参加课程或与我们合作有疑问吗？\n"
 "      请在下面给我们留言——阿什利会阅读每条消息，通常会在一两天内回复。"
 
-#: core/templates/core/contact.html:62
+#: core/templates/core/contact.html:63
 msgid "Send us a note"
 msgstr "给我们留言"
 
-#: core/templates/core/contact.html:63
+#: core/templates/core/contact.html:64
 msgid "All fields are optional except email — we'll use it to reply."
 msgstr "除了电子邮件之外，所有字段都是可选的 - 我们将用它来回复。"
 
-#: core/templates/core/contact.html:69
+#: core/templates/core/contact.html:70
 msgid "Your name"
 msgstr "你的名字"
 
-#: core/templates/core/contact.html:79
+#: core/templates/core/contact.html:80
 msgid "I'm reaching out as a…"
 msgstr "我正在以……的身份伸出援手。"
 
-#: core/templates/core/contact.html:81
+#: core/templates/core/contact.html:82
 msgid "Choose one"
 msgstr "选择一个"
 
-#: core/templates/core/contact.html:82
+#: core/templates/core/contact.html:83
 #, fuzzy
 #| msgid "teachers &amp; volunteer partners"
 msgid "Teacher or volunteer"
 msgstr "老师或志愿者"
 
-#: core/templates/core/contact.html:83
+#: core/templates/core/contact.html:84
 #, fuzzy
 #| msgid "- Student 1"
 msgid "Student or family"
 msgstr "学生或家庭"
 
-#: core/templates/core/contact.html:84
+#: core/templates/core/contact.html:85
 #, fuzzy
 #| msgid "Partners &amp; friends"
 msgid "Partner organisation"
 msgstr "合作伙伴组织"
 
-#: core/templates/core/contact.html:85
+#: core/templates/core/contact.html:86
 msgid "Something else"
 msgstr "其他的东西"
 
-#: core/templates/core/contact.html:90
+#: core/templates/core/contact.html:91
 msgid "Your message"
 msgstr "您的留言"
 
-#: core/templates/core/contact.html:96
+#: core/templates/core/contact.html:97
 msgid "Send message"
 msgstr "发送消息"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "Or email"
 msgstr "或发送电子邮件"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "ashley@projecteureka.org"
 msgstr "ashley@projecteureka.org"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "directly."
 msgstr "直接地。"
 
@@ -310,7 +310,7 @@ msgstr "直接地。"
 msgid "Project Eureka — FAQ"
 msgstr "尤里卡计划 — 常见问题解答"
 
-#: core/templates/core/faq.html:9 core/templates/core/faq.html:104
+#: core/templates/core/faq.html:9 core/templates/core/faq.html:103
 msgid "FAQ"
 msgstr "常问问题"
 
@@ -370,7 +370,7 @@ msgstr "阿什利会阅读每条消息，通常会在一两天内回复。"
 msgid "Email us"
 msgstr "给我们发电子邮件"
 
-#: core/templates/core/faq.html:105
+#: core/templates/core/faq.html:104
 #, fuzzy
 #| msgid "Contact us"
 msgid "Contact"
@@ -466,6 +466,30 @@ msgstr "联系我们"
 #: core/templates/core/home.html:149
 msgid "Questions, ideas, or want to volunteer?"
 msgstr "有问题、想法或想成为志愿者吗？"
+
+#: core/templates/core/login.html:11 core/templates/core/login.html:42
+msgid "Sign in"
+msgstr "登入"
+
+#: core/templates/core/login.html:12
+msgid "Good to see you again."
+msgstr "很高兴再次见到你。"
+
+#: core/templates/core/login.html:31
+msgid "Username"
+msgstr "用户名"
+
+#: core/templates/core/login.html:36
+msgid "Password"
+msgstr "密码"
+
+#: core/templates/core/login.html:50
+msgid "Don't have an account?"
+msgstr "没有帐户？"
+
+#: core/templates/core/login.html:51
+msgid "Register here"
+msgstr "在此注册"
 
 #: project_eureka/settings.py:86
 msgid "English"

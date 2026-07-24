@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 11:00+0000\n"
+"POT-Creation-Date: 2026-07-24 05:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Project Eureka — About Us"
 msgstr "Project Eureka — About Us"
 
-#: core/templates/core/about.html:10 core/templates/core/faq.html:103
+#: core/templates/core/about.html:10 core/templates/core/faq.html:102
 msgid "About us"
 msgstr "About us"
 
@@ -238,7 +238,7 @@ msgstr "Volunteer with us"
 msgid "Say hello"
 msgstr "Say hello"
 
-#: core/templates/core/contact.html:11
+#: core/templates/core/contact.html:12
 msgid ""
 "\n"
 "      Questions about volunteering, joining a class, or partnering with us?\n"
@@ -248,59 +248,59 @@ msgstr ""
 "Questions about volunteering, joining a class, or partnering with us?\n"
 "      Drop us a note below — Ashley reads every message and usually replies within a day or two."
 
-#: core/templates/core/contact.html:62
+#: core/templates/core/contact.html:63
 msgid "Send us a note"
 msgstr "Send us a note"
 
-#: core/templates/core/contact.html:63
+#: core/templates/core/contact.html:64
 msgid "All fields are optional except email — we'll use it to reply."
 msgstr "All fields are optional except email — we'll use it to reply."
 
-#: core/templates/core/contact.html:69
+#: core/templates/core/contact.html:70
 msgid "Your name"
 msgstr "Your name"
 
-#: core/templates/core/contact.html:79
+#: core/templates/core/contact.html:80
 msgid "I'm reaching out as a…"
 msgstr "I'm reaching out as a…"
 
-#: core/templates/core/contact.html:81
+#: core/templates/core/contact.html:82
 msgid "Choose one"
 msgstr "Choose one"
 
-#: core/templates/core/contact.html:82
+#: core/templates/core/contact.html:83
 msgid "Teacher or volunteer"
 msgstr "Teacher or volunteer"
 
-#: core/templates/core/contact.html:83
+#: core/templates/core/contact.html:84
 msgid "Student or family"
 msgstr "Student or family"
 
-#: core/templates/core/contact.html:84
+#: core/templates/core/contact.html:85
 msgid "Partner organisation"
 msgstr "Partner organisation"
 
-#: core/templates/core/contact.html:85
+#: core/templates/core/contact.html:86
 msgid "Something else"
 msgstr "Something else"
 
-#: core/templates/core/contact.html:90
+#: core/templates/core/contact.html:91
 msgid "Your message"
 msgstr "Your message"
 
-#: core/templates/core/contact.html:96
+#: core/templates/core/contact.html:97
 msgid "Send message"
 msgstr "Send message"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "Or email"
 msgstr "Or email"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "ashley@projecteureka.org"
 msgstr "ashley@projecteureka.org"
 
-#: core/templates/core/contact.html:99
+#: core/templates/core/contact.html:100
 msgid "directly."
 msgstr "directly."
 
@@ -310,7 +310,7 @@ msgstr "directly."
 msgid "Project Eureka — FAQ"
 msgstr "Project Eureka — FAQ"
 
-#: core/templates/core/faq.html:9 core/templates/core/faq.html:104
+#: core/templates/core/faq.html:9 core/templates/core/faq.html:103
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -374,7 +374,7 @@ msgstr "Ashley reads every message and usually replies within a day or two."
 msgid "Email us"
 msgstr "Email us"
 
-#: core/templates/core/faq.html:105
+#: core/templates/core/faq.html:104
 #, fuzzy
 #| msgid "Contact us"
 msgid "Contact"
@@ -481,6 +481,30 @@ msgstr "Contact us"
 #: core/templates/core/home.html:149
 msgid "Questions, ideas, or want to volunteer?"
 msgstr "Questions, ideas, or want to volunteer?"
+
+#: core/templates/core/login.html:11 core/templates/core/login.html:42
+msgid "Sign in"
+msgstr "Sign in"
+
+#: core/templates/core/login.html:12
+msgid "Good to see you again."
+msgstr "Good to see you again."
+
+#: core/templates/core/login.html:31
+msgid "Username"
+msgstr "Username"
+
+#: core/templates/core/login.html:36
+msgid "Password"
+msgstr "Password"
+
+#: core/templates/core/login.html:50
+msgid "Don't have an account?"
+msgstr "Don't have an account?"
+
+#: core/templates/core/login.html:51
+msgid "Register here"
+msgstr "Register here"
 
 #: project_eureka/settings.py:86
 msgid "English"
