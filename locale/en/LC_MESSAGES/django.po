@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 06:35+0000\n"
+"POT-Creation-Date: 2026-07-24 10:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -544,9 +544,171 @@ msgstr ""
 "font-bold text-ink\">Sign in here</a>."
 
 #: project_eureka/settings.py:86
+#: teachers/templates/teachers/resources.html:178
 msgid "English"
 msgstr "English"
 
 #: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
 msgstr "Chinese (Simplified)"
+
+#: teachers/templates/teachers/resources.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — Resource Library"
+msgstr "Project Eureka — Resource Library"
+
+#: teachers/templates/teachers/resources.html:15
+msgid "Resource Library"
+msgstr "Resource Library"
+
+#: teachers/templates/teachers/resources.html:17
+#, fuzzy
+#| msgid "The shared library opens"
+msgid "Resource library"
+msgstr "Resource library"
+
+#: teachers/templates/teachers/resources.html:24
+msgid "Upload resource"
+msgstr "Upload resource"
+
+#: teachers/templates/teachers/resources.html:37
+msgid "Filters"
+msgstr "Filters"
+
+#: teachers/templates/teachers/resources.html:40
+msgid "Collapse filters"
+msgstr "Collapse filters"
+
+#: teachers/templates/teachers/resources.html:49
+msgid "Education level"
+msgstr "Education level"
+
+#: teachers/templates/teachers/resources.html:53
+#: teachers/templates/teachers/resources.html:125
+#: teachers/templates/teachers/resources.html:229
+msgid "Primary"
+msgstr "Primary"
+
+#: teachers/templates/teachers/resources.html:57
+#: teachers/templates/teachers/resources.html:177
+msgid "Lower Secondary"
+msgstr "Lower Secondary"
+
+#: teachers/templates/teachers/resources.html:61
+msgid "Upper Secondary"
+msgstr "Upper Secondary"
+
+#: teachers/templates/teachers/resources.html:67
+msgid "Subject"
+msgstr "Subject"
+
+#: teachers/templates/teachers/resources.html:71
+msgid "Mathematics"
+msgstr "Mathematics"
+
+#: teachers/templates/teachers/resources.html:75
+#, fuzzy
+#| msgid "English"
+msgid "English Language"
+msgstr "English Language"
+
+#: teachers/templates/teachers/resources.html:81
+msgid "Resource"
+msgstr "Resource"
+
+#: teachers/templates/teachers/resources.html:85
+#, fuzzy
+#| msgid "Curriculum lead"
+msgid "Curriculum"
+msgstr "Curriculum"
+
+#: teachers/templates/teachers/resources.html:89
+msgid "Lesson Plans"
+msgstr "Lesson Plans"
+
+#: teachers/templates/teachers/resources.html:93
+msgid "Worksheets"
+msgstr "Worksheets"
+
+#: teachers/templates/teachers/resources.html:97
+msgid "Video Guides"
+msgstr "Video Guides"
+
+#: teachers/templates/teachers/resources.html:104
+msgid "Apply filters"
+msgstr "Apply filters"
+
+#: teachers/templates/teachers/resources.html:106
+msgid "Clear all"
+msgstr "Clear all"
+
+#: teachers/templates/teachers/resources.html:119
+#: teachers/templates/teachers/resources.html:171
+#: teachers/templates/teachers/resources.html:223
+msgid "Language"
+msgstr "Language"
+
+#: teachers/templates/teachers/resources.html:126
+#: teachers/templates/teachers/resources.html:230
+msgid "Math"
+msgstr "Math"
+
+#: teachers/templates/teachers/resources.html:127
+msgid "Worksheet"
+msgstr "Worksheet"
+
+#: teachers/templates/teachers/resources.html:132
+#: teachers/templates/teachers/resources.html:184
+#: teachers/templates/teachers/resources.html:236
+msgid "PREVIEW"
+msgstr "PREVIEW"
+
+#: teachers/templates/teachers/resources.html:135
+#: teachers/templates/teachers/resources.html:187
+#: teachers/templates/teachers/resources.html:239
+msgid "View"
+msgstr "View"
+
+#: teachers/templates/teachers/resources.html:145
+#: teachers/templates/teachers/resources.html:197
+#: teachers/templates/teachers/resources.html:249
+msgid "Download"
+msgstr "Download"
+
+#: teachers/templates/teachers/resources.html:159
+#: teachers/templates/teachers/resources.html:211
+#: teachers/templates/teachers/resources.html:263
+msgid "Answer key"
+msgstr "Answer key"
+
+#: teachers/templates/teachers/resources.html:179
+msgid "Lesson Plan"
+msgstr "Lesson Plan"
+
+#: teachers/templates/teachers/resources.html:231
+msgid "Video Guide"
+msgstr "Video Guide"
+
+#: teachers/templates/teachers/resources.html:268
+#, fuzzy
+#| msgid "Partner organisation"
+msgid "Pagination"
+msgstr "Pagination"
+
+#: teachers/templates/teachers/resources.html:273
+msgid "Previous page"
+msgstr "Previous page"
+
+#: teachers/templates/teachers/resources.html:278
+#, python-format
+msgid ""
+"Page <span class=\"font-display text-lg text-ink\">%(current_page)s</span> "
+"of %(total_pages)s"
+msgstr ""
+"Page <span class=\"font-display text-lg text-ink\">%(current_page)s</span> "
+"of %(total_pages)s"
+
+#: teachers/templates/teachers/resources.html:285
+msgid "Next page"
+msgstr "Next page"

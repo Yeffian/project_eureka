@@ -24,3 +24,7 @@ def dashboard(request):
         "display_name": "Ms. Sara",
         "avatar_letter": "S",
     })
+
+
+def resources(request):
+    return render(request, "teachers/resources.html")

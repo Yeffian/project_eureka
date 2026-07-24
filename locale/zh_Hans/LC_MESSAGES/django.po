@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 06:35+0000\n"
+"POT-Creation-Date: 2026-07-24 10:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -529,12 +529,174 @@ msgstr ""
 "ink\">在此处登录</a>。"
 
 #: project_eureka/settings.py:86
+#: teachers/templates/teachers/resources.html:178
 msgid "English"
 msgstr "英语"
 
 #: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
 msgstr "中文（简体）"
+
+#: teachers/templates/teachers/resources.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — Resource Library"
+msgstr "尤里卡计划 — 资源库"
+
+#: teachers/templates/teachers/resources.html:15
+msgid "Resource Library"
+msgstr "资源库"
+
+#: teachers/templates/teachers/resources.html:17
+#, fuzzy
+#| msgid "The shared library opens"
+msgid "Resource library"
+msgstr "资源库"
+
+#: teachers/templates/teachers/resources.html:24
+msgid "Upload resource"
+msgstr "上传资源"
+
+#: teachers/templates/teachers/resources.html:37
+msgid "Filters"
+msgstr "过滤器"
+
+#: teachers/templates/teachers/resources.html:40
+msgid "Collapse filters"
+msgstr "折叠过滤器"
+
+#: teachers/templates/teachers/resources.html:49
+msgid "Education level"
+msgstr "教育程度"
+
+#: teachers/templates/teachers/resources.html:53
+#: teachers/templates/teachers/resources.html:125
+#: teachers/templates/teachers/resources.html:229
+msgid "Primary"
+msgstr "基本的"
+
+#: teachers/templates/teachers/resources.html:57
+#: teachers/templates/teachers/resources.html:177
+msgid "Lower Secondary"
+msgstr "初中"
+
+#: teachers/templates/teachers/resources.html:61
+msgid "Upper Secondary"
+msgstr "高中"
+
+#: teachers/templates/teachers/resources.html:67
+msgid "Subject"
+msgstr "主题"
+
+#: teachers/templates/teachers/resources.html:71
+msgid "Mathematics"
+msgstr "数学"
+
+#: teachers/templates/teachers/resources.html:75
+#, fuzzy
+#| msgid "English"
+msgid "English Language"
+msgstr "英语"
+
+#: teachers/templates/teachers/resources.html:81
+msgid "Resource"
+msgstr "资源"
+
+#: teachers/templates/teachers/resources.html:85
+#, fuzzy
+#| msgid "Curriculum lead"
+msgid "Curriculum"
+msgstr "课程"
+
+#: teachers/templates/teachers/resources.html:89
+msgid "Lesson Plans"
+msgstr "课程计划"
+
+#: teachers/templates/teachers/resources.html:93
+msgid "Worksheets"
+msgstr "工作表"
+
+#: teachers/templates/teachers/resources.html:97
+msgid "Video Guides"
+msgstr "视频指南"
+
+#: teachers/templates/teachers/resources.html:104
+msgid "Apply filters"
+msgstr "应用过滤器"
+
+#: teachers/templates/teachers/resources.html:106
+msgid "Clear all"
+msgstr "全部清除"
+
+#: teachers/templates/teachers/resources.html:119
+#: teachers/templates/teachers/resources.html:171
+#: teachers/templates/teachers/resources.html:223
+msgid "Language"
+msgstr "语言"
+
+#: teachers/templates/teachers/resources.html:126
+#: teachers/templates/teachers/resources.html:230
+msgid "Math"
+msgstr "数学"
+
+#: teachers/templates/teachers/resources.html:127
+msgid "Worksheet"
+msgstr "工作表"
+
+#: teachers/templates/teachers/resources.html:132
+#: teachers/templates/teachers/resources.html:184
+#: teachers/templates/teachers/resources.html:236
+msgid "PREVIEW"
+msgstr "预览"
+
+#: teachers/templates/teachers/resources.html:135
+#: teachers/templates/teachers/resources.html:187
+#: teachers/templates/teachers/resources.html:239
+msgid "View"
+msgstr "看法"
+
+#: teachers/templates/teachers/resources.html:145
+#: teachers/templates/teachers/resources.html:197
+#: teachers/templates/teachers/resources.html:249
+msgid "Download"
+msgstr "下载"
+
+#: teachers/templates/teachers/resources.html:159
+#: teachers/templates/teachers/resources.html:211
+#: teachers/templates/teachers/resources.html:263
+msgid "Answer key"
+msgstr "答案键"
+
+#: teachers/templates/teachers/resources.html:179
+msgid "Lesson Plan"
+msgstr "课程计划"
+
+#: teachers/templates/teachers/resources.html:231
+msgid "Video Guide"
+msgstr "视频指南"
+
+#: teachers/templates/teachers/resources.html:268
+#, fuzzy
+#| msgid "Partners &amp; friends"
+msgid "Pagination"
+msgstr "分页"
+
+#: teachers/templates/teachers/resources.html:273
+msgid "Previous page"
+msgstr "上一页"
+
+#: teachers/templates/teachers/resources.html:278
+#, python-format
+msgid ""
+"Page <span class=\"font-display text-lg text-ink\">%(current_page)s</span> "
+"of %(total_pages)s"
+msgstr ""
+"第 <span class=\"font-display text-lg text-ink\">%(current_page)s</span> 页，共 "
+"%(total_pages)s"
+
+#: teachers/templates/teachers/resources.html:285
+msgid "Next page"
+msgstr "下一页"
 
 #~ msgid "2023"
 #~ msgstr "2023年"

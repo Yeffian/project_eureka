@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Project Eureka — Resource Library" %}{% endblock %}
+
+{% block header %}{% include "partials/header.html" %}{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-6xl px-5 pt-6 pb-6">
+  <div class="reveal flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-sm text-inksoft mb-1">
+        <a href="#" class="squiggle-link font-bold">Project Eureka</a>
+        <span class="mx-1 text-inksoft/60">/</span>
+        <span class="font-bold">{% translate "Resource Library" %}</span>
+      </p>
+      <h1 class="font-display text-4xl md:text-5xl font-bold leading-[1.05] mt-1">{% translate "Resource library" %}</h1>
+    </div>
+
+    <a href="#" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      {% translate "Upload resource" %}
+    </a>
+  </div>
+
+  <svg viewBox="0 0 600 14" class="w-full max-w-2xl block mt-6" aria-hidden="true">
+    <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
+  </svg>
+</section>
+
+<section class="mx-auto max-w-6xl px-5 pb-16">
+  <div class="grid gap-8 md:grid-cols-[240px_1fr] items-start">
+    <aside class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:sticky md:top-40">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="font-display text-xl font-bold">{% translate "Filters" %}</h2>
+        <button type="button" id="filters-toggle"
+                class="grid place-items-center w-8 h-8 rounded-full border-2 border-ink bg-cream hover:bg-butter/70 transition-colors"
+                aria-label="{% translate 'Collapse filters' %}" aria-expanded="true">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M13 5 L 7 10 L 13 15" stroke="#3E4C54" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <form method="get" class="space-y-6 text-sm">
+        <div>
+          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">{% translate "Education level" %}</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="lvl-primary" name="level" value="primary" class="doodle-check">
+              <label for="lvl-primary" class="cursor-pointer">{% translate "Primary" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="lvl-lower" name="level" value="lower" class="doodle-check">
+              <label for="lvl-lower" class="cursor-pointer">{% translate "Lower Secondary" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="lvl-upper" name="level" value="upper" class="doodle-check">
+              <label for="lvl-upper" class="cursor-pointer">{% translate "Upper Secondary" %}</label>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">{% translate "Subject" %}</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="sub-math" name="subject" value="math" class="doodle-check">
+              <label for="sub-math" class="cursor-pointer">{% translate "Mathematics" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="sub-eng" name="subject" value="english" class="doodle-check">
+              <label for="sub-eng" class="cursor-pointer">{% translate "English Language" %}</label>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">{% translate "Resource" %}</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="res-curr" name="resource" value="curriculum" class="doodle-check">
+              <label for="res-curr" class="cursor-pointer">{% translate "Curriculum" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="res-lesson" name="resource" value="lesson" class="doodle-check">
+              <label for="res-lesson" class="cursor-pointer">{% translate "Lesson Plans" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="res-work" name="resource" value="worksheet" class="doodle-check">
+              <label for="res-work" class="cursor-pointer">{% translate "Worksheets" %}</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input type="checkbox" id="res-video" name="resource" value="video" class="doodle-check">
+              <label for="res-video" class="cursor-pointer">{% translate "Video Guides" %}</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-2 pt-2">
+          <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-cream px-4 py-2 text-sm font-bold hover:bg-ink/80 transition-colors">
+            {% translate "Apply filters" %}
+          </button>
+          <a href="#" class="text-center text-xs text-inksoft squiggle-link">{% translate "Clear all" %}</a>
+        </div>
+      </form>
+    </aside>
+
+    <div class="space-y-6">
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+          <div>
+            <p class="font-display font-bold text-xs uppercase tracking-widest text-inksoft mb-1">MATHS-101</p>
+            <h3 class="font-display text-2xl font-bold leading-tight">Foundations of Algebra</h3>
+          </div>
+          <p class="text-sm text-inksoft">
+            <span class="uppercase tracking-widest text-xs font-bold">{% translate "Language" %}</span>
+            <span class="block font-bold text-ink">English</span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-5 text-xs">
+          <span class="rounded-full px-3 py-1 bg-mint/60 border-2 border-ink/10 font-bold">{% translate "Primary" %}</span>
+          <span class="rounded-full px-3 py-1 bg-butter/70 border-2 border-ink/10 font-bold">{% translate "Math" %}</span>
+          <span class="rounded-full px-3 py-1 bg-blush/60 border-2 border-ink/10 font-bold">{% translate "Worksheet" %}</span>
+        </div>
+
+        <div class="flex items-stretch gap-3 mb-5">
+          <div class="flex-1 rounded-2xl bg-sky/30 border-2 border-ink/15 border-dashed grid place-items-center py-10 font-display font-bold text-2xl text-inksoft/70">
+            {% translate "PREVIEW" %}
+          </div>
+          <a href="#" class="grid place-items-center rounded-2xl bg-butter border-2 border-ink px-6 font-display font-bold hover:bg-butter/70 transition-colors">
+            {% translate "View" %}
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-1.5 text-sm font-bold hover:bg-butter transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v14m0 0-5-5m5 5 5-5M4 21h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {% translate "Download" %}
+            </a>
+            <span class="text-xs text-inksoft flex items-center gap-1.5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              1.2 MB
+            </span>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink border-dashed bg-blush/30 px-4 py-1.5 text-sm font-bold hover:bg-blush/60 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 7a3 3 0 1 1 6 0v3H15V7ZM6 21h9a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Zm4.5-6v2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {% translate "Answer key" %}
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+          <div>
+            <p class="font-display font-bold text-xs uppercase tracking-widest text-inksoft mb-1">ENG-201</p>
+            <h3 class="font-display text-2xl font-bold leading-tight">Everyday Reading Practice</h3>
+          </div>
+          <p class="text-sm text-inksoft">
+            <span class="uppercase tracking-widest text-xs font-bold">{% translate "Language" %}</span>
+            <span class="block font-bold text-ink">English</span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-5 text-xs">
+          <span class="rounded-full px-3 py-1 bg-lilac/50 border-2 border-ink/10 font-bold">{% translate "Lower Secondary" %}</span>
+          <span class="rounded-full px-3 py-1 bg-blush/60 border-2 border-ink/10 font-bold">{% translate "English" %}</span>
+          <span class="rounded-full px-3 py-1 bg-mint/60 border-2 border-ink/10 font-bold">{% translate "Lesson Plan" %}</span>
+        </div>
+
+        <div class="flex items-stretch gap-3 mb-5">
+          <div class="flex-1 rounded-2xl bg-sky/30 border-2 border-ink/15 border-dashed grid place-items-center py-10 font-display font-bold text-2xl text-inksoft/70">
+            {% translate "PREVIEW" %}
+          </div>
+          <a href="#" class="grid place-items-center rounded-2xl bg-butter border-2 border-ink px-6 font-display font-bold hover:bg-butter/70 transition-colors">
+            {% translate "View" %}
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-1.5 text-sm font-bold hover:bg-butter transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v14m0 0-5-5m5 5 5-5M4 21h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {% translate "Download" %}
+            </a>
+            <span class="text-xs text-inksoft flex items-center gap-1.5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              840 KB
+            </span>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink border-dashed bg-blush/30 px-4 py-1.5 text-sm font-bold hover:bg-blush/60 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 7a3 3 0 1 1 6 0v3H15V7ZM6 21h9a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Zm4.5-6v2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {% translate "Answer key" %}
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+          <div>
+            <p class="font-display font-bold text-xs uppercase tracking-widest text-inksoft mb-1">MATHS-105</p>
+            <h3 class="font-display text-2xl font-bold leading-tight">Times Tables Made Easy</h3>
+          </div>
+          <p class="text-sm text-inksoft">
+            <span class="uppercase tracking-widest text-xs font-bold">{% translate "Language" %}</span>
+            <span class="block font-bold text-ink">English</span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-5 text-xs">
+          <span class="rounded-full px-3 py-1 bg-mint/60 border-2 border-ink/10 font-bold">{% translate "Primary" %}</span>
+          <span class="rounded-full px-3 py-1 bg-butter/70 border-2 border-ink/10 font-bold">{% translate "Math" %}</span>
+          <span class="rounded-full px-3 py-1 bg-sky/60 border-2 border-ink/10 font-bold">{% translate "Video Guide" %}</span>
+        </div>
+
+        <div class="flex items-stretch gap-3 mb-5">
+          <div class="flex-1 rounded-2xl bg-sky/30 border-2 border-ink/15 border-dashed grid place-items-center py-10 font-display font-bold text-2xl text-inksoft/70">
+            {% translate "PREVIEW" %}
+          </div>
+          <a href="#" class="grid place-items-center rounded-2xl bg-butter border-2 border-ink px-6 font-display font-bold hover:bg-butter/70 transition-colors">
+            {% translate "View" %}
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-1.5 text-sm font-bold hover:bg-butter transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v14m0 0-5-5m5 5 5-5M4 21h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {% translate "Download" %}
+            </a>
+            <span class="text-xs text-inksoft flex items-center gap-1.5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              14.6 MB
+            </span>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink border-dashed bg-blush/30 px-4 py-1.5 text-sm font-bold hover:bg-blush/60 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 7a3 3 0 1 1 6 0v3H15V7ZM6 21h9a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Zm4.5-6v2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {% translate "Answer key" %}
+          </a>
+        </div>
+      </article>
+
+      <nav class="reveal flex flex-wrap items-center justify-between gap-4 pt-6" aria-label="{% translate 'Pagination' %}">
+        <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 text-sm font-bold hover:bg-butter transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {% translate "Previous page" %}
+        </a>
+
+        {% with current_page="1" total_pages="8" %}
+        <p class="text-sm font-bold text-inksoft">
+          {% blocktranslate trimmed %}
+            Page <span class="font-display text-lg text-ink">{{ current_page }}</span> of {{ total_pages }}
+          {% endblocktranslate %}
+        </p>
+        {% endwith %}
+
+        <a href="#" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 text-sm font-bold hover:bg-butter transition-colors">
+          {% translate "Next page" %}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</section>
+{% endblock %}
