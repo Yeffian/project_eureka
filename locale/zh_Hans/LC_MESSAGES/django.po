@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 10:22+0000\n"
+"POT-Creation-Date: 2026-07-26 15:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -382,7 +382,7 @@ msgid ""
 "        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n"
 "      "
 msgstr ""
-"但是，为了让你们明白那些指责快乐、赞扬痛苦的人的所有这些天生的错误是从何而来，我将揭开整个问题，并解释那位真理的发现者、可以说是幸福生活的建筑师所说的那些话。因为没有人会因为快乐本身而轻视、憎恨或逃避快乐，而是因为那些不知道如何用理性追随快乐的人会遭受巨大的痛苦。此外，也没有人因为喜欢痛苦而追求痛苦、想要获得痛苦，而是因为从未有过这样的时刻，他通过劳动和痛苦来寻求某种巨大的快乐。"
+"但是，为了让你们明白那些指责快乐、赞扬痛苦的人所犯的所有这些与生俱来的错误，我将揭开整个事件，并解释那位真理的发现者、可以说是幸福生活的建筑师所说的那些话。因为没有人会因为快乐本身而轻视、憎恨或逃避快乐，而是因为那些不知道如何用理性追随快乐的人会遭受巨大的痛苦。此外，也没有人因为喜欢痛苦而追求痛苦、想要获得痛苦，而是因为从未有过这样的时刻，他通过劳动和痛苦来寻求某种巨大的快乐。"
 
 #: core/templates/core/home.html:17
 msgid "Get started"
@@ -502,8 +502,8 @@ msgid "New here?"
 msgstr "新来的？"
 
 #: core/templates/core/register.html:11 core/templates/core/register.html:52
-#: teachers/templates/teachers/landing.html:21
-#: teachers/templates/teachers/landing.html:184
+#: teachers/templates/teachers/landing.html:20
+#: teachers/templates/teachers/landing.html:182
 msgid "Create account"
 msgstr "创建账户"
 
@@ -530,14 +530,144 @@ msgstr ""
 "已经有帐户？ <a href=\"%(login_url)s\" class=\"squiggle-link font-bold text-"
 "ink\">在此处登录</a>。"
 
-#: project_eureka/settings.py:86
+#: project_eureka/settings.py:87 students/templates/students/landing.html:113
 #: teachers/templates/teachers/resources.html:173
 msgid "English"
 msgstr "英语"
 
-#: project_eureka/settings.py:87
+#: project_eureka/settings.py:88
 msgid "Chinese (Simplified)"
 msgstr "中文（简体）"
+
+#: students/templates/students/landing.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — For Students"
+msgstr "尤里卡计划——针对学生"
+
+#: students/templates/students/landing.html:10
+#, fuzzy
+#| msgid "- Student 1"
+msgid "For students"
+msgstr "对于学生"
+
+#: students/templates/students/landing.html:11
+msgid "Every learner belongs here."
+msgstr "每个学习者都属于这里。"
+
+#: students/templates/students/landing.html:13
+msgid ""
+"Free lessons with volunteer teachers who want to help you learn — in your "
+"language, at your pace. No cost, no pressure, ever."
+msgstr "志愿教师免费提供课程，他们希望帮助您以您的语言、按照您的节奏学习。永远没有成本，没有压力。"
+
+#: students/templates/students/landing.html:19
+#: students/templates/students/landing.html:197
+msgid "Talk to us"
+msgstr "与我们交谈"
+
+#: students/templates/students/landing.html:23
+msgid "See how it works"
+msgstr "看看它是如何工作的"
+
+#: students/templates/students/landing.html:66
+msgid "How it works"
+msgstr "它是如何运作的"
+
+#: students/templates/students/landing.html:68
+msgid "Three small steps and you'll have a teacher waiting to help you learn."
+msgstr "只需三个小步骤，您就会有一位老师等着帮助您学习。"
+
+#: students/templates/students/landing.html:75
+#, fuzzy
+#| msgid "teachers &amp; volunteer partners"
+msgid "Reach out"
+msgstr "伸出手"
+
+#: students/templates/students/landing.html:76
+msgid ""
+"Send us a message telling us what you'd like to learn. A family member or "
+"friend can help."
+msgstr "给我们留言，告诉我们您想学什么。家人或朋友可以提供帮助。"
+
+#: students/templates/students/landing.html:81
+#, fuzzy
+#| msgid "For teachers"
+msgid "We find a teacher"
+msgstr "我们找老师"
+
+#: students/templates/students/landing.html:82
+msgid ""
+"Someone from our volunteer community with the right subject and language for"
+" you."
+msgstr "我们的志愿者社区中的某人拥有适合您的主题和语言。"
+
+#: students/templates/students/landing.html:87
+msgid "Start learning"
+msgstr "开始学习"
+
+#: students/templates/students/landing.html:88
+msgid ""
+"Lessons happen online or in person, whatever works best for you and your "
+"teacher."
+msgstr "课程可以在线进行，也可以亲自进行，只要最适合您和您的老师即可。"
+
+#: students/templates/students/landing.html:100
+msgid "What you can learn"
+msgstr "你能学到什么"
+
+#: students/templates/students/landing.html:102
+msgid ""
+"Subjects our volunteer teachers can help with. Don't see what you're looking"
+" for? Ask us — we might be able to find someone."
+msgstr "我们的志愿者教师可以提供帮助的科目。没有看到您要找的东西？询问我们——我们也许能找到人。"
+
+#: students/templates/students/landing.html:121
+#: teachers/templates/teachers/resources.html:66
+msgid "Mathematics"
+msgstr "数学"
+
+#: students/templates/students/landing.html:132
+#, fuzzy
+#| msgid "Science Sparks"
+msgid "Science"
+msgstr "科学"
+
+#: students/templates/students/landing.html:141
+msgid "Reading and Writing"
+msgstr "阅读和写作"
+
+#: students/templates/students/landing.html:153
+#, fuzzy
+#| msgid "- Student 1"
+msgid "Student stories"
+msgstr "学生故事"
+
+#: students/templates/students/landing.html:155
+msgid ""
+"The best way to know what learning here feels like is to hear from students "
+"themselves."
+msgstr "要了解在这里学习的感觉，最好的方法就是聆听学生们的心声。"
+
+#: students/templates/students/landing.html:163
+msgid "adfjsdf"
+msgstr "阿德菲斯德夫"
+
+#: students/templates/students/landing.html:173
+msgid "asfjwdghe"
+msgstr "阿斯菲吉韦德盖"
+
+#: students/templates/students/landing.html:189
+msgid "Ready when you are."
+msgstr "当你准备好时。"
+
+#: students/templates/students/landing.html:191
+msgid "Reach out whenever you're ready to start."
+msgstr "当您准备好开始时，请随时联系我们。"
+
+#: students/templates/students/landing.html:201
+msgid "Read our FAQ"
+msgstr "阅读我们的常见问题解答"
 
 #: teachers/templates/teachers/dashboard.html:5
 #, fuzzy
@@ -764,135 +894,135 @@ msgid ""
 " your classes — free for everyone teaching refugee students."
 msgstr "解锁完整的课程库、共享资源驱动器和课程分析——免费向所有教授难民学生的人开放。"
 
-#: teachers/templates/teachers/landing.html:25
-#: teachers/templates/teachers/landing.html:187
+#: teachers/templates/teachers/landing.html:24
+#: teachers/templates/teachers/landing.html:185
 msgid "Log in"
 msgstr "登录"
 
-#: teachers/templates/teachers/landing.html:44
+#: teachers/templates/teachers/landing.html:42
 #, fuzzy
 #| msgid "Curriculum lead"
 msgid "Curriculum preview"
 msgstr "课程预览"
 
-#: teachers/templates/teachers/landing.html:46
+#: teachers/templates/teachers/landing.html:44
 msgid ""
 "A taste of what's inside: ready-to-teach lesson plans built and refined by "
 "our volunteer community. Create a free account to open the full library."
 msgstr "体验里面的内容：由我们的志愿者社区制定和完善的即用型课程计划。创建一个免费帐户以打开完整的图书馆。"
 
-#: teachers/templates/teachers/landing.html:57
+#: teachers/templates/teachers/landing.html:55
 msgid "English foundations"
 msgstr "英语基础"
 
-#: teachers/templates/teachers/landing.html:58
+#: teachers/templates/teachers/landing.html:56
 msgid ""
 "12 lessons · beginner friendly, picture-first vocabulary and everyday "
 "phrases."
 msgstr "12 节课程 · 适合初学者，图文并茂的词汇和日常短语。"
 
-#: teachers/templates/teachers/landing.html:67
+#: teachers/templates/teachers/landing.html:65
 #, fuzzy
 #| msgid "Everyday Maths B"
 msgid "Everyday maths"
 msgstr "日常数学"
 
-#: teachers/templates/teachers/landing.html:68
+#: teachers/templates/teachers/landing.html:66
 msgid "10 lessons · from number sense to money, measuring, and market maths."
 msgstr "10 节课·从数感到金钱、测量和市场数学。"
 
-#: teachers/templates/teachers/landing.html:76
+#: teachers/templates/teachers/landing.html:74
 #, fuzzy
 #| msgid "Science Sparks"
 msgid "Science sparks"
 msgstr "科学火花"
 
-#: teachers/templates/teachers/landing.html:77
+#: teachers/templates/teachers/landing.html:75
 msgid "8 lessons · hands-on experiments using things found in any kitchen."
 msgstr "8 节课 · 使用厨房里随手可得的东西进行动手实验。"
 
-#: teachers/templates/teachers/landing.html:83
+#: teachers/templates/teachers/landing.html:81
 msgid "Resource drive &amp; slides"
 msgstr "资源驱动与幻灯片"
 
-#: teachers/templates/teachers/landing.html:97
+#: teachers/templates/teachers/landing.html:95
 msgid "Slides, worksheets &amp; printables live here."
 msgstr "幻灯片、工作表和印刷品就在这里。"
 
-#: teachers/templates/teachers/landing.html:98
-#: teachers/templates/teachers/landing.html:140
+#: teachers/templates/teachers/landing.html:96
+#: teachers/templates/teachers/landing.html:138
 msgid "Log in to view"
 msgstr "登录查看"
 
-#: teachers/templates/teachers/landing.html:112
+#: teachers/templates/teachers/landing.html:110
 msgid "Analytics preview"
 msgstr "分析预览"
 
-#: teachers/templates/teachers/landing.html:114
+#: teachers/templates/teachers/landing.html:112
 msgid ""
 "See each class at a glance: attendance, assignment progress, and which "
 "topics need another pass — without spreadsheets or guesswork."
 msgstr "一目了然地查看每门课程：出勤情况、作业进度以及哪些主题需要再次通过 - 无需电子表格或猜测。"
 
-#: teachers/templates/teachers/landing.html:117
+#: teachers/templates/teachers/landing.html:115
 msgid ""
 "Your dashboard is private to you and your classes, and it's ready the moment"
 " you sign in."
 msgstr "您的仪表板对您和您的班级来说是私有的，并且在您登录时就已准备就绪。"
 
-#: teachers/templates/teachers/landing.html:123
+#: teachers/templates/teachers/landing.html:121
 #, fuzzy
 #| msgid "English"
 msgid "Class: Year 7 English"
 msgstr "班级：7年级英语"
 
-#: teachers/templates/teachers/landing.html:139
+#: teachers/templates/teachers/landing.html:137
 msgid "Class analytics unlock with your account."
 msgstr "使用您的帐户解锁课程分析。"
 
-#: teachers/templates/teachers/landing.html:152
+#: teachers/templates/teachers/landing.html:150
 msgid "Built by teachers, for teachers"
 msgstr "由教师构建，为教师服务"
 
-#: teachers/templates/teachers/landing.html:154
+#: teachers/templates/teachers/landing.html:152
 msgid ""
 "Every lesson in our library was written, tested, and improved by volunteers "
 "like you. When you join, your feedback and materials make the whole "
 "community stronger."
 msgstr "我们图书馆的每一节课都是由像您这样的志愿者编写、测试和改进的。当您加入时，您的反馈和材料将使整个社区变得更加强大。"
 
-#: teachers/templates/teachers/landing.html:159
+#: teachers/templates/teachers/landing.html:157
 msgid "Share"
 msgstr "分享"
 
-#: teachers/templates/teachers/landing.html:160
+#: teachers/templates/teachers/landing.html:158
 msgid ""
 "Upload your own slides and worksheets to the drive for others to reuse."
 msgstr "将您自己的幻灯片和工作表上传到驱动器以供其他人重复使用。"
 
-#: teachers/templates/teachers/landing.html:163
+#: teachers/templates/teachers/landing.html:161
 #, fuzzy
 #| msgid "Request +"
 msgid "Request"
 msgstr "要求"
 
-#: teachers/templates/teachers/landing.html:164
+#: teachers/templates/teachers/landing.html:162
 msgid "Missing a topic? Request it and the community helps build it."
 msgstr "缺少主题吗？提出请求，社区就会帮助构建它。"
 
-#: teachers/templates/teachers/landing.html:167
+#: teachers/templates/teachers/landing.html:165
 msgid "Connect"
 msgstr "连接"
 
-#: teachers/templates/teachers/landing.html:168
+#: teachers/templates/teachers/landing.html:166
 msgid "Swap advice with fellow volunteers in the teacher forums."
 msgstr "在教师论坛中与其他志愿者交换建议。"
 
-#: teachers/templates/teachers/landing.html:180
+#: teachers/templates/teachers/landing.html:178
 msgid "Ready to teach with us?"
 msgstr "准备好和我们一起教学了吗？"
 
-#: teachers/templates/teachers/landing.html:181
+#: teachers/templates/teachers/landing.html:179
 msgid ""
 "A free account takes two minutes — your first class could start this week."
 msgstr "免费帐户只需两分钟 - 您的第一堂课可能会在本周开始。"
@@ -937,10 +1067,6 @@ msgstr "高中"
 #: teachers/templates/teachers/resources.html:62
 msgid "Subject"
 msgstr "主题"
-
-#: teachers/templates/teachers/resources.html:66
-msgid "Mathematics"
-msgstr "数学"
 
 #: teachers/templates/teachers/resources.html:70
 #, fuzzy
@@ -1048,6 +1174,21 @@ msgstr "下一页"
 #, python-format
 msgid "Change language, currently %(lang)s"
 msgstr "更改语言，当前为 %(lang)s"
+
+#~ msgid ""
+#~ "When we came here, I thought I'd fall behind. My teacher Sarah helped me "
+#~ "feel like it was OK to not know things yet. Now I love reading."
+#~ msgstr "当我们来到这里时，我以为我会落后。我的老师莎拉让我觉得，还不知道事情也没关系。现在我喜欢读书了。"
+
+#~ msgid ""
+#~ "I was nervous about my math class. But my teacher was so patient — he "
+#~ "explained things three different ways until I understood. I passed my test."
+#~ msgstr "我对数学课感到紧张。但我的老师非常耐心——他用三种不同的方式解释了事情，直到我明白为止。我通过了测试。"
+
+#~ msgid ""
+#~ "Reach out whenever you're ready to start. If English is hard for you, that's"
+#~ " OK — someone on our team can help in your language."
+#~ msgstr "当您准备好开始时，请随时联系我们。如果英语对您来说很难，那也没关系，我们团队中的某个人可以用您的语言提供帮助。"
 
 #~ msgid "Resource Library"
 #~ msgstr "资源库"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-24 10:22+0000\n"
+"POT-Creation-Date: 2026-07-26 15:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -517,8 +517,8 @@ msgid "New here?"
 msgstr "New here?"
 
 #: core/templates/core/register.html:11 core/templates/core/register.html:52
-#: teachers/templates/teachers/landing.html:21
-#: teachers/templates/teachers/landing.html:184
+#: teachers/templates/teachers/landing.html:20
+#: teachers/templates/teachers/landing.html:182
 msgid "Create account"
 msgstr "Create account"
 
@@ -545,14 +545,157 @@ msgstr ""
 "Already have an account? <a href=\"%(login_url)s\" class=\"squiggle-link "
 "font-bold text-ink\">Sign in here</a>."
 
-#: project_eureka/settings.py:86
+#: project_eureka/settings.py:87 students/templates/students/landing.html:113
 #: teachers/templates/teachers/resources.html:173
 msgid "English"
 msgstr "English"
 
-#: project_eureka/settings.py:87
+#: project_eureka/settings.py:88
 msgid "Chinese (Simplified)"
 msgstr "Chinese (Simplified)"
+
+#: students/templates/students/landing.html:4
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — For Students"
+msgstr "Project Eureka — For Students"
+
+#: students/templates/students/landing.html:10
+#, fuzzy
+#| msgid "Student or family"
+msgid "For students"
+msgstr "For students"
+
+#: students/templates/students/landing.html:11
+msgid "Every learner belongs here."
+msgstr "Every learner belongs here."
+
+#: students/templates/students/landing.html:13
+msgid ""
+"Free lessons with volunteer teachers who want to help you learn — in your "
+"language, at your pace. No cost, no pressure, ever."
+msgstr ""
+"Free lessons with volunteer teachers who want to help you learn — in your "
+"language, at your pace. No cost, no pressure, ever."
+
+#: students/templates/students/landing.html:19
+#: students/templates/students/landing.html:197
+msgid "Talk to us"
+msgstr "Talk to us"
+
+#: students/templates/students/landing.html:23
+msgid "See how it works"
+msgstr "See how it works"
+
+#: students/templates/students/landing.html:66
+msgid "How it works"
+msgstr "How it works"
+
+#: students/templates/students/landing.html:68
+msgid "Three small steps and you'll have a teacher waiting to help you learn."
+msgstr ""
+"Three small steps and you'll have a teacher waiting to help you learn."
+
+#: students/templates/students/landing.html:75
+#, fuzzy
+#| msgid "Teacher or volunteer"
+msgid "Reach out"
+msgstr "Reach out"
+
+#: students/templates/students/landing.html:76
+msgid ""
+"Send us a message telling us what you'd like to learn. A family member or "
+"friend can help."
+msgstr ""
+"Send us a message telling us what you'd like to learn. A family member or "
+"friend can help."
+
+#: students/templates/students/landing.html:81
+#, fuzzy
+#| msgid "For teachers"
+msgid "We find a teacher"
+msgstr "We find a teacher"
+
+#: students/templates/students/landing.html:82
+msgid ""
+"Someone from our volunteer community with the right subject and language for"
+" you."
+msgstr ""
+"Someone from our volunteer community with the right subject and language for"
+" you."
+
+#: students/templates/students/landing.html:87
+msgid "Start learning"
+msgstr "Start learning"
+
+#: students/templates/students/landing.html:88
+msgid ""
+"Lessons happen online or in person, whatever works best for you and your "
+"teacher."
+msgstr ""
+"Lessons happen online or in person, whatever works best for you and your "
+"teacher."
+
+#: students/templates/students/landing.html:100
+msgid "What you can learn"
+msgstr "What you can learn"
+
+#: students/templates/students/landing.html:102
+msgid ""
+"Subjects our volunteer teachers can help with. Don't see what you're looking"
+" for? Ask us — we might be able to find someone."
+msgstr ""
+"Subjects our volunteer teachers can help with. Don't see what you're looking"
+" for? Ask us — we might be able to find someone."
+
+#: students/templates/students/landing.html:121
+#: teachers/templates/teachers/resources.html:66
+msgid "Mathematics"
+msgstr "Mathematics"
+
+#: students/templates/students/landing.html:132
+#, fuzzy
+#| msgid "Science Sparks"
+msgid "Science"
+msgstr "Science"
+
+#: students/templates/students/landing.html:141
+msgid "Reading and Writing"
+msgstr "Reading and Writing"
+
+#: students/templates/students/landing.html:153
+#, fuzzy
+#| msgid "Student or family"
+msgid "Student stories"
+msgstr "Student stories"
+
+#: students/templates/students/landing.html:155
+msgid ""
+"The best way to know what learning here feels like is to hear from students "
+"themselves."
+msgstr ""
+"The best way to know what learning here feels like is to hear from students "
+"themselves."
+
+#: students/templates/students/landing.html:163
+msgid "adfjsdf"
+msgstr "adfjsdf"
+
+#: students/templates/students/landing.html:173
+msgid "asfjwdghe"
+msgstr "asfjwdghe"
+
+#: students/templates/students/landing.html:189
+msgid "Ready when you are."
+msgstr "Ready when you are."
+
+#: students/templates/students/landing.html:191
+msgid "Reach out whenever you're ready to start."
+msgstr "Reach out whenever you're ready to start."
+
+#: students/templates/students/landing.html:201
+msgid "Read our FAQ"
+msgstr "Read our FAQ"
 
 #: teachers/templates/teachers/dashboard.html:5
 #, fuzzy
@@ -783,18 +926,18 @@ msgstr ""
 "Unlock a full curriculum library, a shared resource drive, and analytics for"
 " your classes — free for everyone teaching refugee students."
 
-#: teachers/templates/teachers/landing.html:25
-#: teachers/templates/teachers/landing.html:187
+#: teachers/templates/teachers/landing.html:24
+#: teachers/templates/teachers/landing.html:185
 msgid "Log in"
 msgstr "Log in"
 
-#: teachers/templates/teachers/landing.html:44
+#: teachers/templates/teachers/landing.html:42
 #, fuzzy
 #| msgid "Curriculum lead"
 msgid "Curriculum preview"
 msgstr "Curriculum preview"
 
-#: teachers/templates/teachers/landing.html:46
+#: teachers/templates/teachers/landing.html:44
 msgid ""
 "A taste of what's inside: ready-to-teach lesson plans built and refined by "
 "our volunteer community. Create a free account to open the full library."
@@ -802,11 +945,11 @@ msgstr ""
 "A taste of what's inside: ready-to-teach lesson plans built and refined by "
 "our volunteer community. Create a free account to open the full library."
 
-#: teachers/templates/teachers/landing.html:57
+#: teachers/templates/teachers/landing.html:55
 msgid "English foundations"
 msgstr "English foundations"
 
-#: teachers/templates/teachers/landing.html:58
+#: teachers/templates/teachers/landing.html:56
 msgid ""
 "12 lessons · beginner friendly, picture-first vocabulary and everyday "
 "phrases."
@@ -814,44 +957,44 @@ msgstr ""
 "12 lessons · beginner friendly, picture-first vocabulary and everyday "
 "phrases."
 
-#: teachers/templates/teachers/landing.html:67
+#: teachers/templates/teachers/landing.html:65
 #, fuzzy
 #| msgid "Everyday Maths B"
 msgid "Everyday maths"
 msgstr "Everyday maths"
 
-#: teachers/templates/teachers/landing.html:68
+#: teachers/templates/teachers/landing.html:66
 msgid "10 lessons · from number sense to money, measuring, and market maths."
 msgstr "10 lessons · from number sense to money, measuring, and market maths."
 
-#: teachers/templates/teachers/landing.html:76
+#: teachers/templates/teachers/landing.html:74
 #, fuzzy
 #| msgid "Science Sparks"
 msgid "Science sparks"
 msgstr "Science sparks"
 
-#: teachers/templates/teachers/landing.html:77
+#: teachers/templates/teachers/landing.html:75
 msgid "8 lessons · hands-on experiments using things found in any kitchen."
 msgstr "8 lessons · hands-on experiments using things found in any kitchen."
 
-#: teachers/templates/teachers/landing.html:83
+#: teachers/templates/teachers/landing.html:81
 msgid "Resource drive &amp; slides"
 msgstr "Resource drive &amp; slides"
 
-#: teachers/templates/teachers/landing.html:97
+#: teachers/templates/teachers/landing.html:95
 msgid "Slides, worksheets &amp; printables live here."
 msgstr "Slides, worksheets &amp; printables live here."
 
-#: teachers/templates/teachers/landing.html:98
-#: teachers/templates/teachers/landing.html:140
+#: teachers/templates/teachers/landing.html:96
+#: teachers/templates/teachers/landing.html:138
 msgid "Log in to view"
 msgstr "Log in to view"
 
-#: teachers/templates/teachers/landing.html:112
+#: teachers/templates/teachers/landing.html:110
 msgid "Analytics preview"
 msgstr "Analytics preview"
 
-#: teachers/templates/teachers/landing.html:114
+#: teachers/templates/teachers/landing.html:112
 msgid ""
 "See each class at a glance: attendance, assignment progress, and which "
 "topics need another pass — without spreadsheets or guesswork."
@@ -859,7 +1002,7 @@ msgstr ""
 "See each class at a glance: attendance, assignment progress, and which "
 "topics need another pass — without spreadsheets or guesswork."
 
-#: teachers/templates/teachers/landing.html:117
+#: teachers/templates/teachers/landing.html:115
 msgid ""
 "Your dashboard is private to you and your classes, and it's ready the moment"
 " you sign in."
@@ -867,21 +1010,21 @@ msgstr ""
 "Your dashboard is private to you and your classes, and it's ready the moment"
 " you sign in."
 
-#: teachers/templates/teachers/landing.html:123
+#: teachers/templates/teachers/landing.html:121
 #, fuzzy
 #| msgid "English"
 msgid "Class: Year 7 English"
 msgstr "Class: Year 7 English"
 
-#: teachers/templates/teachers/landing.html:139
+#: teachers/templates/teachers/landing.html:137
 msgid "Class analytics unlock with your account."
 msgstr "Class analytics unlock with your account."
 
-#: teachers/templates/teachers/landing.html:152
+#: teachers/templates/teachers/landing.html:150
 msgid "Built by teachers, for teachers"
 msgstr "Built by teachers, for teachers"
 
-#: teachers/templates/teachers/landing.html:154
+#: teachers/templates/teachers/landing.html:152
 msgid ""
 "Every lesson in our library was written, tested, and improved by volunteers "
 "like you. When you join, your feedback and materials make the whole "
@@ -891,39 +1034,39 @@ msgstr ""
 "like you. When you join, your feedback and materials make the whole "
 "community stronger."
 
-#: teachers/templates/teachers/landing.html:159
+#: teachers/templates/teachers/landing.html:157
 msgid "Share"
 msgstr "Share"
 
-#: teachers/templates/teachers/landing.html:160
+#: teachers/templates/teachers/landing.html:158
 msgid ""
 "Upload your own slides and worksheets to the drive for others to reuse."
 msgstr ""
 "Upload your own slides and worksheets to the drive for others to reuse."
 
-#: teachers/templates/teachers/landing.html:163
+#: teachers/templates/teachers/landing.html:161
 #, fuzzy
 #| msgid "Request +"
 msgid "Request"
 msgstr "Request"
 
-#: teachers/templates/teachers/landing.html:164
+#: teachers/templates/teachers/landing.html:162
 msgid "Missing a topic? Request it and the community helps build it."
 msgstr "Missing a topic? Request it and the community helps build it."
 
-#: teachers/templates/teachers/landing.html:167
+#: teachers/templates/teachers/landing.html:165
 msgid "Connect"
 msgstr "Connect"
 
-#: teachers/templates/teachers/landing.html:168
+#: teachers/templates/teachers/landing.html:166
 msgid "Swap advice with fellow volunteers in the teacher forums."
 msgstr "Swap advice with fellow volunteers in the teacher forums."
 
-#: teachers/templates/teachers/landing.html:180
+#: teachers/templates/teachers/landing.html:178
 msgid "Ready to teach with us?"
 msgstr "Ready to teach with us?"
 
-#: teachers/templates/teachers/landing.html:181
+#: teachers/templates/teachers/landing.html:179
 msgid ""
 "A free account takes two minutes — your first class could start this week."
 msgstr ""
@@ -969,10 +1112,6 @@ msgstr "Upper Secondary"
 #: teachers/templates/teachers/resources.html:62
 msgid "Subject"
 msgstr "Subject"
-
-#: teachers/templates/teachers/resources.html:66
-msgid "Mathematics"
-msgstr "Mathematics"
 
 #: teachers/templates/teachers/resources.html:70
 #, fuzzy
@@ -1080,6 +1219,27 @@ msgstr "Next page"
 #, python-format
 msgid "Change language, currently %(lang)s"
 msgstr "Change language, currently %(lang)s"
+
+#~ msgid ""
+#~ "When we came here, I thought I'd fall behind. My teacher Sarah helped me "
+#~ "feel like it was OK to not know things yet. Now I love reading."
+#~ msgstr ""
+#~ "When we came here, I thought I'd fall behind. My teacher Sarah helped me "
+#~ "feel like it was OK to not know things yet. Now I love reading."
+
+#~ msgid ""
+#~ "I was nervous about my math class. But my teacher was so patient — he "
+#~ "explained things three different ways until I understood. I passed my test."
+#~ msgstr ""
+#~ "I was nervous about my math class. But my teacher was so patient — he "
+#~ "explained things three different ways until I understood. I passed my test."
+
+#~ msgid ""
+#~ "Reach out whenever you're ready to start. If English is hard for you, that's"
+#~ " OK — someone on our team can help in your language."
+#~ msgstr ""
+#~ "Reach out whenever you're ready to start. If English is hard for you, that's"
+#~ " OK — someone on our team can help in your language."
 
 #~ msgid "Resource Library"
 #~ msgstr "Resource Library"

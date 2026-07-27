@@ -17,7 +17,7 @@ translator = GoogleTranslator(source='auto', target=args.lang)
 pofile = polib.pofile(args.filename)
 for entry in pofile:
     translated = translator.translate(entry.msgid)
-    print(entry.msgid, "=>", translated)
+    # print(entry.msgid, "=>", translated)
     entry.msgstr = translated
 
 pofile.save()

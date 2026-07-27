@@ -16,5 +16,6 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
 
     path("teachers/", include("teachers.urls")),
+    path("students/", include("students.urls")),
     path("", include("core.urls")),  # keep last so it doesn't shadow other prefixes
 ]

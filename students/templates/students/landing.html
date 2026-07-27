@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Project Eureka — For Students" %}{% endblock %}
+{% block header %}{% include "partials/header.html" %}{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-6xl px-5 pt-10 pb-6 grid md:grid-cols-2 gap-10 items-center">
+  <div class="reveal">
+    <p class="inline-block rounded-full bg-blush px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">{% translate "For students" %}</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-5">{% translate "Every learner belongs here." %}</h1>
+    <p class="text-inksoft text-lg leading-relaxed max-w-md mb-8">
+      {% blocktranslate trimmed %}
+        Free lessons with volunteer teachers who want to help you learn — in your language, at your pace. No cost, no pressure, ever.
+      {% endblocktranslate %}
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        {% translate "Talk to us" %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#how" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors">
+        {% translate "See how it works" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="reveal flex justify-center" aria-hidden="true">
+    <svg viewBox="0 0 400 320" class="w-full max-w-md">
+      <path d="M330 44 c18-2 30 12 31 27 c1 16-12 30-29 30 c-17 1-31-12-31-28 c0-15 13-27 29-29 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="3.5" stroke-linecap="round"/>
+
+      <g class="drift" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M46 74 c-2-9 6-16 15-16 c2-8 10-14 19-13 c11 0 19 8 21 18 c7 0 13 5 13 11 c0 1-1 2-2 2 H50 c-2 0-4-1-4-2 Z"/>
+      </g>
+      <g class="drift-slow" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M256 50 c-1-7 5-13 12-13 c2-6 8-10 15-10 c9 0 16 6 17 14 c5 1 9 5 8 9 c0 1-1 1-2 1 h-48 c-1 0-2 0-2-1 Z"/>
+      </g>
+
+      <path d="M0 260 C 60 230 120 260 200 240 C 280 225 350 255 400 240 L 400 320 L 0 320 Z" fill="#F791A9" stroke="#3E4C54" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M0 285 C 70 265 130 285 200 275 C 270 265 340 285 400 275 L 400 320 L 0 320 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <g transform="translate(140 150)">
+        <path d="M0 20 C 20 8 45 8 60 18 C 75 8 100 8 120 20 L 120 68 C 100 56 75 56 60 66 C 45 56 20 56 0 68 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M60 18 V66" stroke="#3E4C54" stroke-width="3"/>
+        <path d="M12 32 h34 M12 42 h30 M74 32 h34 M74 42 h30" stroke="#FFDBDF" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+
+      <path d="M92 120 C 89 116 82 117 82 122 C 82 128 92 132 92 132 C 92 132 102 128 102 122 C 102 117 95 116 92 120 Z" fill="#FFDBDF" stroke="#3E4C54" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M320 135 C 318 132 313 132 313 137 C 313 141 320 145 320 145 C 320 145 327 141 327 137 C 327 132 322 132 320 135 Z" fill="#FFDBDF" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
+
+      <path d="M60 200l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.5"/>
+      <path d="M340 210l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#FFDBDF" stroke="#3E4C54" stroke-width="2.5"/>
+      <circle cx="30" cy="130" r="4" fill="#3E4C54"/>
+      <circle cx="376" cy="106" r="4" fill="#3E4C54"/>
+    </svg>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 90" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 45 C 180 90 360 0 540 40 C 720 80 900 10 1080 45 C 1260 80 1350 30 1440 50 L1440 90 L0 90 Z" fill="#F791A9"/>
+</svg>
+
+<section id="how" class="bg-lilac -mt-px">
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <div class="reveal max-w-2xl mb-12">
+      <h2 class="font-display text-4xl font-bold mb-4">{% translate "How it works" %}</h2>
+      <p class="text-ink/80 leading-relaxed">
+        {% translate "Three small steps and you'll have a teacher waiting to help you learn." %}
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-5">
+      <article class="reveal rounded-blob bg-cream p-6 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <div class="mb-4 grid place-items-center w-12 h-12 rounded-full bg-butter border-2 border-ink font-display font-bold text-xl">1</div>
+        <h3 class="font-display text-xl font-bold mb-2">{% translate "Reach out" %}</h3>
+        <p class="text-sm text-ink/70">{% translate "Send us a message telling us what you'd like to learn. A family member or friend can help." %}</p>
+      </article>
+
+      <article class="reveal rounded-blob bg-cream p-6 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <div class="mb-4 grid place-items-center w-12 h-12 rounded-full bg-butter border-2 border-ink font-display font-bold text-xl">2</div>
+        <h3 class="font-display text-xl font-bold mb-2">{% translate "We find a teacher" %}</h3>
+        <p class="text-sm text-ink/70">{% translate "Someone from our volunteer community with the right subject and language for you." %}</p>
+      </article>
+
+      <article class="reveal rounded-blob bg-cream p-6 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <div class="mb-4 grid place-items-center w-12 h-12 rounded-full bg-butter border-2 border-ink font-display font-bold text-xl">3</div>
+        <h3 class="font-display text-xl font-bold mb-2">{% translate "Start learning" %}</h3>
+        <p class="text-sm text-ink/70">{% translate "Lessons happen online or in person, whatever works best for you and your teacher." %}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 80" class="w-full block -mt-px" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V30 C 1260 70 1080 5 900 40 C 720 75 540 15 360 45 C 200 70 90 30 0 50 Z" fill="#F791A9"/>
+</svg>
+
+<section class="mx-auto max-w-6xl px-5 py-20">
+  <div class="reveal max-w-2xl mb-10">
+    <h2 class="font-display text-4xl font-bold mb-4">{% translate "What you can learn" %}</h2>
+    <p class="text-inksoft leading-relaxed">
+      {% translate "Subjects our volunteer teachers can help with. Don't see what you're looking for? Ask us — we might be able to find someone." %}
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <article class="reveal rounded-blob bg-mint/40 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.15)] p-6 text-center">
+      <svg width="52" height="52" viewBox="0 0 52 52" class="mx-auto mb-3" aria-hidden="true">
+        <path d="M8 12 C 14 8 20 10 26 14 C 32 10 38 8 44 12 L 44 40 C 38 36 32 34 26 38 C 20 34 14 36 8 40 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="2.8" stroke-linejoin="round"/>
+        <path d="M26 14 V38" stroke="#3E4C54" stroke-width="2.8"/>
+        <path d="M12 22 h10 M12 28 h9 M30 22 h10 M30 28 h9" stroke="#FFDBDF" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h3 class="font-display text-lg font-bold">{% translate "English" %}</h3>
+    </article>
+
+    <article class="reveal rounded-blob bg-butter/60 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.15)] p-6 text-center">
+      <svg width="52" height="52" viewBox="0 0 52 52" class="mx-auto mb-3" aria-hidden="true">
+        <circle cx="26" cy="26" r="18" fill="#E0F2F4" stroke="#3E4C54" stroke-width="2.8"/>
+        <text x="26" y="32" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="14" fill="#3E4C54">123</text>
+      </svg>
+      <h3 class="font-display text-lg font-bold">{% translate "Mathematics" %}</h3>
+    </article>
+
+    <article class="reveal rounded-blob bg-blush/50 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.15)] p-6 text-center">
+      <svg width="52" height="52" viewBox="0 0 52 52" class="mx-auto mb-3" aria-hidden="true">
+        <path d="M20 8 h12 v14 l 8 20 c 1 3-1 6-4 6 h-20 c -3 0-5-3-4-6 l 8-20 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="2.8" stroke-linejoin="round"/>
+        <path d="M20 22 h12" stroke="#3E4C54" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="26" cy="36" r="2" fill="#3E4C54"/>
+        <circle cx="22" cy="42" r="1.5" fill="#3E4C54"/>
+        <circle cx="30" cy="41" r="1.8" fill="#3E4C54"/>
+      </svg>
+      <h3 class="font-display text-lg font-bold">{% translate "Science" %}</h3>
+    </article>
+
+    <article class="reveal rounded-blob bg-lilac/50 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.15)] p-6 text-center">
+      <svg width="52" height="52" viewBox="0 0 52 52" class="mx-auto mb-3" aria-hidden="true">
+        <path d="M14 40 L 34 20 L 40 26 L 20 46 L 12 48 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.8" stroke-linejoin="round"/>
+        <path d="M34 20 L 40 14 L 46 20 L 40 26 Z" fill="#F791A9" stroke="#3E4C54" stroke-width="2.8" stroke-linejoin="round"/>
+        <path d="M12 48 L 18 46" stroke="#3E4C54" stroke-width="2.8" stroke-linecap="round"/>
+      </svg>
+      <h3 class="font-display text-lg font-bold">{% translate "Reading and Writing" %}</h3>
+    </article>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 70" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 40 C 240 70 480 10 720 35 C 960 60 1200 15 1440 45 L1440 70 L0 70 Z" fill="#BAD6DA"/>
+</svg>
+
+<section class="bg-sky -mt-px">
+  <div class="mx-auto max-w-6xl px-5 pb-20 pt-14">
+    <div class="reveal max-w-2xl mx-auto text-center mb-12">
+      <h2 class="font-display text-4xl font-bold mb-4">{% translate "Student stories" %}</h2>
+      <p class="text-ink/80 leading-relaxed">
+        {% translate "The best way to know what learning here feels like is to hear from students themselves." %}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
+        <blockquote class="text-lg leading-relaxed mb-4">
+          {% blocktranslate trimmed %}
+            adfjsdf
+          {% endblocktranslate %}
+        </blockquote>
+        <figcaption class="font-bold text-sm">— Amira, age 12</figcaption>
+      </figure>
+
+      <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+        <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
+        <blockquote class="text-lg leading-relaxed mb-4">
+          {% blocktranslate trimmed %}
+            asfjwdghe
+          {% endblocktranslate %}
+        </blockquote>
+        <figcaption class="font-bold text-sm">— Yusuf, age 15</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 80" class="w-full block -mt-px" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V35 C 1240 75 1060 10 880 40 C 700 70 520 20 340 45 C 190 66 80 35 0 55 Z" fill="#BAD6DA"/>
+</svg>
+
+<section class="mx-auto max-w-6xl px-5 pb-20 text-center">
+  <div class="reveal rounded-blob bg-blush/50 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] px-6 py-14">
+    <h2 class="font-display text-4xl font-bold mb-4">{% translate "Ready when you are." %}</h2>
+    <p class="text-ink/80 mb-8 max-w-md mx-auto">
+      {% blocktranslate trimmed %}
+        Reach out whenever you're ready to start. 
+      {% endblocktranslate %}
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
+        {% translate "Talk to us" %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="{% url 'core:faq' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-cream transition-colors">
+        {% translate "Read our FAQ" %}
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}
