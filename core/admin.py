@@ -4,4 +4,4 @@ from .models import *
 
 # Register models here when the core app grows models of its own.
 
-admin.site.register(User, UserAdmin)
+admin.site.register(User)

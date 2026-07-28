@@ -3,12 +3,16 @@
 {% block title %}Project Eureka — Sign in{% endblock %}
 
 {% block content %}
+
 <section class="mx-auto max-w-md px-5 pt-10 pb-20">
+  
 
   <div class="reveal text-center mb-10">
-    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">Welcome back</p>
-    <h1 class="font-display text-5xl font-bold leading-[1.05] mb-3">Sign in</h1>
-    <p class="text-inksoft text-lg leading-relaxed">Good to see you again.</p>
+    {% blocktranslate %}
+      <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">Welcome back</p>
+      <h1 class="font-display text-5xl font-bold leading-[1.05] mb-3">Sign in</h1>
+      <p class="text-inksoft text-lg leading-relaxed">Good to see you again.</p>
+    {% endblocktranslate %}
 
     <svg viewBox="0 0 600 14" class="w-full max-w-xs mx-auto block mt-8" aria-hidden="true">
       <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
@@ -19,7 +23,7 @@
 
     {% if message %}
       <div class="mb-6 rounded-2xl bg-blush/40 border-2 border-ink/15 px-4 py-3 text-sm">
-        {{ message }}
+       {{ message }}
       </div>
     {% endif %}
 
@@ -50,4 +54,5 @@
     <a href="{% url 'core:register' %}" class="squiggle-link font-bold text-ink">Register here</a>.
   </p>
 </section>
+
 {% endblock %}

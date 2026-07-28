@@ -12,11 +12,11 @@
       </a>
 
       <nav class="ml-auto flex items-center gap-5 text-sm" aria-label="Utility">
-        <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">Home</a>
-        <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
-        <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
-        <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign up</a>
-        <a href="{% url 'core:login' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
+        <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">{% trans "Home" %}</a>
+        <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">{% trans "About us" %}</a>
+        <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">{% trans "FAQ" %}</a>
+        <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">{% trans "Sign up" %}</a>
+        <a href="{% url 'core:login' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">{% trans "Log in" %}</a>
 
         <div class="relative inline-block text-left">
 
@@ -110,9 +110,9 @@
   <div class="bg-sky/20">
     <div class="mx-auto max-w-6xl px-5">
       <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
-        <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
-        <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
-        <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
+        <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">{% trans "For teachers" %}</a>
+        <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">{% blocktranslate %}For members{% endblocktranslate %}</a>
+        <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">{% trans "For refugee students" %}</a>
       </nav>
     </div>
   </div>

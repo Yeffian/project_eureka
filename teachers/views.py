@@ -7,6 +7,7 @@ between the Sign-in button and the user chip.
 """
 
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
 def landing(request):
@@ -15,7 +16,7 @@ def landing(request):
         "signed_in": False,
     })
 
-
+@login_required(login_url='/login')
 def dashboard(request):
     return render(request, "teachers/dashboard.html", {
         "current_page": "teachers",
