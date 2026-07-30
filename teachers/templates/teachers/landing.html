@@ -1,33 +1,34 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}Project Eureka — For Teachers{% endblock %}
+{% block title %}{% translate "Project Eureka — For Teachers" %}{% endblock %}
 
 {% block header %}{% include "partials/header.html" %}{% endblock %}
 
 {% block content %}
+
 <section class="mx-auto max-w-6xl px-5 pt-12 pb-6">
   <div class="reveal text-center">
-    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">For teachers</p>
-    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-4 max-w-3xl mx-auto">{% trans "Are you an educator or volunteer partner?" %}</h1>
+    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">{% translate "For teachers" %}</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-4 max-w-3xl mx-auto">{% translate "Are you an educator or volunteer partner?" %}</h1>
     <p class="text-inksoft text-lg leading-relaxed max-w-xl mx-auto mb-8">
-      Unlock a full curriculum library, a shared resource drive, and analytics for your classes —
-      free for everyone teaching refugee students.
+      {% translate "Unlock a full curriculum library, a shared resource drive, and analytics for your classes — free for everyone teaching refugee students." %}
     </p>
 
-    <div class="flex flex-wrap justify-center gap-4 mb-10">
-      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-        Create account
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-        Log in
-      </a>
-    </div>
+<div class="flex flex-wrap justify-center gap-4 mb-10">
+  <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    {% translate "Create account" %}
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    {% translate "Log in" %}
+  </a>
+</div>
 
-    <svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block" aria-hidden="true">
-      <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
-    </svg>
+<svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block" aria-hidden="true">
+  <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
+</svg>
+
   </div>
 </section>
 
@@ -38,61 +39,65 @@
 <section id="curriculum" class="bg-lilac -mt-px">
   <div class="mx-auto max-w-6xl px-5 py-20">
     <div class="reveal max-w-2xl">
-      <h2 class="font-display text-4xl font-bold mb-4">Curriculum preview</h2>
+      <h2 class="font-display text-4xl font-bold mb-4">{% translate "Curriculum preview" %}</h2>
       <p class="text-ink/80 leading-relaxed mb-10">
-        A taste of what's inside: ready-to-teach lesson plans built and refined by our volunteer community.
-        Create a free account to open the full library.
+        {% translate "A taste of what's inside: ready-to-teach lesson plans built and refined by our volunteer community. Create a free account to open the full library." %}
       </p>
     </div>
 
-    <div class="reveal grid sm:grid-cols-3 gap-5">
-      <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
-          <path d="M5 8 C 10 5 15 6 17 8 C 19 6 24 5 29 8 L 29 27 C 24 24 19 25 17 27 C 15 25 10 24 5 27 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M17 8 V27" stroke="#3E4C54" stroke-width="2.2"/>
-        </svg>
-        <h3 class="font-display text-xl font-bold mb-1">English foundations</h3>
-        <p class="text-sm text-ink/70">12 lessons · beginner friendly, picture-first vocabulary and everyday phrases.</p>
-      </article>
-      <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
-          <path d="M7 27 C 6 18 10 8 17 6 C 24 8 28 18 27 27" fill="none" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M11 20 h12 M13 14 h8" stroke="#FFDBDF" stroke-width="3" stroke-linecap="round"/>
-          <path d="M5 28 c8-3 16-3 24 0" fill="none" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/>
-        </svg>
-        <h3 class="font-display text-xl font-bold mb-1">Everyday maths</h3>
-        <p class="text-sm text-ink/70">10 lessons · from number sense to money, measuring, and market maths.</p>
-      </article>
-      <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
-          <path d="M17 5 c6 4 6 10 0 14 c-6-4-6-10 0-14 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M17 19 V29 M12 25 c2 2 8 2 10 0" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <h3 class="font-display text-xl font-bold mb-1">Science sparks</h3>
-        <p class="text-sm text-ink/70">8 lessons · hands-on experiments using things found in any kitchen.</p>
-      </article>
-    </div>
+```
+<div class="reveal grid sm:grid-cols-3 gap-5">
+  <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
+      <path d="M5 8 C 10 5 15 6 17 8 C 19 6 24 5 29 8 L 29 27 C 24 24 19 25 17 27 C 15 25 10 24 5 27 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M17 8 V27" stroke="#3E4C54" stroke-width="2.2"/>
+    </svg>
+    <h3 class="font-display text-xl font-bold mb-1">{% translate "English foundations" %}</h3>
+    <p class="text-sm text-ink/70">{% translate "12 lessons · beginner friendly, picture-first vocabulary and everyday phrases." %}</p>
+  </article>
 
-    <div class="reveal relative mt-6 rounded-blob bg-cream border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden">
-      <div class="p-6 blur-[3px] select-none" aria-hidden="true">
-        <h3 class="font-display text-xl font-bold mb-3">Resource drive &amp; slides</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div class="h-20 rounded-xl bg-mint/50 border-2 border-ink/10"></div>
-          <div class="h-20 rounded-xl bg-butter/60 border-2 border-ink/10"></div>
-          <div class="h-20 rounded-xl bg-blush/40 border-2 border-ink/10"></div>
-          <div class="h-20 rounded-xl bg-lilac/40 border-2 border-ink/10"></div>
-        </div>
-      </div>
-      <div class="absolute inset-0 bg-cream/55 flex flex-col items-center justify-center gap-3 text-center px-5">
-        <svg width="34" height="38" viewBox="0 0 34 38" aria-hidden="true">
-          <path d="M9 16 C 8 9 11 4 17 4 C 23 4 26 9 25 16" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round"/>
-          <path d="M6 16 C 13 14 21 14 28 16 C 29 22 29 28 28 33 C 21 35 13 35 6 33 C 5 28 5 22 6 16 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
-          <circle cx="17" cy="24" r="2.6" fill="#3E4C54"/>
-        </svg>
-        <p class="font-bold">Slides, worksheets &amp; printables live here.</p>
-        <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">Log in to view</a>
-      </div>
+  <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
+      <path d="M7 27 C 6 18 10 8 17 6 C 24 8 28 18 27 27" fill="none" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M11 20 h12 M13 14 h8" stroke="#FFDBDF" stroke-width="3" stroke-linecap="round"/>
+      <path d="M5 28 c8-3 16-3 24 0" fill="none" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <h3 class="font-display text-xl font-bold mb-1">{% translate "Everyday maths" %}</h3>
+    <p class="text-sm text-ink/70">{% translate "10 lessons · from number sense to money, measuring, and market maths." %}</p>
+  </article>
+
+  <article class="rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" class="mb-3">
+      <path d="M17 5 c6 4 6 10 0 14 c-6-4-6-10 0-14 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M17 19 V29 M12 25 c2 2 8 2 10 0" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <h3 class="font-display text-xl font-bold mb-1">{% translate "Science sparks" %}</h3>
+    <p class="text-sm text-ink/70">{% translate "8 lessons · hands-on experiments using things found in any kitchen." %}</p>
+  </article>
+</div>
+
+<div class="reveal relative mt-6 rounded-blob bg-cream border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden">
+  <div class="p-6 blur-[3px] select-none" aria-hidden="true">
+    <h3 class="font-display text-xl font-bold mb-3">{% translate "Resource drive &amp; slides" %}</h3>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="h-20 rounded-xl bg-mint/50 border-2 border-ink/10"></div>
+      <div class="h-20 rounded-xl bg-butter/60 border-2 border-ink/10"></div>
+      <div class="h-20 rounded-xl bg-blush/40 border-2 border-ink/10"></div>
+      <div class="h-20 rounded-xl bg-lilac/40 border-2 border-ink/10"></div>
     </div>
+  </div>
+  <div class="absolute inset-0 bg-cream/55 flex flex-col items-center justify-center gap-3 text-center px-5">
+    <svg width="34" height="38" viewBox="0 0 34 38" aria-hidden="true">
+      <path d="M9 16 C 8 9 11 4 17 4 C 23 4 26 9 25 16" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round"/>
+      <path d="M6 16 C 13 14 21 14 28 16 C 29 22 29 28 28 33 C 21 35 13 35 6 33 C 5 28 5 22 6 16 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="17" cy="24" r="2.6" fill="#3E4C54"/>
+    </svg>
+    <p class="font-bold">{% translate "Slides, worksheets &amp; printables live here." %}</p>
+    <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">{% translate "Log in to view" %}</a>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
@@ -102,19 +107,18 @@
 
 <section id="analytics" class="mx-auto max-w-6xl px-5 py-20 grid md:grid-cols-2 gap-12 items-center">
   <div class="reveal">
-    <h2 class="font-display text-4xl font-bold mb-4">Analytics preview</h2>
+    <h2 class="font-display text-4xl font-bold mb-4">{% translate "Analytics preview" %}</h2>
     <p class="text-inksoft leading-relaxed mb-4">
-      See each class at a glance: attendance, assignment progress, and which topics need another pass —
-      without spreadsheets or guesswork.
+      {% translate "See each class at a glance: attendance, assignment progress, and which topics need another pass — without spreadsheets or guesswork." %}
     </p>
     <p class="text-inksoft leading-relaxed">
-      Your dashboard is private to you and your classes, and it's ready the moment you sign in.
+      {% translate "Your dashboard is private to you and your classes, and it's ready the moment you sign in." %}
     </p>
   </div>
 
   <div class="reveal relative rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden">
     <div class="p-6 blur-[3px] select-none" aria-hidden="true">
-      <p class="font-display text-xl font-bold mb-4">Class: Year 7 English</p>
+      <p class="font-display text-xl font-bold mb-4">{% translate "Class: Year 7 English" %}</p>
       <svg viewBox="0 0 300 150" class="w-full">
         <path d="M20 130 h260" stroke="#3E4C54" stroke-width="3" stroke-linecap="round"/>
         <path d="M40 128 c-2-20 2-38 3-48 h18 c1 12 3 30 2 48 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="2.5" stroke-linejoin="round"/>
@@ -130,8 +134,8 @@
         <path d="M6 16 C 13 14 21 14 28 16 C 29 22 29 28 28 33 C 21 35 13 35 6 33 C 5 28 5 22 6 16 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
         <circle cx="17" cy="24" r="2.6" fill="#3E4C54"/>
       </svg>
-      <p class="font-bold">Class analytics unlock with your account.</p>
-      <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">Log in to view</a>
+      <p class="font-bold">{% translate "Class analytics unlock with your account." %}</p>
+      <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">{% translate "Log in to view" %}</a>
     </div>
   </div>
 </section>
@@ -143,24 +147,23 @@
 <section class="bg-sky -mt-px">
   <div class="mx-auto max-w-6xl px-5 pb-20 pt-14">
     <div class="reveal max-w-2xl mx-auto text-center mb-12">
-      <h2 class="font-display text-4xl font-bold mb-4">Built by teachers, for teachers</h2>
+      <h2 class="font-display text-4xl font-bold mb-4">{% translate "Built by teachers, for teachers" %}</h2>
       <p class="text-ink/80 leading-relaxed">
-        Every lesson in our library was written, tested, and improved by volunteers like you.
-        When you join, your feedback and materials make the whole community stronger.
+        {% translate "Every lesson in our library was written, tested, and improved by volunteers like you. When you join, your feedback and materials make the whole community stronger." %}
       </p>
     </div>
     <div class="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
       <div class="reveal rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <p class="font-display text-2xl font-bold mb-1">Share</p>
-        <p class="text-sm text-ink/70">Upload your own slides and worksheets to the drive for others to reuse.</p>
+        <p class="font-display text-2xl font-bold mb-1">{% translate "Share" %}</p>
+        <p class="text-sm text-ink/70">{% translate "Upload your own slides and worksheets to the drive for others to reuse." %}</p>
       </div>
       <div class="reveal rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <p class="font-display text-2xl font-bold mb-1">Request</p>
-        <p class="text-sm text-ink/70">Missing a topic? Request it and the community helps build it.</p>
+        <p class="font-display text-2xl font-bold mb-1">{% translate "Request" %}</p>
+        <p class="text-sm text-ink/70">{% translate "Missing a topic? Request it and the community helps build it." %}</p>
       </div>
       <div class="reveal rounded-blob bg-cream p-6 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
-        <p class="font-display text-2xl font-bold mb-1">Connect</p>
-        <p class="text-sm text-ink/70">Swap advice with fellow volunteers in the teacher forums.</p>
+        <p class="font-display text-2xl font-bold mb-1">{% translate "Connect" %}</p>
+        <p class="text-sm text-ink/70">{% translate "Swap advice with fellow volunteers in the teacher forums." %}</p>
       </div>
     </div>
   </div>
@@ -172,14 +175,14 @@
 
 <section class="mx-auto max-w-6xl px-5 py-20 text-center">
   <div class="reveal">
-    <h2 class="font-display text-4xl font-bold mb-4">Ready to teach with us?</h2>
-    <p class="text-inksoft mb-6 max-w-md mx-auto">A free account takes two minutes — your first class could start this week.</p>
+    <h2 class="font-display text-4xl font-bold mb-4">{% translate "Ready to teach with us?" %}</h2>
+    <p class="text-inksoft mb-6 max-w-md mx-auto">{% translate "A free account takes two minutes — your first class could start this week." %}</p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
-        Create account
+        {% translate "Create account" %}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors">Log in</a>
+      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors">{% translate "Log in" %}</a>
     </div>
   </div>
 </section>

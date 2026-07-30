@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Project Eureka — Teacher Dashboard{% endblock %}
+{% block title %}{% translate "Project Eureka — Teacher Dashboard" %}{% endblock %}
 
 {% block body %}
-  {% include "partials/header.html" %}
+{% include "partials/header.html" %}
 
-  <aside id="sidebar" aria-label="Teacher menu">
+  <aside id="sidebar" aria-label="{% translate 'Teacher menu' %}">
     <nav class="h-full flex flex-col rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-3 text-sm overflow-y-auto">
       <div class="flex items-center justify-between gap-2 px-2 pb-3">
-        <p class="sb-title font-display font-bold text-lg">Menu</p>
-        <button id="sidebar-toggle" type="button" aria-label="Collapse menu" aria-expanded="true"
+        <p class="sb-title font-display font-bold text-lg">{% translate "Menu" %}</p>
+        <button id="sidebar-toggle" type="button" aria-label="{% translate 'Collapse menu' %}" aria-expanded="true"
                 class="grid place-items-center w-9 h-9 rounded-full border-2 border-ink bg-cream hover:bg-butter/70 transition-colors">
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M13 5 L 7 10 L 13 15" stroke="#3E4C54" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -18,36 +19,42 @@
         </button>
       </div>
       <ul class="space-y-1">
-        <li><a href="#dashboard" aria-current="page" title="Dashboard" class="flex items-center gap-2.5 rounded-full bg-butter/70 px-3 py-2 font-bold">
+        <li><a href="#dashboard" aria-current="page" title="{% translate 'Dashboard' %}" class="flex items-center gap-2.5 rounded-full bg-butter/70 px-3 py-2 font-bold">
           <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 9 C 3 6 4 3.5 6.5 3.5 h7 C 16 3.5 17 6 16.5 9 c.4 3-.6 7.2-1.5 7.5 h-10 C 4 16.2 3.1 12 3.5 9 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7.5 12.5 v-3 M10 12.5 v-5.5 M12.5 12.5 v-2" stroke="#3E4C54" stroke-width="2" stroke-linecap="round"/></svg>
-          <span class="sb-label">Dashboard</span></a></li>
-        <li><a href="#resources" title="Resource library" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
-          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3 6 C 6 4.5 9 5 10 6.2 C 11 5 14 4.5 17 6 v9.5 C 14 14 11 14.4 10 15.5 C 9 14.4 6 14 3 15.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M10 6.2 V15.5" stroke="#3E4C54" stroke-width="2"/></svg>
-          <span class="sb-label">Resource library</span></a></li>
-        <li><a href="#request" title="Request resources" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
-          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M10 4 c.3 3.6.4 8.4 0 12 M4 10 c3.6-.4 8.4-.3 12 0" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <span class="sb-label">Request resources</span></a></li>
-        <li>
-          <a href="#classrooms" title="Classrooms" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
-            <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 8 C 6 6.5 14 6.5 16.5 8 c.3 3-.2 6.5-.8 7.5 c-3.5 1-7.9 1-11.4 0 C 3.7 14.5 3.2 11 3.5 8 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7.5 8 c0-2.5 1-4 2.5-4 s2.5 1.5 2.5 4" stroke="#3E4C54" stroke-width="2" stroke-linecap="round"/></svg>
-            <span class="sb-label">Classrooms</span></a>
-          <ul class="sb-sub ml-9 mt-1 space-y-1 text-inksoft border-l-2 border-ink/15 pl-3">
-            <li><a href="#assignments" class="squiggle-link block py-0.5">Assignments</a></li>
-            <li><a href="#progress" class="squiggle-link block py-0.5">Progress</a></li>
-          </ul>
-        </li>
-        <li class="pt-1"><a href="#forums" title="Teacher forums" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
-          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 5.5 C 7 4 13 4 16.5 5.5 c.3 2.2 0 4.6-.6 6 c-2 1-4.5 1.2-6.6 1 L6 15 l.4-2.6 c-1 0-2-.4-2.9-.9 C 3 10.1 3.2 7.7 3.5 5.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/></svg>
-          <span class="sb-label">Teacher forums</span></a></li>
+          <span class="sb-label">{% translate "Dashboard" %}</span></a></li>
+
+    <li><a href="#resources" title="{% translate 'Resource library' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3 6 C 6 4.5 9 5 10 6.2 C 11 5 14 4.5 17 6 v9.5 C 14 14 11 14.4 10 15.5 C 9 14.4 6 14 3 15.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M10 6.2 V15.5" stroke="#3E4C54" stroke-width="2"/></svg>
+      <span class="sb-label">{% translate "Resource library" %}</span></a></li>
+
+    <li><a href="#request" title="{% translate 'Request resources' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M10 4 c.3 3.6.4 8.4 0 12 M4 10 c3.6-.4 8.4-.3 12 0" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span class="sb-label">{% translate "Request resources" %}</span></a></li>
+
+    <li>
+      <a href="#classrooms" title="{% translate 'Classrooms' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 8 C 6 6.5 14 6.5 16.5 8 c.3 3-.2 6.5-.8 7.5 c-3.5 1-7.9 1-11.4 0 C 3.7 14.5 3.2 11 3.5 8 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7.5 8 c0-2.5 1-4 2.5-4 s2.5 1.5 2.5 4" stroke="#3E4C54" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="sb-label">{% translate "Classrooms" %}</span></a>
+      <ul class="sb-sub ml-9 mt-1 space-y-1 text-inksoft border-l-2 border-ink/15 pl-3">
+        <li><a href="#assignments" class="squiggle-link block py-0.5">{% translate "Assignments" %}</a></li>
+        <li><a href="#progress" class="squiggle-link block py-0.5">{% translate "Progress" %}</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <li class="pt-1"><a href="#forums" title="{% translate 'Teacher forums' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 5.5 C 7 4 13 4 16.5 5.5 c.3 2.2 0 4.6-.6 6 c-2 1-4.5 1.2-6.6 1 L6 15 l.4-2.6 c-1 0-2-.4-2.9-.9 C 3 10.1 3.2 7.7 3.5 5.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span class="sb-label">{% translate "Teacher forums" %}</span></a></li>
+  </ul>
+</nav>
+```
+
   </aside>
 
   <div id="main-shell" class="pt-32">
     <main id="dashboard" class="pb-16 pt-6 space-y-8">
       <section class="reveal relative overflow-hidden rounded-blob bg-lilac text-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-8">
-        <h1 class="font-display text-3xl md:text-4xl font-bold mb-2">Welcome back, {{ display_name|default:"Ms. Sara" }}!</h1>
-        <p class="text-cream/90 max-w-md">You have 2 classes today and 3 assignments waiting to be marked. Small steps, big summits.</p>
+        <h1 class="font-display text-3xl md:text-4xl font-bold mb-2">{% translate "Welcome back," %} {{ display_name|default:"Ms. Sara" }}!</h1>
+        <p class="text-cream/90 max-w-md">{% translate "You have 2 classes today and 3 assignments waiting to be marked. Small steps, big summits." %}</p>
         <svg viewBox="0 0 160 90" class="pointer-events-none absolute -right-3 -bottom-2 w-40 opacity-90" aria-hidden="true">
           <path d="M14 84 C 26 66 38 46 50 28 C 55 20 60 12 66 9 C 71 6.5 76 9 80 15 C 92 33 106 58 118 84 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
           <path d="M66 9 C 71 6.5 76 9 80 15 l 7 11 c-4 6-8-4-13 2 c-5 6-9-4-14 2 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
@@ -55,80 +62,84 @@
         </svg>
       </section>
 
-      <section id="progress" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <h2 class="font-display text-2xl font-bold">Class progress</h2>
-          <a href="#classrooms" class="squiggle-link text-sm font-bold">All classrooms</a>
-        </div>
-        <div class="space-y-5">
-          <div>
-            <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">Year 7 English</span><span class="text-inksoft">18 / 24 lessons</span></div>
-            <div class="h-4 rounded-full bg-mint/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-mint border-r-2 border-ink/20" style="width:75%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">Everyday Maths B</span><span class="text-inksoft">9 / 20 lessons</span></div>
-            <div class="h-4 rounded-full bg-butter/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-butter border-r-2 border-ink/20" style="width:45%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">Science Sparks</span><span class="text-inksoft">3 / 16 lessons</span></div>
-            <div class="h-4 rounded-full bg-blush/25 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-blush border-r-2 border-ink/20" style="width:19%"></div></div>
-          </div>
-        </div>
-      </section>
-
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <section id="assignments" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
-          <h2 class="font-display text-2xl font-bold mb-5">Assignments</h2>
-          <ul class="space-y-4 text-sm">
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="q1" class="doodle-check">
-              <label for="q1" class="cursor-pointer"><span class="font-bold">Q1 —</span> Mark "My first week" writing task <span class="text-inksoft">· Year 7 English</span></label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="q2" class="doodle-check">
-              <label for="q2" class="cursor-pointer"><span class="font-bold">Q2 —</span> Review fractions worksheet <span class="text-inksoft">· Everyday Maths B</span></label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="q3" class="doodle-check">
-              <label for="q3" class="cursor-pointer"><span class="font-bold">Q3 —</span> Prepare volcano experiment kit <span class="text-inksoft">· Science Sparks</span></label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="q4" class="doodle-check" checked>
-              <label for="q4" class="cursor-pointer"><span class="font-bold">Q4 —</span> Send weekly summary to guardians</label>
-            </li>
-          </ul>
-          <a href="#classrooms" class="squiggle-link inline-block mt-5 text-sm font-bold">View all assignments</a>
-        </section>
-
-        <section id="resources" class="reveal rounded-blob bg-mint/40 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
-          <h2 class="font-display text-2xl font-bold mb-5">Resource library</h2>
-          <div class="grid grid-cols-2 gap-3 text-sm">
-            <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">Slides</a>
-            <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">Worksheets</a>
-            <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">Printables</a>
-            <a href="#request" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">Request +</a>
-          </div>
-          <p class="text-xs text-inksoft mt-4">New this week: 6 slide decks shared by the community.</p>
-        </section>
+```
+  <section id="progress" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
+    <div class="flex items-center justify-between gap-4 mb-5">
+      <h2 class="font-display text-2xl font-bold">{% translate "Class progress" %}</h2>
+      <a href="#classrooms" class="squiggle-link text-sm font-bold">{% translate "All classrooms" %}</a>
+    </div>
+    <div class="space-y-5">
+      <div>
+        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Year 7 English" %}</span><span class="text-inksoft">{% translate "18 / 24 lessons" %}</span></div>
+        <div class="h-4 rounded-full bg-mint/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-mint border-r-2 border-ink/20" style="width:75%"></div></div>
       </div>
+      <div>
+        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Everyday Maths B" %}</span><span class="text-inksoft">{% translate "9 / 20 lessons" %}</span></div>
+        <div class="h-4 rounded-full bg-butter/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-butter border-r-2 border-ink/20" style="width:45%"></div></div>
+      </div>
+      <div>
+        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Science Sparks" %}</span><span class="text-inksoft">{% translate "3 / 16 lessons" %}</span></div>
+        <div class="h-4 rounded-full bg-blush/25 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-blush border-r-2 border-ink/20" style="width:19%"></div></div>
+      </div>
+    </div>
+  </section>
 
-      <section id="forums" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <h2 class="font-display text-2xl font-bold">Teacher forums</h2>
-          <a href="#forums" class="squiggle-link text-sm font-bold">Open forums</a>
-        </div>
-        <ul class="divide-y-2 divide-ink/10 text-sm">
-          <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">Icebreakers that work with mixed language levels?</span></span><span class="text-inksoft">12 replies</span></li>
-          <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">Sharing my phonics slide pack</span> · Resource swap</span><span class="text-inksoft">8 replies</span></li>
-          <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">Tips for first online lesson</span> · New teachers</span><span class="text-inksoft">21 replies</span></li>
-        </ul>
-      </section>
-    </main>
+  <div class="grid md:grid-cols-2 gap-8 items-start">
+    <section id="assignments" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
+      <h2 class="font-display text-2xl font-bold mb-5">{% translate "Assignments" %}</h2>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center gap-3">
+          <input type="checkbox" id="q1" class="doodle-check">
+          <label for="q1" class="cursor-pointer"><span class="font-bold">{% translate "Q1 —" %}</span> {% translate 'Mark "My first week" writing task' %} <span class="text-inksoft">· {% translate "Year 7 English" %}</span></label>
+        </li>
+        <li class="flex items-center gap-3">
+          <input type="checkbox" id="q2" class="doodle-check">
+          <label for="q2" class="cursor-pointer"><span class="font-bold">{% translate "Q2 —" %}</span> {% translate "Review fractions worksheet" %} <span class="text-inksoft">· {% translate "Everyday Maths B" %}</span></label>
+        </li>
+        <li class="flex items-center gap-3">
+          <input type="checkbox" id="q3" class="doodle-check">
+          <label for="q3" class="cursor-pointer"><span class="font-bold">{% translate "Q3 —" %}</span> {% translate "Prepare volcano experiment kit" %} <span class="text-inksoft">· {% translate "Science Sparks" %}</span></label>
+        </li>
+        <li class="flex items-center gap-3">
+          <input type="checkbox" id="q4" class="doodle-check" checked>
+          <label for="q4" class="cursor-pointer"><span class="font-bold">{% translate "Q4 —" %}</span> {% translate "Send weekly summary to guardians" %}</label>
+        </li>
+      </ul>
+      <a href="#classrooms" class="squiggle-link inline-block mt-5 text-sm font-bold">{% translate "View all assignments" %}</a>
+    </section>
 
-    {% include "partials/footer.html" %}
+    <section id="resources" class="reveal rounded-blob bg-mint/40 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
+      <h2 class="font-display text-2xl font-bold mb-5">{% translate "Resource library" %}</h2>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">{% translate "Slides" %}</a>
+        <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">{% translate "Worksheets" %}</a>
+        <a href="#resources" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">{% translate "Printables" %}</a>
+        <a href="#request" class="rounded-2xl bg-cream border-2 border-ink/15 p-4 font-bold hover:bg-butter/60 transition-colors">{% translate "Request +" %}</a>
+      </div>
+      <p class="text-xs text-inksoft mt-4">{% translate "New this week: 6 slide decks shared by the community." %}</p>
+    </section>
+  </div>
+
+  <section id="forums" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
+    <div class="flex items-center justify-between gap-4 mb-5">
+      <h2 class="font-display text-2xl font-bold">{% translate "Teacher forums" %}</h2>
+      <a href="#forums" class="squiggle-link text-sm font-bold">{% translate "Open forums" %}</a>
+    </div>
+    <ul class="divide-y-2 divide-ink/10 text-sm">
+      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Icebreakers that work with mixed language levels?" %}</span></span><span class="text-inksoft">{% translate "12 replies" %}</span></li>
+      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Sharing my phonics slide pack" %}</span> · {% translate "Resource swap" %}</span><span class="text-inksoft">{% translate "8 replies" %}</span></li>
+      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Tips for first online lesson" %}</span> · {% translate "New teachers" %}</span><span class="text-inksoft">{% translate "21 replies" %}</span></li>
+    </ul>
+  </section>
+</main>
+
+{% include "partials/footer.html" %}
+
   </div>
 {% endblock %}
 
 {% block extra_scripts %}
+
   <script src="{% static 'js/sidebar.js' %}"></script>
+
 {% endblock %}
