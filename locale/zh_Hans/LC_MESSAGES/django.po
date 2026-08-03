@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-03 07:45+0000\n"
+"POT-Creation-Date: 2026-08-03 08:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -530,14 +530,212 @@ msgstr ""
 "已经有帐户？ <a href=\"%(login_url)s\" class=\"squiggle-link font-bold text-"
 "ink\">在此处登录</a>。"
 
-#: project_eureka/settings.py:87 refugees/templates/refugees/landing.html:113
+#: project_eureka/settings.py:86 refugees/templates/refugees/dashboard.html:74
+#: refugees/templates/refugees/dashboard.html:150
+#: refugees/templates/refugees/landing.html:113
 #: teachers/templates/teachers/resources.html:173
 msgid "English"
 msgstr "英语"
 
-#: project_eureka/settings.py:88
+#: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
 msgstr "中文（简体）"
+
+#: refugees/templates/refugees/dashboard.html:5
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — My Classes"
+msgstr "尤里卡计划——我的课程"
+
+#: refugees/templates/refugees/dashboard.html:13
+#: teachers/templates/teachers/dashboard.html:13
+msgid "Menu"
+msgstr "菜单"
+
+#: refugees/templates/refugees/dashboard.html:14
+#: teachers/templates/teachers/dashboard.html:14
+#, fuzzy
+#| msgid "Collapse filters"
+msgid "Collapse menu"
+msgstr "折叠菜单"
+
+#: refugees/templates/refugees/dashboard.html:22
+#: refugees/templates/refugees/dashboard.html:24
+#: refugees/templates/refugees/dashboard.html:66
+msgid "My classes"
+msgstr "我的课程"
+
+#: refugees/templates/refugees/dashboard.html:25
+#: refugees/templates/refugees/dashboard.html:27
+msgid "To do"
+msgstr "要做的事"
+
+#: refugees/templates/refugees/dashboard.html:28
+msgid "Activity"
+msgstr "活动"
+
+#: refugees/templates/refugees/dashboard.html:30
+#, fuzzy
+#| msgid "Your message"
+msgid "Messages"
+msgstr "留言"
+
+#: refugees/templates/refugees/dashboard.html:31
+#: refugees/templates/refugees/dashboard.html:33
+msgid "Materials"
+msgstr "材料"
+
+#: refugees/templates/refugees/dashboard.html:34
+#: refugees/templates/refugees/dashboard.html:36
+#, fuzzy
+#| msgid "Progress"
+msgid "My progress"
+msgstr "我的进步"
+
+#: refugees/templates/refugees/dashboard.html:37
+#: refugees/templates/refugees/dashboard.html:39
+#, fuzzy
+#| msgid "Ways to help"
+msgid "Ask for help"
+msgstr "求人"
+
+#: refugees/templates/refugees/dashboard.html:48
+#, fuzzy, python-format
+#| msgid "Welcome back,"
+msgid "Welcome back, %(name)s!"
+msgstr "欢迎回来，%(name)s！"
+
+#: refugees/templates/refugees/dashboard.html:51
+msgid ""
+"You have three classes this week, and something new to look at. Ready when "
+"you are."
+msgstr "这周你有三节课，还有一些新的东西要看。当你准备好时。"
+
+#: refugees/templates/refugees/dashboard.html:67
+#, fuzzy
+#| msgid "Clear all"
+msgid "See all"
+msgstr "查看全部"
+
+#: refugees/templates/refugees/dashboard.html:84
+#: refugees/templates/refugees/dashboard.html:180
+msgid "Ms. Sara"
+msgstr "萨拉女士"
+
+#: refugees/templates/refugees/dashboard.html:87
+#: refugees/templates/refugees/dashboard.html:109
+#: refugees/templates/refugees/dashboard.html:131
+#, fuzzy
+#| msgid "Next page"
+msgid "Next lesson"
+msgstr "下一课"
+
+#: refugees/templates/refugees/dashboard.html:89
+msgid "Tuesday, 4:00 pm"
+msgstr "星期二下午 4:00"
+
+#: refugees/templates/refugees/dashboard.html:96
+#: refugees/templates/refugees/dashboard.html:159
+#: teachers/templates/teachers/resources.html:121
+#: teachers/templates/teachers/resources.html:225
+msgid "Math"
+msgstr "数学"
+
+#: refugees/templates/refugees/dashboard.html:106
+#: refugees/templates/refugees/dashboard.html:187
+#, fuzzy
+#| msgid "Daniel"
+msgid "Mr. Daniel"
+msgstr "丹尼尔先生"
+
+#: refugees/templates/refugees/dashboard.html:111
+msgid "Wednesday, 5:00 pm"
+msgstr "周三下午 5:00"
+
+#: refugees/templates/refugees/dashboard.html:118
+#: refugees/templates/refugees/dashboard.html:168
+msgid "Reading"
+msgstr "阅读"
+
+#: refugees/templates/refugees/dashboard.html:128
+#, fuzzy
+#| msgid "Maya"
+msgid "Ms. Maya"
+msgstr "玛雅女士"
+
+#: refugees/templates/refugees/dashboard.html:133
+msgid "Thursday, 3:00 pm"
+msgstr "星期四下午 3:00"
+
+#: refugees/templates/refugees/dashboard.html:142
+msgid "To do this week"
+msgstr "这周要做的事"
+
+#: refugees/templates/refugees/dashboard.html:149
+msgid "Write about a favorite memory"
+msgstr "写一篇最喜欢的回忆"
+
+#: refugees/templates/refugees/dashboard.html:150
+msgid "Due Friday"
+msgstr "周五截止"
+
+#: refugees/templates/refugees/dashboard.html:158
+#, fuzzy
+#| msgid "Review fractions worksheet"
+msgid "Complete fractions worksheet"
+msgstr "完整的分数工作表"
+
+#: refugees/templates/refugees/dashboard.html:159
+msgid "Due Monday"
+msgstr "周一到期"
+
+#: refugees/templates/refugees/dashboard.html:167
+msgid "Read chapter 4"
+msgstr "阅读第 4 章"
+
+#: refugees/templates/refugees/dashboard.html:168
+msgid "Due Thursday"
+msgstr "周四到期"
+
+#: refugees/templates/refugees/dashboard.html:172
+msgid "See everything"
+msgstr "查看一切"
+
+#: refugees/templates/refugees/dashboard.html:176
+msgid "Recent activity"
+msgstr "最近的活动"
+
+#: refugees/templates/refugees/dashboard.html:181
+msgid "added new materials to English Foundations."
+msgstr "为英语基础添加了新材料。"
+
+#: refugees/templates/refugees/dashboard.html:183
+msgid "2 hours ago"
+msgstr "2小时前"
+
+#: refugees/templates/refugees/dashboard.html:188
+#, fuzzy
+#| msgid "Review fractions worksheet"
+msgid "left feedback on your fractions worksheet."
+msgstr "在您的分数工作表上留下反馈。"
+
+#: refugees/templates/refugees/dashboard.html:190
+msgid "Yesterday"
+msgstr "昨天"
+
+#: refugees/templates/refugees/dashboard.html:194
+msgid ""
+"A new study group was added — <span class=\"font-bold\">Wednesday at 5:00 "
+"pm</span>."
+msgstr "添加了一个新的学习小组 - <span class=\"font-bold\">周三下午 5:00</span>。"
+
+#: refugees/templates/refugees/dashboard.html:198
+msgid "2 days ago"
+msgstr "2天前"
+
+#: refugees/templates/refugees/dashboard.html:201
+msgid "See more"
+msgstr "查看更多"
 
 #: refugees/templates/refugees/landing.html:4
 #: students/templates/students/landing.html:4
@@ -547,7 +745,7 @@ msgid "Project Eureka — For Students"
 msgstr "尤里卡计划——针对学生"
 
 #: refugees/templates/refugees/landing.html:10
-#: students/templates/students/landing.html:10
+#: students/templates/students/landing.html:9
 #, fuzzy
 #| msgid "- Student 1"
 msgid "For students"
@@ -569,12 +767,12 @@ msgid "Talk to us"
 msgstr "与我们交谈"
 
 #: refugees/templates/refugees/landing.html:23
-#: students/templates/students/landing.html:23
+#: students/templates/students/landing.html:22
 msgid "See how it works"
 msgstr "看看它是如何工作的"
 
 #: refugees/templates/refugees/landing.html:66
-#: students/templates/students/landing.html:88
+#: students/templates/students/landing.html:72
 msgid "How it works"
 msgstr "它是如何运作的"
 
@@ -670,116 +868,116 @@ msgid "Reach out whenever you're ready to start."
 msgstr "当您准备好开始时，请随时联系我们。"
 
 #: refugees/templates/refugees/landing.html:201
-#: students/templates/students/landing.html:241
+#: students/templates/students/landing.html:215
 msgid "Read our FAQ"
 msgstr "阅读我们的常见问题解答"
 
-#: students/templates/students/landing.html:11
+#: students/templates/students/landing.html:10
 msgid "Teach what you know."
 msgstr "教你所知道的。"
 
-#: students/templates/students/landing.html:13
+#: students/templates/students/landing.html:12
 msgid ""
 "You don't need to be a professional teacher to make a difference. Whether "
 "you can tutor for an hour a week or help us translate materials, there's a "
 "spot for you here."
 msgstr "您不需要成为一名专业教师才能有所作为。无论您是每周辅导一小时还是帮助我们翻译材料，这里都有适合您的位置。"
 
-#: students/templates/students/landing.html:19
-#: students/templates/students/landing.html:237
+#: students/templates/students/landing.html:18
+#: students/templates/students/landing.html:211
 #, fuzzy
 #| msgid "Apply filters"
 msgid "Apply to volunteer"
 msgstr "申请成为志愿者"
 
-#: students/templates/students/landing.html:90
+#: students/templates/students/landing.html:74
 msgid ""
 "From application to your first session, we'll walk you through every step."
 msgstr "从申请到您的第一次会议，我们将引导您完成每一步。"
 
-#: students/templates/students/landing.html:97
+#: students/templates/students/landing.html:81
 msgid "Tell us about you"
 msgstr "告诉我们关于你的事"
 
-#: students/templates/students/landing.html:98
+#: students/templates/students/landing.html:82
 msgid ""
 "Fill out a short form. Subjects you know, languages you speak, when you're "
 "free — that's it."
 msgstr "填写一份简短的表格。你知道的科目，你说的语言，当你有空的时候——就是这样。"
 
-#: students/templates/students/landing.html:103
+#: students/templates/students/landing.html:87
 msgid "We match you"
 msgstr "我们匹配你"
 
-#: students/templates/students/landing.html:104
+#: students/templates/students/landing.html:88
 msgid ""
 "We find refugee students who'd benefit from what you have to offer, and "
 "connect you with one of our lead teachers."
 msgstr "我们寻找可以从您所提供的服务中受益的难民学生，并将您与我们的一位首席老师联系起来。"
 
-#: students/templates/students/landing.html:109
+#: students/templates/students/landing.html:93
 #, fuzzy
 #| msgid "Start learning"
 msgid "Start helping"
 msgstr "开始提供帮助"
 
-#: students/templates/students/landing.html:110
+#: students/templates/students/landing.html:94
 msgid ""
 "Weekly sessions, online or in person. Support from our team, always. You're "
 "never on your own."
 msgstr "每周会议，在线或面对面。我们团队的支持，始终如一。你永远不是一个人。"
 
-#: students/templates/students/landing.html:124
+#: students/templates/students/landing.html:106
 msgid "Ways to help"
 msgstr "提供帮助的方法"
 
-#: students/templates/students/landing.html:126
+#: students/templates/students/landing.html:108
 msgid ""
 "Different ways to contribute — pick what fits your skills and schedule. You "
 "can start small and grow into more when you're ready."
 msgstr "不同的贡献方式——选择适合您的技能和日程安排的方式。您可以从小处开始，当您准备好时，可以做得更多。"
 
-#: students/templates/students/landing.html:139
+#: students/templates/students/landing.html:120
 msgid "Tutor one-on-one"
 msgstr "导师一对一"
 
-#: students/templates/students/landing.html:140
+#: students/templates/students/landing.html:121
 msgid "Weekly sessions with a student, in a subject you know well."
 msgstr "每周与一名学生就您熟悉的科目进行课程。"
 
-#: students/templates/students/landing.html:152
+#: students/templates/students/landing.html:132
 msgid "Translate materials"
 msgstr "翻译材料"
 
-#: students/templates/students/landing.html:153
+#: students/templates/students/landing.html:133
 msgid "Help make lessons available in more languages."
 msgstr "帮助以更多语言提供课程。"
 
-#: students/templates/students/landing.html:165
+#: students/templates/students/landing.html:144
 msgid "Run study groups"
 msgstr "开展学习小组"
 
-#: students/templates/students/landing.html:166
+#: students/templates/students/landing.html:145
 msgid "Small groups working through curriculum together."
 msgstr "小组一起完成课程。"
 
-#: students/templates/students/landing.html:176
+#: students/templates/students/landing.html:154
 #, fuzzy
 #| msgid "Resource"
 msgid "Create resources"
 msgstr "创建资源"
 
-#: students/templates/students/landing.html:177
+#: students/templates/students/landing.html:155
 msgid "Slides, worksheets, videos for our shared library."
 msgstr "我们共享库的幻灯片、工作表、视频。"
 
-#: students/templates/students/landing.html:191
+#: students/templates/students/landing.html:167
 #, fuzzy
 #| msgid "students learning with us"
 msgid "Volunteer stories"
 msgstr "志愿者故事"
 
-#: students/templates/students/landing.html:193
+#: students/templates/students/landing.html:169
 #, fuzzy
 #| msgid ""
 #| "The best way to know what learning here feels like is to hear from students "
@@ -789,27 +987,27 @@ msgid ""
 "students themselves."
 msgstr "要了解在这里做志愿者的感觉，最好的方法就是听取学生自己的意见。"
 
-#: students/templates/students/landing.html:201
+#: students/templates/students/landing.html:177
 msgid ""
 "I signed up thinking I'd help someone learn math. But I've learned way more "
 "than I taught — about persistence, about what really matters in a lesson. I "
 "look forward to Tuesdays."
 msgstr "我报名的目的是想帮助别人学习数学。但我学到的东西比我教的要多得多——关于坚持，关于课程中真正重要的事情。我期待着星期二。"
 
-#: students/templates/students/landing.html:211
+#: students/templates/students/landing.html:187
 msgid ""
 "Translating a lesson into Arabic meant more to me than any grade I've ever "
 "gotten. Someone read it. Someone understood. That's it — that's the whole "
 "reward."
 msgstr "对我来说，将课程翻译成阿拉伯语比我取得的任何成绩都更重要。有人读过。有人明白了。就是这样——这就是全部的奖励。"
 
-#: students/templates/students/landing.html:229
+#: students/templates/students/landing.html:203
 #, fuzzy
 #| msgid "Small steps, big summits."
 msgid "Small hours, big impact."
 msgstr "时间短，影响大。"
 
-#: students/templates/students/landing.html:231
+#: students/templates/students/landing.html:205
 msgid ""
 "Two hours a week is enough to make a real difference for someone. Ready to "
 "get started?"
@@ -824,16 +1022,6 @@ msgstr "尤里卡计划 — 教师仪表板"
 #: teachers/templates/teachers/dashboard.html:10
 msgid "Teacher menu"
 msgstr "教师菜单"
-
-#: teachers/templates/teachers/dashboard.html:13
-msgid "Menu"
-msgstr "菜单"
-
-#: teachers/templates/teachers/dashboard.html:14
-#, fuzzy
-#| msgid "Collapse filters"
-msgid "Collapse menu"
-msgstr "折叠菜单"
 
 #: teachers/templates/teachers/dashboard.html:22
 #: teachers/templates/teachers/dashboard.html:24
@@ -1252,11 +1440,6 @@ msgstr "全部清除"
 msgid "Language"
 msgstr "语言"
 
-#: teachers/templates/teachers/resources.html:121
-#: teachers/templates/teachers/resources.html:225
-msgid "Math"
-msgstr "数学"
-
 #: teachers/templates/teachers/resources.html:122
 msgid "Worksheet"
 msgstr "工作表"
@@ -1353,12 +1536,6 @@ msgstr "更改语言，当前为 %(lang)s"
 
 #~ msgid "Ashley"
 #~ msgstr "阿什利"
-
-#~ msgid "Daniel"
-#~ msgstr "丹尼尔"
-
-#~ msgid "Maya"
-#~ msgstr "玛雅人"
 
 #~ msgid "Jonah"
 #~ msgstr "约拿"
