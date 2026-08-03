@@ -26,7 +26,7 @@
       </div>
     {% endif %}
 
-    <form action="{% url 'core:login' %}" method="post" class="space-y-5" novalidate>
+    <form action="{% url 'core:login_view' %}" method="post" class="space-y-5" novalidate>
       {% csrf_token %}
 
       <div>

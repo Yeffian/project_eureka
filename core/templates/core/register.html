@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{{% extends "base.html" %}
 {% load i18n %}
 
 {% block title %}{% translate "Project Eureka — Register" %}{% endblock %}
@@ -6,13 +6,15 @@
 {% block content %}
 <section class="mx-auto max-w-md px-5 pt-10 pb-20">
 
-=  <div class="reveal text-center mb-10">
-    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">{% translate "New here?" %}</p>
+  <div class="reveal text-center mb-10">
+    <p class="inline-block rounded-full bg-butter px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5">{%
+      translate "New here?" %}</p>
     <h1 class="font-display text-5xl font-bold leading-[1.05] mb-3">{% translate "Create account" %}</h1>
     <p class="text-inksoft text-lg leading-relaxed">{% translate "Two minutes and you're in." %}</p>
 
-=    <svg viewBox="0 0 600 14" class="w-full max-w-xs mx-auto block mt-8" aria-hidden="true">
-      <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
+    <svg viewBox="0 0 600 14" class="w-full max-w-xs mx-auto block mt-8" aria-hidden="true">
+      <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none"
+        stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12" />
     </svg>
   </div>
 
@@ -33,8 +35,21 @@
       </div>
 
       <div>
-        <label for="email" class="block text-sm font-bold mb-1.5">{% translate "Email" %} <span class="text-lilac">*</span></label>
+        <label for="email" class="block text-sm font-bold mb-1.5">{% translate "Email" %} <span
+            class="text-lilac">*</span></label>
         <input type="email" id="email" name="email" required class="doodle-input" placeholder="you@example.com">
+      </div>
+
+      <div>
+        <label for="role" class="block text-sm font-bold mb-1.5">{% translate "I am a..." %} <span
+            class="text-lilac">*</span></label>
+        <select id="role" name="role" required class="doodle-input">
+          <option value="" disabled selected>{% translate "Select your role" %}</option>
+          <option value="TEACHER">{% translate "Teacher" %}</option>
+          <option value="REFUGEE_STUDENT">{% translate "Refugee Student" %}</option>
+          <option value="CCA_MEMBER">{% translate "CCA Member" %}</option>
+          <option value="GENERIC_STUDENT">{% translate "Generic Student" %}</option>
+        </select>
       </div>
 
       <div>
@@ -44,23 +59,28 @@
 
       <div>
         <label for="confirmation" class="block text-sm font-bold mb-1.5">{% translate "Confirm password" %}</label>
-        <input type="password" id="confirmation" name="confirmation" required class="doodle-input" placeholder="••••••••">
+        <input type="password" id="confirmation" name="confirmation" required class="doodle-input"
+          placeholder="••••••••">
       </div>
 
       <div class="pt-2">
-        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        <button type="submit"
+          class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
           {% translate "Create account" %}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
       </div>
     </form>
   </div>
 
-  {% url 'core:login' as login_url %}
+  {% url 'core:login_view' as login_url %}
   <p class="reveal mt-6 text-center text-sm text-inksoft">
     {% blocktranslate trimmed %}
-      Already have an account?
-      <a href="{{ login_url }}" class="squiggle-link font-bold text-ink">Sign in here</a>.
+    Already have an account?
+    <a href="{{ login_url }}" class="squiggle-link font-bold text-ink">Sign in here</a>.
     {% endblocktranslate %}
   </p>
 </section>

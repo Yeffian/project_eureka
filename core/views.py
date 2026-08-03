@@ -6,6 +6,7 @@ on the corresponding link in the header partial.
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login as auth_login
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -28,7 +29,7 @@ def faq(request):
 def contact(request):
     return render(request, "core/contact.html", {"current_page": "contact"})
 
-def login(request):
+def login_view(request):
     if request.method == "POST":
 
         # Attempt to sign user in
@@ -39,13 +40,18 @@ def login(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("home"))
+            return HttpResponseRedirect(reverse("core:home"))
         else:
             return render(request, "core/login.html", {
                 "message": "Invalid username and/or password."
             })
     else:
         return render(request, "core/login.html")
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("core:home"))
 
 def redirect_by_role(user):
     if user.role == User.Role.TEACHER:
@@ -54,18 +60,25 @@ def redirect_by_role(user):
 
 def register(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            try:
-                user = form.save()
-                return redirect('login')
-            except Exception as e:
-                print("--- DB ERROR TRACEBACK ---")
-                traceback.print_exc()
-                print("--------------------------")
-        else:
-            print(form.errors)
-    else:
-        form = CustomUserCreationForm()
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        role = request.POST.get('role')  # <--- Catch selected role here
+        password = request.POST.get('password')
+        confirmation = request.POST.get('confirmation')
 
-    return render(request, 'core/register.html', {'form': form})
+        if password != confirmation:
+            return render(request, 'core/register.html', {'message': 'Passwords do not match.'})
+
+        # Save user with role
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            role=role  # <--- Pass the role into your User model
+        )
+        user.save()
+
+        # Log in or redirect
+        return redirect('core:login_view')
+
+    return render(request, 'core/register.html')
