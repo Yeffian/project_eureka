@@ -20,19 +20,10 @@
         <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
         <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign up</a>
         <a href="{% url 'core:login' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
-
-        <div class="relative inline-block text-left">
- 
-
-{% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info for LANGUAGE_CODE as current_lang %}
-{% get_available_languages as LANGUAGES %}
-
-{% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info for LANGUAGE_CODE as current_lang %}
-{% get_available_languages as LANGUAGES %}
+      </nav>
+    </div>
+  </div>
+</header>
 
 <form action="{% url 'set_language' %}" method="post" id="lang-form" class="relative inline-block text-left">
   {% csrf_token %}
@@ -140,8 +131,8 @@
     <div class="mx-auto max-w-6xl px-5">
       <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
         <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
-        <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
-        <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
+        <a href="{% url 'students:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
+        <a href="{% url 'refugees:landing' %}"" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
       </nav>
     </div>
   </div>
