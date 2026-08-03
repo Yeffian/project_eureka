@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% translate "Project Eureka — My Classes" %}{% endblock %}
+
+{% block body %}
+  {% include "partials/header.html" %}
+
+  <aside id="sidebar" aria-label="Student menu">
+    <nav class="h-full flex flex-col rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-3 text-sm overflow-y-auto">
+      <div class="flex items-center justify-between gap-2 px-2 pb-3">
+        <p class="sb-title font-display font-bold text-lg">{% translate "Menu" %}</p>
+        <button id="sidebar-toggle" type="button" aria-label="{% translate 'Collapse menu' %}" aria-expanded="true"
+                class="grid place-items-center w-9 h-9 rounded-full border-2 border-ink bg-cream hover:bg-butter/70 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M13 5 L 7 10 L 13 15" stroke="#3E4C54" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="space-y-1">
+        <li><a href="#classes" aria-current="page" title="{% translate 'My classes' %}" class="flex items-center gap-2.5 rounded-full bg-butter/70 px-3 py-2 font-bold">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3 6 C 6 4.5 9 5 10 6.2 C 11 5 14 4.5 17 6 v9.5 C 14 14 11 14.4 10 15.5 C 9 14.4 6 14 3 15.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M10 6.2 V15.5" stroke="#3E4C54" stroke-width="2"/></svg>
+          <span class="sb-label">{% translate "My classes" %}</span></a></li>
+        <li><a href="#todo" title="{% translate 'To do' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-blush/40 transition-colors">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><rect x="3.5" y="4" width="13" height="13" rx="2.5" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M6.5 9.5 l2 2 5-5" stroke="#3E4C54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sb-label">{% translate "To do" %}</span></a></li>
+        <li><a href="#activity" title="{% translate 'Activity' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-blush/40 transition-colors">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 5.5 C 7 4 13 4 16.5 5.5 c.3 2.2 0 4.6-.6 6 c-2 1-4.5 1.2-6.6 1 L6 15 l.4-2.6 c-1 0-2-.4-2.9-.9 C 3 10.1 3.2 7.7 3.5 5.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span class="sb-label">{% translate "Messages" %}</span></a></li>
+        <li><a href="#materials" title="{% translate 'Materials' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-blush/40 transition-colors">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3 6 c 0-1 .8-2 2-2 h3 l 2 2 h5 c 1.2 0 2 .8 2 2 v6 c 0 1.2-.8 2-2 2 h-10 c-1.2 0-2-.8-2-2 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span class="sb-label">{% translate "Materials" %}</span></a></li>
+        <li><a href="#progress" title="{% translate 'My progress' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-blush/40 transition-colors">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 16.5 h13" stroke="#3E4C54" stroke-width="2" stroke-linecap="round"/><path d="M5 14 v-3 M9 14 v-6 M13 14 v-4 M17 14 v-8" stroke="#3E4C54" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span class="sb-label">{% translate "My progress" %}</span></a></li>
+        <li class="pt-4"><a href="{% url 'core:contact' %}" title="{% translate 'Ask for help' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-blush/40 transition-colors border-2 border-ink/10 border-dashed">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><circle cx="10" cy="10" r="7" stroke="#3E4C54" stroke-width="2"/><path d="M8 8 c 0-1.5 1-2.5 2.2-2.5 c 1.4 0 2.3 1 2.3 2 c 0 1.5-1.5 1.8-2.3 3 M10 14 v.1" stroke="#3E4C54" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="sb-label">{% translate "Ask for help" %}</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div id="main-shell" class="pt-32">
+    <main class="pb-16 pt-6 space-y-8">
+      <section class="reveal relative overflow-hidden rounded-blob bg-blush/70 border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-8">
+        <h1 class="font-display text-3xl md:text-4xl font-bold mb-2">
+          {% blocktranslate with name=display_name|default:"Amira" %}Welcome back, {{ name }}!{% endblocktranslate %}
+        </h1>
+        <p class="text-ink/80">
+          {% translate "You have three classes this week, and something new to look at. Ready when you are." %}
+        </p>
+      </section>
+
+      <section id="classes" class="reveal">
+        <div class="flex items-baseline justify-between gap-4 mb-5">
+          <h2 class="font-display text-2xl font-bold">{% translate "My classes" %}</h2>
+          <a href="#" class="squiggle-link text-sm font-bold">{% translate "See all" %}</a>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+          <article class="rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden hover:shadow-[8px_8px_0_0_rgba(62,76,84,0.22)] transition-shadow">
+            <div class="relative h-24 bg-lilac border-b-2 border-ink/15 flex items-end p-4">
+              <span class="rounded-full bg-cream/90 border-2 border-ink px-3 py-0.5 text-xs font-bold uppercase tracking-widest">{% translate "English" %}</span>
+              <svg width="52" height="52" viewBox="0 0 52 52" class="absolute top-3 right-4 opacity-90" aria-hidden="true">
+                <path d="M8 12 C 14 8 20 10 26 14 C 32 10 38 8 44 12 L 44 40 C 38 36 32 34 26 38 C 20 34 14 36 8 40 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M26 14 V38" stroke="#3E4C54" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-xl font-bold mb-2">English Foundations</h3>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="grid place-items-center w-6 h-6 rounded-full bg-butter border-2 border-ink font-display font-bold text-xs">S</span>
+                <span class="text-sm text-inksoft">{% translate "Ms. Sara" %}</span>
+              </div>
+              <div class="rounded-2xl bg-sky/20 border-2 border-ink/10 border-dashed p-3">
+                <p class="text-xs uppercase tracking-widest text-inksoft font-bold mb-1">{% translate "Next lesson" %}</p>
+                <p class="text-sm font-bold">Everyday verbs</p>
+                <p class="text-xs text-inksoft mt-0.5">{% translate "Tuesday, 4:00 pm" %}</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden hover:shadow-[8px_8px_0_0_rgba(62,76,84,0.22)] transition-shadow">
+            <div class="relative h-24 bg-butter border-b-2 border-ink/15 flex items-end p-4">
+              <span class="rounded-full bg-cream/90 border-2 border-ink px-3 py-0.5 text-xs font-bold uppercase tracking-widest">{% translate "Math" %}</span>
+              <svg width="52" height="52" viewBox="0 0 52 52" class="absolute top-3 right-4 opacity-90" aria-hidden="true">
+                <circle cx="26" cy="26" r="18" fill="#E0F2F4" stroke="#3E4C54" stroke-width="2.5"/>
+                <text x="26" y="32" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="14" fill="#3E4C54">123</text>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-xl font-bold mb-2">Everyday Maths</h3>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="grid place-items-center w-6 h-6 rounded-full bg-mint border-2 border-ink font-display font-bold text-xs">D</span>
+                <span class="text-sm text-inksoft">{% translate "Mr. Daniel" %}</span>
+              </div>
+              <div class="rounded-2xl bg-sky/20 border-2 border-ink/10 border-dashed p-3">
+                <p class="text-xs uppercase tracking-widest text-inksoft font-bold mb-1">{% translate "Next lesson" %}</p>
+                <p class="text-sm font-bold">Fractions, part 1</p>
+                <p class="text-xs text-inksoft mt-0.5">{% translate "Wednesday, 5:00 pm" %}</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] overflow-hidden hover:shadow-[8px_8px_0_0_rgba(62,76,84,0.22)] transition-shadow">
+            <div class="relative h-24 bg-mint border-b-2 border-ink/15 flex items-end p-4">
+              <span class="rounded-full bg-cream/90 border-2 border-ink px-3 py-0.5 text-xs font-bold uppercase tracking-widest">{% translate "Reading" %}</span>
+              <svg width="52" height="52" viewBox="0 0 52 52" class="absolute top-3 right-4 opacity-90" aria-hidden="true">
+                <path d="M14 40 L 34 20 L 40 26 L 20 46 L 12 48 Z" fill="#FFE797" stroke="#3E4C54" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M34 20 L 40 14 L 46 20 L 40 26 Z" fill="#F791A9" stroke="#3E4C54" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-xl font-bold mb-2">Reading Practice</h3>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="grid place-items-center w-6 h-6 rounded-full bg-blush border-2 border-ink font-display font-bold text-xs">M</span>
+                <span class="text-sm text-inksoft">{% translate "Ms. Maya" %}</span>
+              </div>
+              <div class="rounded-2xl bg-sky/20 border-2 border-ink/10 border-dashed p-3">
+                <p class="text-xs uppercase tracking-widest text-inksoft font-bold mb-1">{% translate "Next lesson" %}</p>
+                <p class="text-sm font-bold">Chapter 4 discussion</p>
+                <p class="text-xs text-inksoft mt-0.5">{% translate "Thursday, 3:00 pm" %}</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-6 items-start">
+        <section id="todo" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+          <h2 class="font-display text-2xl font-bold mb-4">{% translate "To do this week" %}</h2>
+          <ul class="space-y-3 text-sm">
+            <li class="flex gap-3 items-start rounded-2xl border-2 border-ink/10 bg-cream p-3">
+              <div class="grid place-items-center w-8 h-8 rounded-full bg-lilac/60 border-2 border-ink flex-none">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4 h9 l 3 3 v9 h-12 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7 10 h6 M7 13 h5" stroke="#3E4C54" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <p class="font-bold mb-0.5">{% translate "Write about a favorite memory" %}</p>
+                <p class="text-xs text-inksoft"><span class="font-bold">{% translate "English" %}</span> · {% translate "Due Friday" %}</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start rounded-2xl border-2 border-ink/10 bg-cream p-3">
+              <div class="grid place-items-center w-8 h-8 rounded-full bg-butter/70 border-2 border-ink flex-none">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4 h9 l 3 3 v9 h-12 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7 10 h6 M7 13 h5" stroke="#3E4C54" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <p class="font-bold mb-0.5">{% translate "Complete fractions worksheet" %}</p>
+                <p class="text-xs text-inksoft"><span class="font-bold">{% translate "Math" %}</span> · {% translate "Due Monday" %}</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start rounded-2xl border-2 border-ink/10 bg-cream p-3">
+              <div class="grid place-items-center w-8 h-8 rounded-full bg-mint/70 border-2 border-ink flex-none">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4 h9 l 3 3 v9 h-12 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/><path d="M7 10 h6 M7 13 h5" stroke="#3E4C54" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <p class="font-bold mb-0.5">{% translate "Read chapter 4" %}</p>
+                <p class="text-xs text-inksoft"><span class="font-bold">{% translate "Reading" %}</span> · {% translate "Due Thursday" %}</p>
+              </div>
+            </li>
+          </ul>
+          <a href="#todo" class="squiggle-link inline-block mt-4 text-sm font-bold">{% translate "See everything" %}</a>
+        </section>
+
+        <section id="activity" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+          <h2 class="font-display text-2xl font-bold mb-4">{% translate "Recent activity" %}</h2>
+          <ul class="divide-y-2 divide-ink/10 text-sm">
+            <li class="py-3">
+              <p class="mb-1">
+                <span class="font-bold">{% translate "Ms. Sara" %}</span>
+                {% translate "added new materials to English Foundations." %}
+              </p>
+              <p class="text-xs text-inksoft">{% translate "2 hours ago" %}</p>
+            </li>
+            <li class="py-3">
+              <p class="mb-1">
+                <span class="font-bold">{% translate "Mr. Daniel" %}</span>
+                {% translate "left feedback on your fractions worksheet." %}
+              </p>
+              <p class="text-xs text-inksoft">{% translate "Yesterday" %}</p>
+            </li>
+            <li class="py-3">
+              <p class="mb-1">
+                {% blocktranslate trimmed %}
+                  A new study group was added — <span class="font-bold">Wednesday at 5:00 pm</span>.
+                {% endblocktranslate %}
+              </p>
+              <p class="text-xs text-inksoft">{% translate "2 days ago" %}</p>
+            </li>
+          </ul>
+          <a href="#activity" class="squiggle-link inline-block mt-4 text-sm font-bold">{% translate "See more" %}</a>
+        </section>
+      </div>
+    </main>
+
+    {% include "partials/footer.html" %}
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="{% static 'js/sidebar.js' %}"></script>
+{% endblock %}

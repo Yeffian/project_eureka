@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-26 15:52+0000\n"
+"POT-Creation-Date: 2026-08-03 08:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -388,13 +388,13 @@ msgid ""
 msgstr ""
 "But in order that you may see whence all this born error of those who accuse"
 " pleasure and praise pain, I will open the whole matter, and explain the "
-"very things which were said by that discoverer of truth and, as it were, the"
-" architect of a happy life. For no one despises or hates or runs away from "
+"very things which were said by that discoverer of truth and as it were the "
+"architect of a happy life. For no one despises or hates or runs away from "
 "pleasure because it is pleasure, but because great pains result to those who"
 " do not know how to follow pleasure with reason. Nor, moreover, is there any"
-" one who, because he likes pain, pursues it, wants to gain it, but because "
-"such times never occur in which he seeks some great pleasure through labor "
-"and pain."
+" one who, because he loves pain, pursues it, wants to gain it, but because "
+"such times never occur when he seeks some great pleasure through labor and "
+"pain."
 
 #: core/templates/core/home.html:17
 msgid "Get started"
@@ -410,9 +410,9 @@ msgid ""
 "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
 "        "
 msgstr ""
-"It is important to take care of the patient, the patient will be followed by"
-" the patient, but it will happen at such a time that there is a lot of work "
-"and pain."
+"It is very important to take care of the patient, to follow up with the "
+"doctor, but at the same time, it happens that there is a lot of work and "
+"pain."
 
 #: core/templates/core/home.html:69
 msgid ""
@@ -420,8 +420,8 @@ msgid ""
 "          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
 "        "
 msgstr ""
-"Do not be angry with the pain in the reprimand in the pleasure he wants to "
-"be a hair from the pain in the hope that there is no breeding."
+"Do not be angry with the pain in the rebuke in the pleasure he wants to be a"
+" hair from the pain in the hope that there is no breeding."
 
 #: core/templates/core/home.html:85
 msgid "Lessons happen wherever students are."
@@ -438,7 +438,7 @@ msgid ""
 "        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n"
 "      "
 msgstr ""
-"It is important to take care of the patient, the patient will be followed by the patient, but it will happen at such a time that there is a lot of work and pain.\n"
+"It is very important to take care of the patient, to follow up with the doctor, but at the same time, it happens that there is a lot of work and pain.\n"
 "        For to come to the smallest detail, no one should practice any kind of work unless he derives some benefit from it."
 
 #: core/templates/core/home.html:107
@@ -462,9 +462,9 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua."
 msgstr ""
-"It is important to take care of the patient, the patient will be followed by"
-" the patient, but it will happen at such a time that there is a lot of work "
-"and pain."
+"It is very important to take care of the patient, to follow up with the "
+"doctor, but at the same time, it happens that there is a lot of work and "
+"pain."
 
 #: core/templates/core/home.html:131
 msgid "- Student 1"
@@ -545,32 +545,232 @@ msgstr ""
 "Already have an account? <a href=\"%(login_url)s\" class=\"squiggle-link "
 "font-bold text-ink\">Sign in here</a>."
 
-#: project_eureka/settings.py:87 students/templates/students/landing.html:113
+#: project_eureka/settings.py:86 refugees/templates/refugees/dashboard.html:65
+#: refugees/templates/refugees/dashboard.html:141
+#: refugees/templates/refugees/landing.html:113
 #: teachers/templates/teachers/resources.html:173
 msgid "English"
 msgstr "English"
 
-#: project_eureka/settings.py:88
+#: project_eureka/settings.py:87
 msgid "Chinese (Simplified)"
 msgstr "Chinese (Simplified)"
 
+#: refugees/templates/refugees/dashboard.html:5
+#, fuzzy
+#| msgid "Project Eureka — About Us"
+msgid "Project Eureka — My Classes"
+msgstr "Project Eureka — My Classes"
+
+#: refugees/templates/refugees/dashboard.html:13
+#: teachers/templates/teachers/dashboard.html:13
+msgid "Menu"
+msgstr "Menu"
+
+#: refugees/templates/refugees/dashboard.html:14
+#: teachers/templates/teachers/dashboard.html:14
+#, fuzzy
+#| msgid "Collapse filters"
+msgid "Collapse menu"
+msgstr "Collapse menu"
+
+#: refugees/templates/refugees/dashboard.html:22
+#: refugees/templates/refugees/dashboard.html:24
+#: refugees/templates/refugees/dashboard.html:57
+msgid "My classes"
+msgstr "My classes"
+
+#: refugees/templates/refugees/dashboard.html:25
+#: refugees/templates/refugees/dashboard.html:27
+msgid "To do"
+msgstr "To do"
+
+#: refugees/templates/refugees/dashboard.html:28
+msgid "Activity"
+msgstr "Activity"
+
+#: refugees/templates/refugees/dashboard.html:30
+#, fuzzy
+#| msgid "Your message"
+msgid "Messages"
+msgstr "Messages"
+
+#: refugees/templates/refugees/dashboard.html:31
+#: refugees/templates/refugees/dashboard.html:33
+msgid "Materials"
+msgstr "Materials"
+
+#: refugees/templates/refugees/dashboard.html:34
+#: refugees/templates/refugees/dashboard.html:36
+#, fuzzy
+#| msgid "Progress"
+msgid "My progress"
+msgstr "My progress"
+
+#: refugees/templates/refugees/dashboard.html:37
+#: refugees/templates/refugees/dashboard.html:39
+#, fuzzy
+#| msgid "Ways to help"
+msgid "Ask for help"
+msgstr "Ask for help"
+
+#: refugees/templates/refugees/dashboard.html:48
+#, fuzzy, python-format
+#| msgid "Welcome back,"
+msgid "Welcome back, %(name)s!"
+msgstr "Welcome back, %(name)s!"
+
+#: refugees/templates/refugees/dashboard.html:51
+msgid ""
+"You have three classes this week, and something new to look at. Ready when "
+"you are."
+msgstr ""
+"You have three classes this week, and something new to look at. Ready when "
+"you are."
+
+#: refugees/templates/refugees/dashboard.html:58
+#, fuzzy
+#| msgid "Clear all"
+msgid "See all"
+msgstr "See all"
+
+#: refugees/templates/refugees/dashboard.html:75
+#: refugees/templates/refugees/dashboard.html:171
+msgid "Ms. Sara"
+msgstr "Ms. Sara"
+
+#: refugees/templates/refugees/dashboard.html:78
+#: refugees/templates/refugees/dashboard.html:100
+#: refugees/templates/refugees/dashboard.html:122
+#, fuzzy
+#| msgid "Next page"
+msgid "Next lesson"
+msgstr "Next lesson"
+
+#: refugees/templates/refugees/dashboard.html:80
+msgid "Tuesday, 4:00 pm"
+msgstr "Tuesday, 4:00 pm"
+
+#: refugees/templates/refugees/dashboard.html:87
+#: refugees/templates/refugees/dashboard.html:150
+#: teachers/templates/teachers/resources.html:121
+#: teachers/templates/teachers/resources.html:225
+msgid "Math"
+msgstr "Math"
+
+#: refugees/templates/refugees/dashboard.html:97
+#: refugees/templates/refugees/dashboard.html:178
+msgid "Mr. Daniel"
+msgstr "Mr. Daniel"
+
+#: refugees/templates/refugees/dashboard.html:102
+msgid "Wednesday, 5:00 pm"
+msgstr "Wednesday, 5:00 pm"
+
+#: refugees/templates/refugees/dashboard.html:109
+#: refugees/templates/refugees/dashboard.html:159
+msgid "Reading"
+msgstr "Reading"
+
+#: refugees/templates/refugees/dashboard.html:119
+msgid "Ms. Maya"
+msgstr "Ms. Maya"
+
+#: refugees/templates/refugees/dashboard.html:124
+msgid "Thursday, 3:00 pm"
+msgstr "Thursday, 3:00 pm"
+
+#: refugees/templates/refugees/dashboard.html:133
+msgid "To do this week"
+msgstr "To do this week"
+
+#: refugees/templates/refugees/dashboard.html:140
+msgid "Write about a favorite memory"
+msgstr "Write about a favorite memory"
+
+#: refugees/templates/refugees/dashboard.html:141
+msgid "Due Friday"
+msgstr "Due Friday"
+
+#: refugees/templates/refugees/dashboard.html:149
+#, fuzzy
+#| msgid "Review fractions worksheet"
+msgid "Complete fractions worksheet"
+msgstr "Complete fractions worksheet"
+
+#: refugees/templates/refugees/dashboard.html:150
+msgid "Due Monday"
+msgstr "Due Monday"
+
+#: refugees/templates/refugees/dashboard.html:158
+msgid "Read chapter 4"
+msgstr "Read chapter 4"
+
+#: refugees/templates/refugees/dashboard.html:159
+msgid "Due Thursday"
+msgstr "Due Thursday"
+
+#: refugees/templates/refugees/dashboard.html:163
+msgid "See everything"
+msgstr "See everything"
+
+#: refugees/templates/refugees/dashboard.html:167
+msgid "Recent activity"
+msgstr "Recent activity"
+
+#: refugees/templates/refugees/dashboard.html:172
+msgid "added new materials to English Foundations."
+msgstr "added new materials to English Foundations."
+
+#: refugees/templates/refugees/dashboard.html:174
+msgid "2 hours ago"
+msgstr "2 hours ago"
+
+#: refugees/templates/refugees/dashboard.html:179
+#, fuzzy
+#| msgid "Review fractions worksheet"
+msgid "left feedback on your fractions worksheet."
+msgstr "left feedback on your fractions worksheet."
+
+#: refugees/templates/refugees/dashboard.html:181
+msgid "Yesterday"
+msgstr "Yesterday"
+
+#: refugees/templates/refugees/dashboard.html:185
+msgid ""
+"A new study group was added — <span class=\"font-bold\">Wednesday at 5:00 "
+"pm</span>."
+msgstr ""
+"A new study group was added — <span class=\"font-bold\">Wednesday at 5:00 "
+"pm</span>."
+
+#: refugees/templates/refugees/dashboard.html:189
+msgid "2 days ago"
+msgstr "2 days ago"
+
+#: refugees/templates/refugees/dashboard.html:192
+msgid "See more"
+msgstr "See more"
+
+#: refugees/templates/refugees/landing.html:4
 #: students/templates/students/landing.html:4
 #, fuzzy
 #| msgid "Project Eureka — About Us"
 msgid "Project Eureka — For Students"
 msgstr "Project Eureka — For Students"
 
-#: students/templates/students/landing.html:10
+#: refugees/templates/refugees/landing.html:10
+#: students/templates/students/landing.html:9
 #, fuzzy
 #| msgid "Student or family"
 msgid "For students"
 msgstr "For students"
 
-#: students/templates/students/landing.html:11
+#: refugees/templates/refugees/landing.html:11
 msgid "Every learner belongs here."
 msgstr "Every learner belongs here."
 
-#: students/templates/students/landing.html:13
+#: refugees/templates/refugees/landing.html:13
 msgid ""
 "Free lessons with volunteer teachers who want to help you learn — in your "
 "language, at your pace. No cost, no pressure, ever."
@@ -578,31 +778,32 @@ msgstr ""
 "Free lessons with volunteer teachers who want to help you learn — in your "
 "language, at your pace. No cost, no pressure, ever."
 
-#: students/templates/students/landing.html:19
-#: students/templates/students/landing.html:197
+#: refugees/templates/refugees/landing.html:19
 msgid "Talk to us"
 msgstr "Talk to us"
 
-#: students/templates/students/landing.html:23
+#: refugees/templates/refugees/landing.html:23
+#: students/templates/students/landing.html:22
 msgid "See how it works"
 msgstr "See how it works"
 
-#: students/templates/students/landing.html:66
+#: refugees/templates/refugees/landing.html:66
+#: students/templates/students/landing.html:72
 msgid "How it works"
 msgstr "How it works"
 
-#: students/templates/students/landing.html:68
+#: refugees/templates/refugees/landing.html:68
 msgid "Three small steps and you'll have a teacher waiting to help you learn."
 msgstr ""
 "Three small steps and you'll have a teacher waiting to help you learn."
 
-#: students/templates/students/landing.html:75
+#: refugees/templates/refugees/landing.html:75
 #, fuzzy
 #| msgid "Teacher or volunteer"
 msgid "Reach out"
 msgstr "Reach out"
 
-#: students/templates/students/landing.html:76
+#: refugees/templates/refugees/landing.html:76
 msgid ""
 "Send us a message telling us what you'd like to learn. A family member or "
 "friend can help."
@@ -610,13 +811,13 @@ msgstr ""
 "Send us a message telling us what you'd like to learn. A family member or "
 "friend can help."
 
-#: students/templates/students/landing.html:81
+#: refugees/templates/refugees/landing.html:81
 #, fuzzy
 #| msgid "For teachers"
 msgid "We find a teacher"
 msgstr "We find a teacher"
 
-#: students/templates/students/landing.html:82
+#: refugees/templates/refugees/landing.html:82
 msgid ""
 "Someone from our volunteer community with the right subject and language for"
 " you."
@@ -624,11 +825,11 @@ msgstr ""
 "Someone from our volunteer community with the right subject and language for"
 " you."
 
-#: students/templates/students/landing.html:87
+#: refugees/templates/refugees/landing.html:87
 msgid "Start learning"
 msgstr "Start learning"
 
-#: students/templates/students/landing.html:88
+#: refugees/templates/refugees/landing.html:88
 msgid ""
 "Lessons happen online or in person, whatever works best for you and your "
 "teacher."
@@ -636,11 +837,11 @@ msgstr ""
 "Lessons happen online or in person, whatever works best for you and your "
 "teacher."
 
-#: students/templates/students/landing.html:100
+#: refugees/templates/refugees/landing.html:100
 msgid "What you can learn"
 msgstr "What you can learn"
 
-#: students/templates/students/landing.html:102
+#: refugees/templates/refugees/landing.html:102
 msgid ""
 "Subjects our volunteer teachers can help with. Don't see what you're looking"
 " for? Ask us — we might be able to find someone."
@@ -648,28 +849,28 @@ msgstr ""
 "Subjects our volunteer teachers can help with. Don't see what you're looking"
 " for? Ask us — we might be able to find someone."
 
-#: students/templates/students/landing.html:121
+#: refugees/templates/refugees/landing.html:121
 #: teachers/templates/teachers/resources.html:66
 msgid "Mathematics"
 msgstr "Mathematics"
 
-#: students/templates/students/landing.html:132
+#: refugees/templates/refugees/landing.html:132
 #, fuzzy
 #| msgid "Science Sparks"
 msgid "Science"
 msgstr "Science"
 
-#: students/templates/students/landing.html:141
+#: refugees/templates/refugees/landing.html:141
 msgid "Reading and Writing"
 msgstr "Reading and Writing"
 
-#: students/templates/students/landing.html:153
+#: refugees/templates/refugees/landing.html:153
 #, fuzzy
 #| msgid "Student or family"
 msgid "Student stories"
 msgstr "Student stories"
 
-#: students/templates/students/landing.html:155
+#: refugees/templates/refugees/landing.html:155
 msgid ""
 "The best way to know what learning here feels like is to hear from students "
 "themselves."
@@ -677,23 +878,198 @@ msgstr ""
 "The best way to know what learning here feels like is to hear from students "
 "themselves."
 
-#: students/templates/students/landing.html:163
+#: refugees/templates/refugees/landing.html:163
 msgid "adfjsdf"
 msgstr "adfjsdf"
 
-#: students/templates/students/landing.html:173
+#: refugees/templates/refugees/landing.html:173
 msgid "asfjwdghe"
 msgstr "asfjwdghe"
 
-#: students/templates/students/landing.html:189
+#: refugees/templates/refugees/landing.html:189
 msgid "Ready when you are."
 msgstr "Ready when you are."
 
-#: students/templates/students/landing.html:191
+#: refugees/templates/refugees/landing.html:191
 msgid "Reach out whenever you're ready to start."
 msgstr "Reach out whenever you're ready to start."
 
-#: students/templates/students/landing.html:201
+#: refugees/templates/refugees/landing.html:197
+#, fuzzy
+#| msgid "Sign in"
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: refugees/templates/refugees/landing.html:201
+#, fuzzy
+#| msgid "Log in"
+msgid "Log In"
+msgstr "Log In"
+
+#: students/templates/students/landing.html:10
+msgid "Teach what you know."
+msgstr "Teach what you know."
+
+#: students/templates/students/landing.html:12
+msgid ""
+"You don't need to be a professional teacher to make a difference. Whether "
+"you can tutor for an hour a week or help us translate materials, there's a "
+"spot for you here."
+msgstr ""
+"You don't need to be a professional teacher to make a difference. Whether "
+"you can tutor for an hour a week or help us translate materials, there's a "
+"spot for you here."
+
+#: students/templates/students/landing.html:18
+#: students/templates/students/landing.html:211
+#, fuzzy
+#| msgid "Apply filters"
+msgid "Apply to volunteer"
+msgstr "Apply to volunteer"
+
+#: students/templates/students/landing.html:74
+msgid ""
+"From application to your first session, we'll walk you through every step."
+msgstr ""
+"From application to your first session, we'll walk you through every step."
+
+#: students/templates/students/landing.html:81
+msgid "Tell us about you"
+msgstr "Tell us about you"
+
+#: students/templates/students/landing.html:82
+msgid ""
+"Fill out a short form. Subjects you know, languages you speak, when you're "
+"free — that's it."
+msgstr ""
+"Fill out a short form. Subjects you know, languages you speak, when you're "
+"free — that's it."
+
+#: students/templates/students/landing.html:87
+msgid "We match you"
+msgstr "We match you"
+
+#: students/templates/students/landing.html:88
+msgid ""
+"We find refugee students who'd benefit from what you have to offer, and "
+"connect you with one of our lead teachers."
+msgstr ""
+"We find refugee students who'd benefit from what you have to offer, and "
+"connect you with one of our lead teachers."
+
+#: students/templates/students/landing.html:93
+#, fuzzy
+#| msgid "Start learning"
+msgid "Start helping"
+msgstr "Start helping"
+
+#: students/templates/students/landing.html:94
+msgid ""
+"Weekly sessions, online or in person. Support from our team, always. You're "
+"never on your own."
+msgstr ""
+"Weekly sessions, online or in person. Support from our team, always. You're "
+"never on your own."
+
+#: students/templates/students/landing.html:106
+msgid "Ways to help"
+msgstr "Ways to help"
+
+#: students/templates/students/landing.html:108
+msgid ""
+"Different ways to contribute — pick what fits your skills and schedule. You "
+"can start small and grow into more when you're ready."
+msgstr ""
+"Different ways to contribute — pick what fits your skills and schedule. You "
+"can start small and grow into more when you're ready."
+
+#: students/templates/students/landing.html:120
+msgid "Tutor one-on-one"
+msgstr "Tutor one-on-one"
+
+#: students/templates/students/landing.html:121
+msgid "Weekly sessions with a student, in a subject you know well."
+msgstr "Weekly sessions with a student, in a subject you know well."
+
+#: students/templates/students/landing.html:132
+msgid "Translate materials"
+msgstr "Translate materials"
+
+#: students/templates/students/landing.html:133
+msgid "Help make lessons available in more languages."
+msgstr "Help make lessons available in more languages."
+
+#: students/templates/students/landing.html:144
+msgid "Run study groups"
+msgstr "Run study groups"
+
+#: students/templates/students/landing.html:145
+msgid "Small groups working through curriculum together."
+msgstr "Small groups working through curriculum together."
+
+#: students/templates/students/landing.html:154
+#, fuzzy
+#| msgid "Resource"
+msgid "Create resources"
+msgstr "Create resources"
+
+#: students/templates/students/landing.html:155
+msgid "Slides, worksheets, videos for our shared library."
+msgstr "Slides, worksheets, videos for our shared library."
+
+#: students/templates/students/landing.html:167
+#, fuzzy
+#| msgid "Volunteer with us"
+msgid "Volunteer stories"
+msgstr "Volunteer stories"
+
+#: students/templates/students/landing.html:169
+#, fuzzy
+#| msgid ""
+#| "The best way to know what learning here feels like is to hear from students "
+#| "themselves."
+msgid ""
+"The best way to know what volunteering here feels like is to hear from "
+"students themselves."
+msgstr ""
+"The best way to know what volunteering here feels like is to hear from "
+"students themselves."
+
+#: students/templates/students/landing.html:177
+msgid ""
+"I signed up thinking I'd help someone learn math. But I've learned way more "
+"than I taught — about persistence, about what really matters in a lesson. I "
+"look forward to Tuesdays."
+msgstr ""
+"I signed up thinking I'd help someone learn math. But I've learned way more "
+"than I taught — about persistence, about what really matters in a lesson. I "
+"look forward to Tuesdays."
+
+#: students/templates/students/landing.html:187
+msgid ""
+"Translating a lesson into Arabic meant more to me than any grade I've ever "
+"gotten. Someone read it. Someone understood. That's it — that's the whole "
+"reward."
+msgstr ""
+"Translating a lesson into Arabic meant more to me than any grade I've ever "
+"gotten. Someone read it. Someone understood. That's it — that's the whole "
+"reward."
+
+#: students/templates/students/landing.html:203
+#, fuzzy
+#| msgid "Small steps, big summits."
+msgid "Small hours, big impact."
+msgstr "Small hours, big impact."
+
+#: students/templates/students/landing.html:205
+msgid ""
+"Two hours a week is enough to make a real difference for someone. Ready to "
+"get started?"
+msgstr ""
+"Two hours a week is enough to make a real difference for someone. Ready to "
+"get started?"
+
+#: students/templates/students/landing.html:215
 msgid "Read our FAQ"
 msgstr "Read our FAQ"
 
@@ -706,16 +1082,6 @@ msgstr "Project Eureka — Teacher Dashboard"
 #: teachers/templates/teachers/dashboard.html:10
 msgid "Teacher menu"
 msgstr "Teacher menu"
-
-#: teachers/templates/teachers/dashboard.html:13
-msgid "Menu"
-msgstr "Menu"
-
-#: teachers/templates/teachers/dashboard.html:14
-#, fuzzy
-#| msgid "Collapse filters"
-msgid "Collapse menu"
-msgstr "Collapse menu"
 
 #: teachers/templates/teachers/dashboard.html:22
 #: teachers/templates/teachers/dashboard.html:24
@@ -1150,11 +1516,6 @@ msgstr "Clear all"
 #: teachers/templates/teachers/resources.html:218
 msgid "Language"
 msgstr "Language"
-
-#: teachers/templates/teachers/resources.html:121
-#: teachers/templates/teachers/resources.html:225
-msgid "Math"
-msgstr "Math"
 
 #: teachers/templates/teachers/resources.html:122
 msgid "Worksheet"
