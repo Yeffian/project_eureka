@@ -17,5 +17,6 @@ urlpatterns = [
 
     path("teachers/", include("teachers.urls")),
     path("students/", include("students.urls")),
+    path("refugees/", include("refugees.urls")),
     path("", include("core.urls")),  # keep last so it doesn't shadow other prefixes
 ]
