@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ category.name }} — {% translate "Forums" %} — Project Eureka{% endblock %}
+
+{% block header %}{% include "partials/header.html" %}{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-4xl px-5 pt-10 pb-6">
+  <p class="reveal text-sm text-inksoft mb-3">
+    <a href="{% url 'forum:index' %}" class="squiggle-link font-bold">{% translate "Forums" %}</a>
+    <span class="mx-1 text-inksoft/60">/</span>
+    <span class="font-bold">{{ category.name }}</span>
+  </p>
+
+  <div class="reveal flex flex-wrap items-end justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <div class="grid place-items-center w-14 h-14 rounded-2xl bg-mint/60 border-2 border-ink flex-none">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6 C 7 4 10 5 12 6 C 14 5 17 4 20 6 L 20 19 C 17 17 14 17.5 12 19 C 10 17.5 7 17 4 19 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M12 6 V19" stroke="#3E4C54" stroke-width="2"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="font-display text-3xl md:text-4xl font-bold leading-tight">{{ category.name }}</h1>
+        {% if category.description %}
+          <p class="text-sm text-inksoft mt-1">{{ category.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <a href="{% url 'forum:new_thread' %}?category={{ category.slug }}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 font-bold hover:bg-ink/80 transition-colors flex-none">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      {% translate "New thread" %}
+    </a>
+  </div>
+</section>
+
+<section class="mx-auto max-w-4xl px-5 pb-16">
+  <ul class="space-y-3">
+    {% for thread in threads %}
+      <li class="reveal">
+        <a href="{% url 'forum:thread' category.slug thread.pk %}" class="block rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 hover:shadow-[8px_8px_0_0_rgba(62,76,84,0.22)] transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              {% if thread.is_pinned %}
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="text-xs font-bold rounded-full bg-butter border-2 border-ink px-2 py-0.5">📌 {% translate "Pinned" %}</span>
+                </div>
+              {% endif %}
+              <h3 class="font-display text-lg font-bold mb-1">{{ thread.title }}</h3>
+              <p class="text-sm text-inksoft line-clamp-2">{{ thread.body|truncatewords:25 }}</p>
+              <div class="flex flex-wrap items-center gap-2 mt-3 text-xs text-inksoft">
+                {% if thread.author %}
+                  <span class="grid place-items-center w-6 h-6 rounded-full {% if thread.author.role == 'TEACHER' %}bg-butter{% elif thread.author.role == 'REFUGEE_STUDENT' %}bg-blush{% else %}bg-mint{% endif %} border-2 border-ink font-display font-bold text-[10px]">{{ thread.author.username|first|upper }}</span>
+                  <span class="font-bold text-ink">{{ thread.author.username }}</span>
+                  <span class="rounded-full {% if thread.author.role == 'TEACHER' %}bg-mint/40{% elif thread.author.role == 'REFUGEE_STUDENT' %}bg-blush/40{% else %}bg-lilac/40{% endif %} border-2 border-ink/10 px-2 py-0.5 font-bold text-ink">{{ thread.author.get_role_display }}</span>
+                {% else %}
+                  <span class="italic">{% translate "Deleted user" %}</span>
+                {% endif %}
+                <span>·</span>
+                <span>{{ thread.created_at|timesince }} {% translate "ago" %}</span>
+              </div>
+            </div>
+            <div class="text-right text-xs text-inksoft flex-none">
+              <p><span class="font-bold text-ink text-base font-display">{{ thread.replies.count }}</span></p>
+              <p class="uppercase tracking-widest">{% translate "replies" %}</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    {% empty %}
+      <li class="reveal text-center text-inksoft italic py-12">
+        {% translate "No threads yet. Be the first to start one!" %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {# Pagination — only renders if `threads` is a Paginator Page object with multiple pages #}
+  {% if threads.has_other_pages %}
+    <nav class="reveal flex flex-wrap items-center justify-between gap-4 pt-8" aria-label="Pagination">
+      {% if threads.has_previous %}
+        <a href="?page={{ threads.previous_page_number }}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 text-sm font-bold hover:bg-butter transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {% translate "Previous" %}
+        </a>
+      {% else %}
+        <span class="inline-flex items-center gap-2 rounded-full border-2 border-ink/30 text-inksoft/50 px-4 py-2 text-sm font-bold cursor-not-allowed">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {% translate "Previous" %}
+        </span>
+      {% endif %}
+
+      <p class="text-sm font-bold text-inksoft">
+        {% blocktranslate trimmed with current=threads.number total=threads.paginator.num_pages %}Page <span class="font-display text-lg text-ink">{{ current }}</span> of {{ total }}{% endblocktranslate %}
+      </p>
+
+      {% if threads.has_next %}
+        <a href="?page={{ threads.next_page_number }}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 text-sm font-bold hover:bg-butter transition-colors">
+          {% translate "Next" %}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      {% else %}
+        <span class="inline-flex items-center gap-2 rounded-full border-2 border-ink/30 text-inksoft/50 px-4 py-2 text-sm font-bold cursor-not-allowed">
+          {% translate "Next" %}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      {% endif %}
+    </nav>
+  {% endif %}
+</section>
+{% endblock %}

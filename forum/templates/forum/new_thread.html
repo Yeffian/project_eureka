@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "New thread — Forums — Project Eureka" %}{% endblock %}
+
+{% block header %}{% include "partials/header.html" %}{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-3xl px-5 pt-10 pb-16">
+  <p class="reveal text-sm text-inksoft mb-3">
+    <a href="{% url 'forum:index' %}" class="squiggle-link font-bold">{% translate "Forums" %}</a>
+    <span class="mx-1 text-inksoft/60">/</span>
+    <span class="font-bold">{% translate "New thread" %}</span>
+  </p>
+
+  <div class="reveal mb-8">
+    <h1 class="font-display text-4xl md:text-5xl font-bold leading-[1.05] mb-3">{% translate "Start a new thread" %}</h1>
+    <p class="text-inksoft">{% translate "Ask a question, share what you've learned, or just say hello. Pick the best category and give it a clear title." %}</p>
+  </div>
+
+  <div class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:p-8">
+
+    {% if error %}
+      <div class="mb-6 rounded-2xl bg-blush/40 border-2 border-ink/15 px-4 py-3 text-sm">
+        {{ error }}
+      </div>
+    {% endif %}
+
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+
+      <div>
+        <label for="category" class="block text-sm font-bold mb-1.5">{% translate "Category" %} <span class="text-lilac">*</span></label>
+        <select id="category" name="category" required class="doodle-select">
+          <option value="">{% translate "Choose a category" %}</option>
+          {% for category in categories %}
+            <option value="{{ category.slug }}" {% if category.slug == request.GET.category %}selected{% endif %}>{{ category.name }}</option>
+          {% empty %}
+            <option value="" disabled>{% translate "No categories available." %}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <label for="title" class="block text-sm font-bold mb-1.5">{% translate "Title" %} <span class="text-lilac">*</span></label>
+        <input type="text" id="title" name="title" required maxlength="200"
+               class="doodle-input"
+               placeholder="{% translate 'What is your thread about?' %}"
+               value="{{ request.POST.title|default:'' }}">
+        <p class="text-xs text-inksoft mt-1">{% translate "Keep it short and clear — 60 characters or so is a good length." %}</p>
+      </div>
+
+      <div>
+        <label for="body" class="block text-sm font-bold mb-1.5">{% translate "Your message" %} <span class="text-lilac">*</span></label>
+        <textarea id="body" name="body" rows="8" required
+                  class="doodle-textarea"
+                  placeholder="{% translate 'Explain your question, share your idea, or say what happened…' %}">{{ request.POST.body|default:'' }}</textarea>
+        <p class="text-xs text-inksoft mt-1">{% translate "Be kind and clear. English mistakes are fine — someone will help you if you need it." %}</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+          {% translate "Post thread" %}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a href="{% url 'forum:index' %}" class="squiggle-link text-sm text-inksoft font-bold">{% translate "Cancel" %}</a>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

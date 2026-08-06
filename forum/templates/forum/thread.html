@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ thread.title }} — {% translate "Forums" %} — Project Eureka{% endblock %}
+
+{% block header %}{% include "partials/header.html" %}{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-3xl px-5 pt-10 pb-4">
+  <p class="reveal text-sm text-inksoft mb-4">
+    <a href="{% url 'forum:index' %}" class="squiggle-link font-bold">{% translate "Forums" %}</a>
+    <span class="mx-1 text-inksoft/60">/</span>
+    <a href="{% url 'forum:category' thread.category.slug %}" class="squiggle-link font-bold">{{ thread.category.name }}</a>
+  </p>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 pb-4">
+  <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:p-8">
+    <h1 class="font-display text-3xl md:text-4xl font-bold leading-tight mb-4">{{ thread.title }}</h1>
+
+    <div class="flex flex-wrap items-center gap-3 mb-6 text-sm">
+      {% if thread.author %}
+        <span class="grid place-items-center w-10 h-10 rounded-full {% if thread.author.role == 'TEACHER' %}bg-butter{% elif thread.author.role == 'REFUGEE_STUDENT' %}bg-blush{% else %}bg-mint{% endif %} border-2 border-ink font-display font-bold">{{ thread.author.username|first|upper }}</span>
+        <div>
+          <p class="flex items-center gap-2 flex-wrap">
+            <span class="font-bold">{{ thread.author.username }}</span>
+            <span class="rounded-full {% if thread.author.role == 'TEACHER' %}bg-mint/40{% elif thread.author.role == 'REFUGEE_STUDENT' %}bg-blush/40{% else %}bg-lilac/40{% endif %} border-2 border-ink/10 px-2 py-0.5 text-xs font-bold">{{ thread.author.get_role_display }}</span>
+          </p>
+          <p class="text-xs text-inksoft">{% translate "Posted" %} {{ thread.created_at|timesince }} {% translate "ago" %}</p>
+        </div>
+      {% else %}
+        <span class="italic text-inksoft">{% translate "Deleted user" %}</span>
+      {% endif %}
+    </div>
+
+    <div class="prose prose-ink max-w-none leading-relaxed">
+      {{ thread.body|linebreaks }}
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3 mt-6 pt-4 border-t-2 border-ink/10">
+      <a href="#reply-form" class="ml-auto squiggle-link text-sm font-bold">{% translate "Reply" %}</a>
+    </div>
+  </article>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 pt-6 pb-2">
+  <div class="reveal flex items-center gap-4">
+    <h2 class="font-display text-lg font-bold">
+      {% blocktranslate count counter=replies.count %}{{ counter }} reply{% plural %}{{ counter }} replies{% endblocktranslate %}
+    </h2>
+    <svg viewBox="0 0 600 14" class="flex-1 max-w-md" aria-hidden="true">
+      <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="10 10"/>
+    </svg>
+  </div>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 pb-8">
+  <ol class="space-y-4">
+    {% for reply in replies %}
+      <li class="reveal">
+        <article class="rounded-blob {% if reply.author.role == 'TEACHER' %}bg-mint/20{% else %}bg-cream{% endif %} border-2 border-ink/15 shadow-[4px_4px_0_0_rgba(62,76,84,0.15)] p-5 md:p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-3 text-sm">
+            {% if reply.author %}
+              <span class="grid place-items-center w-9 h-9 rounded-full {% if reply.author.role == 'TEACHER' %}bg-butter{% elif reply.author.role == 'REFUGEE_STUDENT' %}bg-blush{% else %}bg-mint{% endif %} border-2 border-ink font-display font-bold">{{ reply.author.username|first|upper }}</span>
+              <div>
+                <p class="flex items-center gap-2 flex-wrap">
+                  <span class="font-bold">{{ reply.author.username }}</span>
+                  <span class="rounded-full {% if reply.author.role == 'TEACHER' %}bg-mint/60{% elif reply.author.role == 'REFUGEE_STUDENT' %}bg-blush/40{% else %}bg-lilac/40{% endif %} border-2 border-ink/10 px-2 py-0.5 text-xs font-bold">{{ reply.author.get_role_display }}</span>
+                </p>
+                <p class="text-xs text-inksoft">{{ reply.created_at|timesince }} {% translate "ago" %}</p>
+              </div>
+            {% else %}
+              <span class="italic text-inksoft">{% translate "Deleted user" %}</span>
+            {% endif %}
+          </div>
+          <div class="prose prose-ink max-w-none leading-relaxed text-sm">
+            {{ reply.body|linebreaks }}
+          </div>
+        </article>
+      </li>
+    {% empty %}
+      <li class="text-center text-inksoft italic py-8">
+        {% translate "No replies yet. Be the first to respond!" %}
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="reply-form" class="mx-auto max-w-3xl px-5 pb-16 pt-4">
+  {% if user.is_authenticated %}
+    <div class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:p-8">
+      <h2 class="font-display text-xl font-bold mb-4">{% translate "Add a reply" %}</h2>
+
+      <form method="post" class="space-y-4">
+        {% csrf_token %}
+
+        <div class="flex items-start gap-3">
+          <span class="grid place-items-center w-9 h-9 rounded-full {% if user.role == 'TEACHER' %}bg-butter{% elif user.role == 'REFUGEE_STUDENT' %}bg-blush{% else %}bg-mint{% endif %} border-2 border-ink font-display font-bold flex-none">{{ user.username|first|upper }}</span>
+          <textarea id="reply-body" name="body" rows="4" required
+                    class="doodle-textarea flex-1"
+                    placeholder="{% translate 'Share your thoughts, tips, or a question…' %}"></textarea>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <p class="text-xs text-inksoft">{% translate "Be kind. English mistakes are fine — we all make them." %}</p>
+          <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2 font-bold hover:bg-ink/80 transition-colors">
+            {% translate "Post reply" %}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  {% else %}
+    <div class="reveal rounded-blob bg-cream border-2 border-ink/15 border-dashed shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 text-center">
+      <p class="text-inksoft mb-3">{% translate "You need to be signed in to reply." %}</p>
+      <a href="{% url 'core:login_view' %}?next={{ request.path }}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2 font-bold hover:bg-ink/80 transition-colors">
+        {% translate "Sign in" %}
+      </a>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
