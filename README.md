@@ -1,0 +1,14 @@
+## Project Eureka
+
+This repository holds the source code for the Project Eureka site.
+
+### Structure
+`core` - Main webpages handling user logins, FAQ, contacts, etc
+`forum` - Forum system for students, refugees, and teachers to make posts, comments, etc
+`teachers` - Pages and models specific for teachers, including "classroom" dashboard 
+`students` - Pages and models specific for students wanting to volunteer
+`refugees` - Pages and models specific for refugees including "classroom" dashboard
+
+### Contact
+- 206469@gardenschool.edu.my (Adit Chakraborty - Technical Director)
+- 307062@gardenschool.edu.my (Si Rui Tan - Founder)
