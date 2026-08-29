@@ -18,6 +18,20 @@ ALLOWED_HOSTS = [
     ".ngrok.io",         # older ngrok domain, just in case
 ]
 
+# ngrok terminates HTTPS and forwards plain HTTP to this dev server, so Django
+# needs to be told the request is actually secure (otherwise request.is_secure()
+# is False and other https-dependent behavior breaks).
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# Without these, POSTs (e.g. login) made over the ngrok https tunnel fail CSRF's
+# Origin check: Django computes its own origin as http://<host> (since it doesn't
+# know about the tunnel's TLS termination) while the browser sends an https://
+# Origin header, and the scheme mismatch gets rejected as a 403.
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.ngrok-free.app",
+    "https://*.ngrok.io",
+]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -29,7 +43,8 @@ INSTALLED_APPS = [
     "teachers",
     "students",
     "forum",
-    "refugees",   # add this
+    "refugees",  
+    "classes",
 ]
 
 MIDDLEWARE = [

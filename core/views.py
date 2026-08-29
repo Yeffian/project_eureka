@@ -69,14 +69,22 @@ def register(request):
         if password != confirmation:
             return render(request, 'core/register.html', {'message': 'Passwords do not match.'})
 
+        if User.objects.filter(username=username).exists():
+            return render(request, 'core/register.html', {'message': 'That username is already taken.'})
+
+        if User.objects.filter(email=email).exists():
+            return render(request, 'core/register.html', {'message': 'An account with that email already exists.'})
+
         # Save user with role
-        user = User.objects.create_user(
-            username=username,
-            email=email,
-            password=password,
-            role=role  # <--- Pass the role into your User model
-        )
-        user.save()
+        try:
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                role=role  # <--- Pass the role into your User model
+            )
+        except IntegrityError:
+            return render(request, 'core/register.html', {'message': 'That username or email is already taken.'})
 
         # Log in or redirect
         return redirect('core:login_view')

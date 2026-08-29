@@ -46,7 +46,6 @@
       <span class="sb-label">{% translate "Teacher forums" %}</span></a></li>
   </ul>
 </nav>
-```
 
   </aside>
 
@@ -54,7 +53,13 @@
     <main id="dashboard" class="pb-16 pt-6 space-y-8">
       <section class="reveal relative overflow-hidden rounded-blob bg-lilac text-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-8">
         <h1 class="font-display text-3xl md:text-4xl font-bold mb-2">{% translate "Welcome back," %} {{ display_name|default:"Ms. Sara" }}!</h1>
-        <p class="text-cream/90 max-w-md">{% translate "You have 2 classes today and 3 assignments waiting to be marked. Small steps, big summits." %}</p>
+        <p class="text-cream/90 max-w-md">
+          {% blocktranslate trimmed count classes=course_count %}
+            You have {{ classes }} class and {{ pending_count }} assignments waiting. Small steps, big summits.
+          {% plural %}
+            You have {{ classes }} classes and {{ pending_count }} assignments waiting. Small steps, big summits.
+          {% endblocktranslate %}
+        </p>
         <svg viewBox="0 0 160 90" class="pointer-events-none absolute -right-3 -bottom-2 w-40 opacity-90" aria-hidden="true">
           <path d="M14 84 C 26 66 38 46 50 28 C 55 20 60 12 66 9 C 71 6.5 76 9 80 15 C 92 33 106 58 118 84 Z" fill="#DDDD7B" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
           <path d="M66 9 C 71 6.5 76 9 80 15 l 7 11 c-4 6-8-4-13 2 c-5 6-9-4-14 2 Z" fill="#E0F2F4" stroke="#3E4C54" stroke-width="3" stroke-linejoin="round"/>
@@ -62,25 +67,28 @@
         </svg>
       </section>
 
-```
   <section id="progress" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
     <div class="flex items-center justify-between gap-4 mb-5">
       <h2 class="font-display text-2xl font-bold">{% translate "Class progress" %}</h2>
       <a href="#classrooms" class="squiggle-link text-sm font-bold">{% translate "All classrooms" %}</a>
     </div>
     <div class="space-y-5">
-      <div>
-        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Year 7 English" %}</span><span class="text-inksoft">{% translate "18 / 24 lessons" %}</span></div>
-        <div class="h-4 rounded-full bg-mint/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-mint border-r-2 border-ink/20" style="width:75%"></div></div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Everyday Maths B" %}</span><span class="text-inksoft">{% translate "9 / 20 lessons" %}</span></div>
-        <div class="h-4 rounded-full bg-butter/30 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-butter border-r-2 border-ink/20" style="width:45%"></div></div>
-      </div>
-      <div>
-        <div class="flex justify-between text-sm mb-1.5"><span class="font-bold">{% translate "Science Sparks" %}</span><span class="text-inksoft">{% translate "3 / 16 lessons" %}</span></div>
-        <div class="h-4 rounded-full bg-blush/25 border-2 border-ink/15 overflow-hidden"><div class="h-full rounded-full bg-blush border-r-2 border-ink/20" style="width:19%"></div></div>
-      </div>
+      {% for course in courses %}
+        <div>
+          <div class="flex justify-between text-sm mb-1.5">
+            <span class="font-bold">{{ course.name }}</span>
+            <span class="text-inksoft">
+              {% blocktranslate trimmed with done=course.completed_lessons total=course.total_lessons %}{{ done }} / {{ total }} lessons{% endblocktranslate %}
+            </span>
+          </div>
+          <div class="h-4 rounded-full bg-{{ course.color }}/30 border-2 border-ink/15 overflow-hidden">
+            <div class="h-full rounded-full bg-{{ course.color }} border-r-2 border-ink/20"
+                 style="width:{% if course.total_lessons %}{% widthratio course.completed_lessons course.total_lessons 100 %}{% else %}0{% endif %}%"></div>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-sm text-inksoft italic">{% translate "You're not running any classes yet." %}</p>
+      {% endfor %}
     </div>
   </section>
 
@@ -88,22 +96,17 @@
     <section id="assignments" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
       <h2 class="font-display text-2xl font-bold mb-5">{% translate "Assignments" %}</h2>
       <ul class="space-y-4 text-sm">
-        <li class="flex items-center gap-3">
-          <input type="checkbox" id="q1" class="doodle-check">
-          <label for="q1" class="cursor-pointer"><span class="font-bold">{% translate "Q1 —" %}</span> {% translate 'Mark "My first week" writing task' %} <span class="text-inksoft">· {% translate "Year 7 English" %}</span></label>
-        </li>
-        <li class="flex items-center gap-3">
-          <input type="checkbox" id="q2" class="doodle-check">
-          <label for="q2" class="cursor-pointer"><span class="font-bold">{% translate "Q2 —" %}</span> {% translate "Review fractions worksheet" %} <span class="text-inksoft">· {% translate "Everyday Maths B" %}</span></label>
-        </li>
-        <li class="flex items-center gap-3">
-          <input type="checkbox" id="q3" class="doodle-check">
-          <label for="q3" class="cursor-pointer"><span class="font-bold">{% translate "Q3 —" %}</span> {% translate "Prepare volcano experiment kit" %} <span class="text-inksoft">· {% translate "Science Sparks" %}</span></label>
-        </li>
-        <li class="flex items-center gap-3">
-          <input type="checkbox" id="q4" class="doodle-check" checked>
-          <label for="q4" class="cursor-pointer"><span class="font-bold">{% translate "Q4 —" %}</span> {% translate "Send weekly summary to guardians" %}</label>
-        </li>
+        {% for assignment in pending_assignments %}
+          <li class="flex items-center gap-3">
+            <input type="checkbox" id="assignment-{{ assignment.pk }}" class="doodle-check">
+            <label for="assignment-{{ assignment.pk }}" class="cursor-pointer">
+              {{ assignment.title }}
+              <span class="text-inksoft">· {{ assignment.course.name }}</span>
+            </label>
+          </li>
+        {% empty %}
+          <li class="text-inksoft italic">{% translate "Nothing to mark right now. Nice work!" %}</li>
+        {% endfor %}
       </ul>
       <a href="#classrooms" class="squiggle-link inline-block mt-5 text-sm font-bold">{% translate "View all assignments" %}</a>
     </section>
