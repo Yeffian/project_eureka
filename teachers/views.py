@@ -6,21 +6,24 @@ dashboard passes `signed_in=True`; the header partial reads that to swap
 between the Sign-in button and the user chip.
 """
 
-from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.db.models import Count, Q
 from django.shortcuts import render
 from classes.models import Course, Assignment
+from django.views.decorators.csrf import ensure_csrf_cookie
+from teachers.decorators import teacher_required
 
 def landing(request):
     return render(request, "teachers/landing.html", {
         "current_page": "teachers",
         "signed_in": False,
     })
-@login_required
+
+@teacher_required
+@ensure_csrf_cookie
 def dashboard(request):
     teacher = request.user
 
-    # All courses this teacher runs, with lesson counts annotated in one query
     courses = (
         Course.objects
         .filter(teacher=teacher)
@@ -32,7 +35,6 @@ def dashboard(request):
         .order_by("name")
     )
 
-    # Pending assignments across all this teacher's courses (the to-do widget)
     pending_assignments = (
         Assignment.objects
         .filter(course__teacher=teacher, is_done=False)
@@ -52,5 +54,6 @@ def dashboard(request):
     }
     return render(request, "teachers/dashboard.html", context)
 
+@teacher_required
 def resources(request):
     return render(request, "teachers/resources.html")
