@@ -41,9 +41,9 @@
       </ul>
     </li>
 
-    <li class="pt-1"><a href="#forums" title="{% translate 'Teacher forums' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
+    <li class="pt-1"><a href="#forums" title="{% translate 'Community forums' %}" class="flex items-center gap-2.5 rounded-full px-3 py-2 hover:bg-mint/40 transition-colors">
       <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none"><path d="M3.5 5.5 C 7 4 13 4 16.5 5.5 c.3 2.2 0 4.6-.6 6 c-2 1-4.5 1.2-6.6 1 L6 15 l.4-2.6 c-1 0-2-.4-2.9-.9 C 3 10.1 3.2 7.7 3.5 5.5 Z" stroke="#3E4C54" stroke-width="2" stroke-linejoin="round"/></svg>
-      <span class="sb-label">{% translate "Teacher forums" %}</span></a></li>
+      <span class="sb-label">{% translate "Community forums" %}</span></a></li>
   </ul>
 </nav>
 
@@ -51,7 +51,6 @@
 
   <div id="main-shell" class="pt-32">
     <main id="dashboard" class="pb-16 pt-6 space-y-8">
-      {% csrf_token %}
       <section class="reveal relative overflow-hidden rounded-blob bg-lilac text-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-8">
         <h1 class="font-display text-3xl md:text-4xl font-bold mb-2">{% translate "Welcome back," %} {{ display_name|default:"Ms. Sara" }}!</h1>
         <p class="text-cream/90 max-w-md">
@@ -126,13 +125,23 @@
 
   <section id="forums" class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-7">
     <div class="flex items-center justify-between gap-4 mb-5">
-      <h2 class="font-display text-2xl font-bold">{% translate "Teacher forums" %}</h2>
-      <a href="#forums" class="squiggle-link text-sm font-bold">{% translate "Open forums" %}</a>
+      <h2 class="font-display text-2xl font-bold">{% translate "Community forums" %}</h2>
+      <a href="{% url 'forum:index' %}" class="squiggle-link text-sm font-bold">{% translate "Open forums" %}</a>
     </div>
     <ul class="divide-y-2 divide-ink/10 text-sm">
-      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Icebreakers that work with mixed language levels?" %}</span></span><span class="text-inksoft">{% translate "12 replies" %}</span></li>
-      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Sharing my phonics slide pack" %}</span> · {% translate "Resource swap" %}</span><span class="text-inksoft">{% translate "8 replies" %}</span></li>
-      <li class="py-3 flex flex-wrap justify-between gap-2"><span><span class="font-bold">{% translate "Tips for first online lesson" %}</span> · {% translate "New teachers" %}</span><span class="text-inksoft">{% translate "21 replies" %}</span></li>
+      {% for thread in recent_threads %}
+        <li class="py-3 flex flex-wrap justify-between gap-2">
+          <span>
+            <a href="{% url 'forum:thread' thread.category.slug thread.pk %}" class="font-bold squiggle-link">{{ thread.title }}</a>
+            <span class="text-inksoft">· {{ thread.category.name }}</span>
+          </span>
+          <span class="text-inksoft">
+            {% blocktranslate trimmed count counter=thread.reply_count %}{{ counter }} reply{% plural %}{{ counter }} replies{% endblocktranslate %}
+          </span>
+        </li>
+      {% empty %}
+        <li class="py-3 text-inksoft italic">{% translate "No discussions yet. Start one!" %}</li>
+      {% endfor %}
     </ul>
   </section>
 </main>

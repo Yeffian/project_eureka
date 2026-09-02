@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.db.models import Count, Q
 from django.shortcuts import render
 from classes.models import Course, Assignment
+from forum.models import Thread
 from django.views.decorators.csrf import ensure_csrf_cookie
 from teachers.decorators import teacher_required
 
@@ -42,6 +43,13 @@ def dashboard(request):
         .order_by("due_date")
     )
 
+    recent_threads = (
+        Thread.objects
+        .select_related("category", "author")
+        .annotate(reply_count=Count("replies"))
+        .order_by("-created_at")[:3]
+    )
+
     context = {
         "current_page": "teachers",
         "signed_in": True,
@@ -51,7 +59,10 @@ def dashboard(request):
         "pending_assignments": pending_assignments,
         "course_count": courses.count(),
         "pending_count": pending_assignments.count(),
-    }
+        "recent_threads": recent_threads,   
+}
+
+
     return render(request, "teachers/dashboard.html", context)
 
 @teacher_required
