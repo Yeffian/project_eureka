@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Enrollment, Lesson, Assignment
+from .models import Course, Enrollment, Lesson, Assignment, AssignmentCompletion
 
 
 class LessonInline(admin.TabularInline):
@@ -49,3 +49,11 @@ class AssignmentAdmin(admin.ModelAdmin):
 class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ("student", "course", "enrolled_at")
     list_filter = ("course",)
+    
+
+@admin.register(AssignmentCompletion)
+class AssignmentCompletionAdmin(admin.ModelAdmin):
+    list_display = ("student", "assignment", "is_done", "completed_at")
+    list_filter = ("is_done", "assignment__course")
+    search_fields = ("student__username", "assignment__title")
+    list_editable = ("is_done",)

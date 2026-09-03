@@ -59,3 +59,25 @@ class Assignment(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AssignmentCompletion(models.Model):
+    assignment = models.ForeignKey(
+        Assignment,
+        on_delete=models.CASCADE,
+        related_name="completions",
+    )
+    student = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="assignment_completions",
+    )
+    is_done = models.BooleanField(default=False)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ("assignment", "student")
+
+    def __str__(self):
+        status = "done" if self.is_done else "pending"
+        return f"{self.student.username} — {self.assignment.title} ({status})"

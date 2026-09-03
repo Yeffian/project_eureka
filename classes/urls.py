@@ -5,4 +5,5 @@ app_name = "classes"
 
 urlpatterns = [
     path("assignments/<int:assignment_id>/toggle/", views.toggle_assignment, name="toggle_assignment"),
+    path("completions/<int:completion_id>/toggle/", views.toggle_completion, name="toggle_completion"),
 ]
