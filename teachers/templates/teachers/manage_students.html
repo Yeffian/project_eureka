@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Manage students" %} — {{ course.name }} — {% translate "Project Eureka" %}{% endblock %}
+
+{% block body %}
+{% include "partials/header.html" %}
+
+  <div id="main-shell" class="pt-32">
+    <main class="pb-16 pt-6">
+      <section class="mx-auto max-w-3xl space-y-8">
+
+        <!-- Breadcrumb + heading -->
+        <div>
+          <p class="reveal text-sm text-inksoft mb-3">
+            <a href="{% url 'teachers:dashboard' %}" class="squiggle-link font-bold">{% translate "Dashboard" %}</a>
+            <span class="mx-1 text-inksoft/60">/</span>
+            <a href="{% url 'teachers:classrooms' %}" class="squiggle-link font-bold">{% translate "My classrooms" %}</a>
+            <span class="mx-1 text-inksoft/60">/</span>
+            <a href="{% url 'teachers:course_detail' course.pk %}" class="squiggle-link font-bold">{{ course.name }}</a>
+            <span class="mx-1 text-inksoft/60">/</span>
+            <span class="font-bold">{% translate "Students" %}</span>
+          </p>
+          <h1 class="reveal font-display text-4xl md:text-5xl font-bold leading-[1.05]">{% translate "Manage students" %}</h1>
+          <p class="reveal text-inksoft mt-2">{% blocktranslate trimmed with name=course.name %}Add or remove students for {{ name }}.{% endblocktranslate %}</p>
+        </div>
+
+        <!-- Add a student -->
+        <section class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+          <h2 class="font-display text-xl font-bold mb-4">{% translate "Add a student" %}</h2>
+          {% if available_students %}
+            <form method="post" class="flex flex-wrap items-end gap-3">
+              {% csrf_token %}
+              <div class="flex-1 min-w-[220px]">
+                <label for="student" class="block text-sm font-bold mb-1.5">{% translate "Choose someone to enroll" %}</label>
+                <select id="student" name="student" required class="doodle-select">
+                  <option value="">{% translate "Select a student…" %}</option>
+                  {% for student in available_students %}
+                    <option value="{{ student.pk }}">
+                      {{ student.get_short_name|default:student.username }} ({{ student.get_role_display }})
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+              <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 font-bold hover:bg-ink/80 transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                {% translate "Add" %}
+              </button>
+            </form>
+          {% else %}
+            <p class="text-sm text-inksoft italic">{% translate "Everyone eligible is already enrolled in this course." %}</p>
+          {% endif %}
+        </section>
+
+        <!-- Enrolled students -->
+        <section class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
+          <h2 class="font-display text-xl font-bold mb-4">
+            {% blocktranslate trimmed count counter=enrollments|length %}
+              {{ counter }} enrolled student
+            {% plural %}
+              {{ counter }} enrolled students
+            {% endblocktranslate %}
+          </h2>
+          {% if enrollments %}
+            <ul class="space-y-2">
+              {% for enrollment in enrollments %}
+                <li class="flex items-center gap-3 rounded-2xl border-2 border-ink/10 bg-cream p-3">
+                  <span class="grid place-items-center w-9 h-9 rounded-full bg-blush border-2 border-ink font-display font-bold text-sm flex-none">{{ enrollment.student.username|first|upper }}</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-bold truncate">{{ enrollment.student.get_short_name|default:enrollment.student.username }}</p>
+                    <p class="text-xs text-inksoft">{{ enrollment.student.get_role_display }}</p>
+                  </div>
+                  <form method="post" action="{% url 'classes:remove_enrollment' enrollment.pk %}" class="flex-none"
+                        onsubmit="return confirm('{% translate "Remove this student from the course?" %}');">
+                    {% csrf_token %}
+                    <button type="submit" class="inline-flex items-center gap-1.5 rounded-full border-2 border-ink/30 text-inksoft px-3 py-1.5 text-sm font-bold hover:bg-blush/40 hover:border-ink transition-colors">
+                      {% translate "Remove" %}
+                    </button>
+                  </form>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-sm text-inksoft italic py-4 text-center">{% translate "No students enrolled yet. Add someone above to get started." %}</p>
+          {% endif %}
+        </section>
+
+        <!-- Back link -->
+        <p class="reveal">
+          <a href="{% url 'teachers:course_detail' course.pk %}" class="squiggle-link text-sm font-bold">{% blocktranslate trimmed with name=course.name %}← Back to {{ name }}{% endblocktranslate %}</a>
+        </p>
+      </section>
+    </main>
+
+    {% include "partials/footer.html" %}
+  </div>
+{% endblock %}

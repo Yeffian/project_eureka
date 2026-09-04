@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% if editing %}{% translate "Edit assignment" %}{% else %}{% translate "Add an assignment" %}{% endif %} — {% translate "Project Eureka" %}{% endblock %}
+
+{% block body %}
+{% include "partials/header.html" %}
+
+  <div id="main-shell" class="pt-32">
+    <main class="pb-16 pt-6">
+      <section class="mx-auto max-w-2xl">
+        <p class="reveal text-sm text-inksoft mb-3">
+          <a href="{% url 'teachers:dashboard' %}" class="squiggle-link font-bold">{% translate "Dashboard" %}</a>
+          <span class="mx-1 text-inksoft/60">/</span>
+          <a href="{% url 'teachers:classrooms' %}" class="squiggle-link font-bold">{% translate "My classrooms" %}</a>
+          {% if editing %}
+            <span class="mx-1 text-inksoft/60">/</span>
+            <a href="{% url 'teachers:course_detail' assignment.course_id %}" class="squiggle-link font-bold">{{ assignment.course.name }}</a>
+          {% endif %}
+          <span class="mx-1 text-inksoft/60">/</span>
+          <span class="font-bold">{% if editing %}{% translate "Edit assignment" %}{% else %}{% translate "New assignment" %}{% endif %}</span>
+        </p>
+
+        <div class="reveal mb-8">
+          <h1 class="font-display text-4xl md:text-5xl font-bold leading-[1.05] mb-3">
+            {% if editing %}{% translate "Edit assignment" %}{% else %}{% translate "Add an assignment" %}{% endif %}
+          </h1>
+          <p class="text-inksoft">
+            {% if editing %}
+              {% translate "Update the details for this task. Your students will see the changes on their dashboard." %}
+            {% else %}
+              {% translate "Set a task for one of your courses. Your students will see it on their dashboard and can mark it complete." %}
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:p-8">
+
+          {% if form.non_field_errors %}
+            <div class="mb-6 rounded-2xl bg-blush/40 border-2 border-ink/15 px-4 py-3 text-sm">
+              {{ form.non_field_errors }}
+            </div>
+          {% endif %}
+
+          <form method="post" class="space-y-6">
+            {% csrf_token %}
+
+            <div>
+              <label for="{{ form.course.id_for_label }}" class="block text-sm font-bold mb-1.5">
+                {% translate "Course" %} <span class="text-lilac">*</span>
+              </label>
+              {{ form.course }}
+              {% if form.course.errors %}
+                <p class="text-xs text-lilac font-bold mt-1">{{ form.course.errors|striptags }}</p>
+              {% endif %}
+              {% if not form.fields.course.queryset %}
+                <p class="text-xs text-inksoft mt-1">{% translate "You don't have any courses yet — create one first." %}</p>
+              {% endif %}
+            </div>
+
+            <div>
+              <label for="{{ form.title.id_for_label }}" class="block text-sm font-bold mb-1.5">
+                {% translate "Title" %} <span class="text-lilac">*</span>
+              </label>
+              {{ form.title }}
+              {% if form.title.errors %}
+                <p class="text-xs text-lilac font-bold mt-1">{{ form.title.errors|striptags }}</p>
+              {% endif %}
+              <p class="text-xs text-inksoft mt-1">{% translate "What do you want your students to do?" %}</p>
+            </div>
+
+            <div>
+              <label for="{{ form.due_date.id_for_label }}" class="block text-sm font-bold mb-1.5">
+                {% translate "Due date" %}
+              </label>
+              {{ form.due_date }}
+              {% if form.due_date.errors %}
+                <p class="text-xs text-lilac font-bold mt-1">{{ form.due_date.errors|striptags }}</p>
+              {% endif %}
+              <p class="text-xs text-inksoft mt-1">{% translate "Optional — leave blank if there's no fixed deadline." %}</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+                {% if editing %}{% translate "Save changes" %}{% else %}{% translate "Create assignment" %}{% endif %}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              {% if editing %}
+                <a href="{% url 'teachers:course_detail' assignment.course_id %}" class="squiggle-link text-sm text-inksoft font-bold">{% translate "Cancel" %}</a>
+              {% else %}
+                <a href="{% url 'teachers:classrooms' %}" class="squiggle-link text-sm text-inksoft font-bold">{% translate "Cancel" %}</a>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    {% include "partials/footer.html" %}
+  </div>
+{% endblock %}
