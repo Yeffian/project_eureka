@@ -10,6 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL = "core.User"
 
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
 DEBUG = True
 ALLOWED_HOSTS = [
     ".vercel.app",
@@ -98,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "zh-hans"
 TIME_ZONE = "UTC"
-USE_I18N = True
+USE_I18N = False
 USE_TZ = True
 
 LANGUAGES = [
