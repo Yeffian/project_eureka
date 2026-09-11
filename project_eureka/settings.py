@@ -10,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL = "core.User"
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
+SECRET_KEY = "wcn229=3tuflhor-_)5r5#993*nxle!1+^bj^g2lmz0tv5zd7e"
 
 DEBUG = True
 ALLOWED_HOSTS = [
