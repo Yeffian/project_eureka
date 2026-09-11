@@ -3,6 +3,7 @@ Django settings for project_eureka.
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
@@ -35,6 +36,7 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 CSRF_TRUSTED_ORIGINS = [
     "https://*.ngrok-free.app",
     "https://*.ngrok.io",
+    "https://*.vercel.app"
 ]
 
 INSTALLED_APPS = [
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",   
     "django.middleware.common.CommonMiddleware",
@@ -83,12 +86,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project_eureka.wsgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.environ["DATABASE_URL"],
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 AUTH_USER_MODEL = 'core.User'
 
@@ -112,6 +124,8 @@ LANGUAGES = [
 LOCALE_PATHS = [BASE_DIR / "locale"]
 
 STATIC_URL = "static/"
+STATIC_ROOT = STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
