@@ -1,11 +1,3 @@
-"""Teacher views: guest landing and (mock) signed-in dashboard.
-
-Since this is a UI-only migration, `signed_in` is a plain context flag rather
-than a real auth check. The landing page passes `signed_in=False`, the
-dashboard passes `signed_in=True`; the header partial reads that to swap
-between the Sign-in button and the user chip.
-"""
-
 from django.contrib import messages
 from django.db.models import Count, Q
 from django.shortcuts import render, redirect, get_object_or_404

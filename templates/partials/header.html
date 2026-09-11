@@ -20,6 +20,7 @@
         <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">{% trans "Home" %}</a>
         <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">{% trans "About us" %}</a>
         <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">{% trans "FAQ" %}</a>
+        <a href="{% url 'forum:index' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">{% trans "Forums" %}</a>
         <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">{% trans "Sign up" %}</a>
 
         {% if request.user.is_authenticated %}
