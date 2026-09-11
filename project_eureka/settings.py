@@ -2,6 +2,7 @@
 Django settings for project_eureka.
 """
 
+import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
@@ -9,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL = "core.User"
 
-SECRET_KEY = "wcn229=3tuflhor-_)5r5#993*nxle!1+^bj^g2lmz0tv5zd7e"
 DEBUG = True
 ALLOWED_HOSTS = [
+    ".vercel.app",
     "localhost",
     "127.0.0.1",
     ".ngrok-free.app",   # leading dot matches any *.ngrok-free.app subdomain
