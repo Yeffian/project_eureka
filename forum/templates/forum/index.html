@@ -13,7 +13,7 @@
       <h1 class="font-display text-4xl md:text-5xl font-bold leading-[1.05]">{% translate "Forums" %}</h1>
       <p class="text-inksoft mt-3 max-w-md">{% translate "Ask questions, share what's working, and get to know people across the community. Everyone's welcome." %}</p>
     </div>
-    <a href="#" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 font-bold hover:bg-ink/80 transition-colors">
+    <a href="{% url 'forum:new_thread' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 font-bold hover:bg-ink/80 transition-colors">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
       {% translate "New thread" %}
     </a>
