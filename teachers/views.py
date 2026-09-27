@@ -9,6 +9,8 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from teachers.decorators import teacher_required
 
 def landing(request):
+    if request.user.is_authenticated and request.user.role == "TEACHER":
+        return redirect("teachers:dashboard")
     return render(request, "teachers/landing.html", {
         "current_page": "teachers",
         "signed_in": False,
