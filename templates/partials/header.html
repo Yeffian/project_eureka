@@ -1,11 +1,6 @@
-<!-- {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info for LANGUAGE_CODE as current_lang %}
-{% get_available_languages as LANGUAGES %} -->
-
 <header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
 
-  <!-- Row 1: brand + utility nav + language switcher -->
+  <!-- Row 1: brand + utility nav -->
   <div class="bg-sky/60 border-b border-ink/10">
     <div class="mx-auto max-w-6xl px-5 flex items-center py-3">
       <a href="{% url 'core:home' %}" class="font-display text-2xl font-bold tracking-tight flex items-center gap-2">
@@ -17,20 +12,29 @@
       </a>
 
       <nav class="ml-auto flex items-center gap-5 text-sm" aria-label="Utility">
-        <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">{% trans "Home" %}</a>
-        <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">{% trans "About us" %}</a>
-        <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">{% trans "FAQ" %}</a>
-        <a href="{% url 'forum:index' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">{% trans "Forums" %}</a>
-        <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">{% trans "Sign up" %}</a>
+        <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">Home</a>
+        <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
+        <a href="{% url 'core:faq' %}" class="squiggle-link{% if current_page == 'faq' %} squiggle-on font-bold{% endif %}">FAQ</a>
+        <a href="{% url 'forum:index' %}" class="squiggle-link{% if current_page == 'forum' %} squiggle-on font-bold{% endif %}">Forums</a>
 
         {% if request.user.is_authenticated %}
-        <form action="{% url 'core:logout_view' %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log out</button>
-        </form>
+          <!-- User chip: role-colored avatar + name -->
+          <div class="flex items-center gap-2 pl-1">
+            <span class="grid place-items-center w-8 h-8 rounded-full border-2 border-ink font-display font-bold text-sm flex-none
+                         {% if request.user.role == 'TEACHER' %}bg-butter{% elif request.user.role == 'REFUGEE_STUDENT' %}bg-blush{% elif request.user.role == 'CCA_MEMBER' %}bg-lilac{% else %}bg-mint{% endif %}"
+                  title="{{ request.user.get_short_name|default:request.user.username }}">
+              {{ request.user.get_short_name|default:request.user.username|first|upper }}
+            </span>
+            <span class="font-bold hidden sm:inline">{{ request.user.get_short_name|default:request.user.username }}</span>
+          </div>
+
+          <form action="{% url 'core:logout_view' %}" method="post" class="inline">
+            {% csrf_token %}
+            <button type="submit" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log out</button>
+          </form>
         {% else %}
-                <a href="{% url 'core:login_view' %}"
-                  class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
+          <a href="{% url 'core:register' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Sign up</a>
+          <a href="{% url 'core:login_view' %}" class="rounded-full border-2 border-ink px-4 py-1.5 font-bold hover:bg-butter transition-colors">Log in</a>
         {% endif %}
       </nav>
     </div>
@@ -41,56 +45,8 @@
     <div class="mx-auto max-w-6xl px-5">
       <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
         <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">For teachers</a>
-        <a href="{% url 'students:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For members</a>
+        <a href="{% url 'students:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">For students</a>
         <a href="{% url 'refugees:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">For refugee students</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<!-- JavaScript (move OUT of the header, at end of file) -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('lang-btn');
-    const menu = document.getElementById('lang-menu');
-    const form = document.getElementById('lang-form');
-    const input = document.getElementById('selected-lang');
-    const options = document.querySelectorAll('.lang-opt');
-
-    if (!btn || !menu || !form || !input) return;
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isHidden = menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(isHidden));
-    });
-
-    document.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-
-    options.forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        input.value = opt.getAttribute('data-lang');
-        form.submit();
-      });
-    });
-  });
-</script>
-      </nav>
-    </div>
-  </div>
-
-  <div class="bg-sky/20">
-    <div class="mx-auto max-w-6xl px-5">
-      <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">
-        <a href="{% url 'teachers:landing' %}" class="squiggle-link px-2 py-1 rounded-full bg-mint/60">{% trans "For teachers" %}</a>
-        <a href="#members" class="squiggle-link px-2 py-1 rounded-full bg-lilac/50">{% blocktranslate %}For members{% endblocktranslate %}</a>
-        <a href="#students" class="squiggle-link px-2 py-1 rounded-full bg-blush/50">{% trans "For refugee students" %}</a>
       </nav>
     </div>
   </div>
