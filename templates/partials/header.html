@@ -1,6 +1,4 @@
 <header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-cream/95 backdrop-blur border-b-2 border-ink/10">
-
-  <!-- Row 1: brand + utility nav -->
   <div class="bg-sky/60 border-b border-ink/10">
     <div class="mx-auto max-w-6xl px-5 flex items-center py-3">
       <a href="{% url 'core:home' %}" class="font-display text-2xl font-bold tracking-tight flex items-center gap-2">
@@ -11,6 +9,7 @@
         Project Eureka
       </a>
 
+
       <nav class="ml-auto flex items-center gap-5 text-sm" aria-label="Utility">
         <a href="{% url 'core:home' %}" class="squiggle-link{% if current_page == 'home' %} squiggle-on font-bold{% endif %}">Home</a>
         <a href="{% url 'core:about' %}" class="squiggle-link{% if current_page == 'about' %} squiggle-on font-bold{% endif %}">About us</a>
@@ -18,7 +17,6 @@
         <a href="{% url 'forum:index' %}" class="squiggle-link{% if current_page == 'forum' %} squiggle-on font-bold{% endif %}">Forums</a>
 
         {% if request.user.is_authenticated %}
-          <!-- User chip: role-colored avatar + name -->
           <div class="flex items-center gap-2 pl-1">
             <span class="grid place-items-center w-8 h-8 rounded-full border-2 border-ink font-display font-bold text-sm flex-none
                          {% if request.user.role == 'TEACHER' %}bg-butter{% elif request.user.role == 'REFUGEE_STUDENT' %}bg-blush{% elif request.user.role == 'CCA_MEMBER' %}bg-lilac{% else %}bg-mint{% endif %}"
@@ -40,7 +38,6 @@
     </div>
   </div>
 
-  <!-- Row 2: audience pills -->
   <div class="bg-sky/20">
     <div class="mx-auto max-w-6xl px-5">
       <nav class="flex flex-wrap items-center gap-3 py-3 text-sm font-medium" aria-label="Audiences">

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% translate "Project Eureka — About Us" %}{% endblock %}
 
@@ -148,28 +149,42 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
       <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
-        <div class="mx-auto w-24 h-24 rounded-full bg-butter/70 border-2 border-ink grid place-items-center mb-3 font-display font-bold text-3xl" aria-hidden="true">A</div>
-        <p class="font-display font-bold text-lg">Ashley</p>
+        <img src="{% static 'img/team/si_rui.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Si Rui Tan</p>
         <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Founder" %}</p>
-        <p class="text-sm mt-3 text-ink/70">{% translate "Started it all at that kitchen table. Still teaches Sunday mornings." %}</p>
       </article>
       <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
-        <div class="mx-auto w-24 h-24 rounded-full bg-mint/60 border-2 border-ink grid place-items-center mb-3 font-display font-bold text-3xl" aria-hidden="true">D</div>
-        <p class="font-display font-bold text-lg">Daniel</p>
-        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Curriculum lead" %}</p>
-        <p class="text-sm mt-3 text-ink/70">{% translate "Keeps the lesson library growing and the community close." %}</p>
+        <img src="{% static 'img/team/ashley.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Ashley</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Communications Lead" %}</p>
       </article>
       <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
-        <div class="mx-auto w-24 h-24 rounded-full bg-blush/60 border-2 border-ink grid place-items-center mb-3 font-display font-bold text-3xl" aria-hidden="true">M</div>
-        <p class="font-display font-bold text-lg">Maya</p>
-        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Student liaison" %}</p>
-        <p class="text-sm mt-3 text-ink/70">{% translate "Was a student first. Now she helps others find their way in." %}</p>
+        <img src="{% static 'img/team/adit.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Adit</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Technical Lead" %}</p>
       </article>
       <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
-        <div class="mx-auto w-24 h-24 rounded-full bg-lilac/60 border-2 border-ink grid place-items-center mb-3 font-display font-bold text-3xl" aria-hidden="true">J</div>
-        <p class="font-display font-bold text-lg">Jonah</p>
-        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Tech and tools" %}</p>
-        <p class="text-sm mt-3 text-ink/70">{% translate "Builds the quiet things — the drive, the dashboards, the pipes." %}</p>
+        <img src="{% static 'img/team/alyssa.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Alyssa</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Mathematics Curriculum Lead" %}</p>
+      </article>
+    </div>
+    <br />
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
+        <img src="{% static 'img/team/kwanha.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Kwanha</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "Mathematics Lead" %}</p>
+      </article>
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
+        <img src="{% static 'img/team/siya.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Siya</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "English Curriculum Lead" %}</p>
+      </article>
+      <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-5 text-center">
+        <img src="{% static 'img/team/shayna.png' %}" alt="Si Rui Tan" class="mx-auto w-24 h-24 rounded-full border-2 border-ink object-cover mb-3">
+        <p class="font-display font-bold text-lg">Shayna</p>
+        <p class="text-xs text-inksoft uppercase tracking-widest mt-1">{% translate "English Lead" %}</p>
       </article>
     </div>
   </div>
