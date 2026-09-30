@@ -8,6 +8,9 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import ensure_csrf_cookie
 from teachers.decorators import teacher_required
 
+def resources_b(request):
+    return render(request, "teachers/resources_.html")
+
 def landing(request):
     if request.user.is_authenticated and request.user.role == "TEACHER":
         return redirect("teachers:dashboard")
