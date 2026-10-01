@@ -61,7 +61,6 @@ def redirect_by_role(user):
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        email = request.POST.get('email')
         role = request.POST.get('role')  # <--- Catch selected role here
         password = request.POST.get('password')
         confirmation = request.POST.get('confirmation')
@@ -72,19 +71,15 @@ def register(request):
         if User.objects.filter(username=username).exists():
             return render(request, 'core/register.html', {'message': 'That username is already taken.'})
 
-        if User.objects.filter(email=email).exists():
-            return render(request, 'core/register.html', {'message': 'An account with that email already exists.'})
-
         # Save user with role
         try:
             user = User.objects.create_user(
                 username=username,
-                email=email,
                 password=password,
                 role=role  # <--- Pass the role into your User model
             )
         except IntegrityError:
-            return render(request, 'core/register.html', {'message': 'That username or email is already taken.'})
+            return render(request, 'core/register.html', {'message': 'That username is already taken.'})
 
         # Log in or redirect
         return redirect('core:login_view')
