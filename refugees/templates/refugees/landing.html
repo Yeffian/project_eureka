@@ -15,10 +15,6 @@
       {% endblocktranslate %}
     </p>
     <div class="flex flex-wrap gap-4">
-      <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-        {% translate "Talk to us" %}
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
       <a href="#how" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors">
         {% translate "See how it works" %}
       </a>
@@ -192,15 +188,6 @@
         Reach out whenever you're ready to start. 
       {% endblocktranslate %}
     </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="{% url 'core:register' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
-        {% translate "Sign Up" %}
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="{% url 'core:login_view' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-cream transition-colors">
-        {% translate "Log In" %}
-      </a>
-    </div>
   </div>
 </section>
 {% endblock %}

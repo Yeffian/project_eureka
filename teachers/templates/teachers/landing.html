@@ -15,16 +15,6 @@
       {% translate "Unlock a full curriculum library, a shared resource drive, and analytics for your classes — free for everyone teaching refugee students." %}
     </p>
 
-<div class="flex flex-wrap justify-center gap-4 mb-10">
-  <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    {% translate "Create account" %}
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-  <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    {% translate "Log in" %}
-  </a>
-</div>
-
 <svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block" aria-hidden="true">
   <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
 </svg>
@@ -93,7 +83,6 @@
       <circle cx="17" cy="24" r="2.6" fill="#3E4C54"/>
     </svg>
     <p class="font-bold">{% translate "Slides, worksheets &amp; printables live here." %}</p>
-    <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">{% translate "Log in to view" %}</a>
   </div>
 </div>
 ```
@@ -135,7 +124,6 @@
         <circle cx="17" cy="24" r="2.6" fill="#3E4C54"/>
       </svg>
       <p class="font-bold">{% translate "Class analytics unlock with your account." %}</p>
-      <a href="{% url 'teachers:dashboard' %}" class="rounded-full border-2 border-ink bg-cream px-5 py-2 font-bold hover:bg-butter transition-colors">{% translate "Log in to view" %}</a>
     </div>
   </div>
 </section>
@@ -177,13 +165,6 @@
   <div class="reveal">
     <h2 class="font-display text-4xl font-bold mb-4">{% translate "Ready to teach with us?" %}</h2>
     <p class="text-inksoft mb-6 max-w-md mx-auto">{% translate "A free account takes two minutes — your first class could start this week." %}</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors">
-        {% translate "Create account" %}
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="{% url 'teachers:dashboard' %}" class="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-3 font-bold hover:bg-butter transition-colors">{% translate "Log in" %}</a>
-    </div>
   </div>
 </section>
 {% endblock %}

@@ -9,8 +9,6 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-AUTH_USER_MODEL = "core.User"
-
 # SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 SECRET_KEY = "wcn229=3tuflhor-_)5r5#993*nxle!1+^bj^g2lmz0tv5zd7e"
@@ -49,9 +47,7 @@ INSTALLED_APPS = [
     "core",
     "teachers",
     "students",
-    "forum",
     "refugees",  
-    "classes",
 ]
 
 MIDDLEWARE = [
@@ -101,9 +97,6 @@ else:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-
-AUTH_USER_MODEL = 'core.User'
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
