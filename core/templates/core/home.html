@@ -10,7 +10,7 @@
     <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.05] mb-5">Every student deserves a <span class="italic">eureka</span> moment.</h1>
     <p class="text-inksoft text-lg leading-relaxed max-w-md mb-8">
       {% blocktranslate %}
-        Project Eureka connects refugee students with volunteer teachers for free, one-on-one learning. We believe that arriving in a new country shouldn't mean falling behind, so we pair learners with teachers who meet them where they are, in the subjects they need, at a pace that works for them. From English and reading to maths and science, our volunteers help students build confidence and catch up, lesson by lesson. No cost, no pressure; just a community of people who want to help each other learn and grow.
+        Project Eureka is a student-led initiative dedicated to empowering refugee students through connecting them with volunteer teachers. The best part? This is all for free! By teaching English and Maths, we hope to increase global literacy in the core subjects, and to build a community of people who want to help each other learn and grow.      
       {% endblocktranslate %}
     </p>
     <a href="{% url 'teachers:landing' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
@@ -62,12 +62,12 @@
     <h2 class="font-display text-4xl font-bold mb-5">{% trans "Our vision" %}</h2>
     <p class="text-ink/80 leading-relaxed mb-4">
       {% blocktranslate %}
-        We imagine a world where every refugee student can keep learning, no matter where life has taken them. Education is one of the first things disrupted when families are forced to move, and one of the hardest to rebuild.
+        Empowering refugee youth by driving their holistic development and education through accessible learning programs and essential resources.
       {% endblocktranslate %}
     </p>
     <p class="text-ink/80 leading-relaxed">
       {% blocktranslate %}
-        Project Eureka exists to close that gap. We're building a community where learners and volunteers meet as equals, where asking for help is easy, and where every student can find the eureka moment that comes from finally understanding something new.
+        Equipping student leaders with practical skills in mentorship and social impact.
       {% endblocktranslate %}
     </p>
     </div>
@@ -91,12 +91,12 @@
   <path d="M0 0 H1440 V30 C 1260 70 1080 5 900 40 C 720 75 540 15 360 45 C 200 70 90 30 0 50 Z" fill="#F791A9"/>
 </svg>
 
-<section class="mx-auto max-w-6xl px-5 py-20">
+<!-- <section class="mx-auto max-w-6xl px-5 py-20">
   <div class="reveal max-w-2xl">
   <h2 class="font-display text-4xl font-bold mb-5">{% trans "Our impact" %}</h2>
   <p class="text-inksoft leading-relaxed mb-6">
     {% blocktranslate %}
-      Behind every number is a student who kept going, and a volunteer who helped them get there. We measure our work not just in lessons taught, but in confidence rebuilt and futures reopened, one eureka moment at a time.
+      While impact can be seen from the academic development of our refugee students, there are also many other things that constitute real impact.
     {% endblocktranslate %}
   </p>
   </div>
@@ -114,7 +114,7 @@
       <p class="text-sm mt-1 text-ink/70">{% trans "students learning with us" %}</p>
     </div>
   </div>
-</section>
+</section> -->
 
 <svg viewBox="0 0 1440 70" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 40 C 240 70 480 10 720 35 C 960 60 1200 15 1440 45 L1440 70 L0 70 Z" fill="#BAD6DA"/>
@@ -122,16 +122,17 @@
 
 <section class="bg-sky -mt-px">
   <div class="mx-auto max-w-6xl px-5 pb-20 pt-14">
-    <h2 class="reveal font-display text-4xl font-bold mb-10 text-center">{% trans "What our members &amp; refugee students say" %}</h2>
+    <h2 class="reveal font-display text-4xl font-bold mb-10 text-center">{% trans "Student/Community Partner Testimonials" %}</h2>
+    <p>Throughout the year, Project Eureka continually strives to improve—starting with student voice.</p>
     <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
         <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
-        <blockquote class="text-lg leading-relaxed mb-4">{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %}</blockquote>
+        <blockquote class="text-lg leading-relaxed mb-4">{% trans "I genuinely enjoyed every session and can't wait to join this CCA again next year." %}</blockquote>
         <figcaption class="font-bold text-sm">{% trans "- Student 1" %}</figcaption>
       </figure>
       <figure class="reveal rounded-blob bg-cream p-8 border-2 border-ink/10 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)]">
         <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden="true" class="mb-4"><path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/></svg>
-        <blockquote class="text-lg leading-relaxed mb-4">{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %}</blockquote>
+        <blockquote class="text-lg leading-relaxed mb-4">{% trans "It was very rewarding seeing the kids learn things and be able to do questions they couldn't before, coming back the next week being able to progress from what I've taught them." %}</blockquote>
         <figcaption class="font-bold text-sm">{% trans "- Student 2" %}</figcaption>
       </figure>
     </div>
@@ -146,7 +147,7 @@
   <div class="reveal">
     <h2 class="font-display text-4xl font-bold mb-4">{% trans "Contact us" %}</h2>
     <p class="text-inksoft mb-6 max-w-md mx-auto">{% trans "Questions, ideas, or want to volunteer?" %}</p>
-    <a href="mailto:ashley@projecteureka.org" class="inline-block rounded-full bg-butter border-2 border-ink px-6 py-3 font-bold hover:bg-blush/70 transition-colors">Email us</a>
+    <a href="mailto:307062@gardenschool.edu.my" class="inline-block rounded-full bg-butter border-2 border-ink px-6 py-3 font-bold hover:bg-blush/70 transition-colors">Email us</a>
   </div>
 </section>
 {% endblock %}
