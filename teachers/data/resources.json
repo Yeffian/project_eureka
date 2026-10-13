@@ -53,27 +53,5 @@
     "tags": ["Math"],
     "drive_id": "https://docs.google.com/presentation/d/10Zj2a2REi3sOR4RfpGXMGv__2UDjCI2kkh5Ti8AGLdY/edit?usp=drive_link",
     "file_size": "1.2 MB"
-  },
-  {
-    "module_code": "MATH",
-    "title": "Numbers",
-    "subject": "maths",
-    "level": "secondary",
-    "resource_type": "lesson",
-    "language": "English",
-    "tags": ["Math"],
-    "drive_id": "https://docs.google.com/presentation/d/10Zj2a2REi3sOR4RfpGXMGv__2UDjCI2kkh5Ti8AGLdY/edit?usp=drive_link",
-    "file_size": "1.2 MB"
-  },
-  {
-    "module_code": "MATH",
-    "title": "Numbers",
-    "subject": "maths",
-    "level": "secondary",
-    "resource_type": "lesson",
-    "language": "English",
-    "tags": ["Math"],
-    "drive_id": "https://docs.google.com/presentation/d/10Zj2a2REi3sOR4RfpGXMGv__2UDjCI2kkh5Ti8AGLdY/edit?usp=drive_link",
-    "file_size": "1.2 MB"
-  }  
+  }
 ]
