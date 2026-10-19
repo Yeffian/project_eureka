@@ -53,5 +53,71 @@
     "tags": ["Math"],
     "drive_id": "https://docs.google.com/presentation/d/10Zj2a2REi3sOR4RfpGXMGv__2UDjCI2kkh5Ti8AGLdY/edit?usp=drive_link",
     "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Listening",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1_8jZidOJt-smISHlIYmCYjb4LWR_-fTnvw8Qnpg86Lk/edit?usp=drive_link",
+    "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Describing People and Places",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1TfjiG3kHHA40cgW7ZHgpIB5XS_wtbj1ttW0lMrFRW8k/edit?usp=drive_link",
+    "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Email or Letter",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1iRq5wXzjB9ayEJFLtyLInmHtK0q8c4NZjc_y62pqRys/edit?usp=drive_link",
+    "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Reading Comprehension",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1Me0_x6oN0iE3AEp4SQ1sR6C7ruPje96LCLSjdOJN5pk/edit?usp=drive_link",
+    "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Simple Tense Pairs",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1g8uf_dtbz6zlQeJWwZiqfWMHn-zLy_0IZ-amhRSb9C4/edit?usp=drive_link",
+    "file_size": "1.2 MB"
+  },
+  {
+    "module_code": "ENGLISH",
+    "title": "Making Requests and Giving Instructions",
+    "subject": "english",
+    "level": "secondary",
+    "resource_type": "lesson",
+    "language": "English",
+    "tags": ["English"],
+    "drive_id": "https://docs.google.com/presentation/d/1BNWN4gslTFMW2zEfhHt5Wx0QCfUKqLmDU2b4epOY2O4/edit?usp=drive_link",
+    "file_size": "1.2 MB"
   }
 ]
