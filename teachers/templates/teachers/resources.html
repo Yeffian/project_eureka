@@ -5,81 +5,48 @@
 {% block header %}{% include "partials/header.html" %}{% endblock %}
 
 {% block content %}
-<!-- ░░ Page header ░░ -->
 <section class="mx-auto max-w-6xl px-5 pt-6 pb-6">
   <div class="reveal">
     <h1 class="font-display text-4xl md:text-5xl font-bold leading-[1.05] mt-1">Resource library</h1>
-    <p class="text-inksoft mt-2">Free teaching materials, organised by subject and level.</p>
+    <p class="text-inksoft mt-2">Free teaching materials, organised by subject.</p>
   </div>
 
-  <!-- hand-drawn dashed divider -->
   <svg viewBox="0 0 600 14" class="w-full max-w-2xl block mt-6" aria-hidden="true">
     <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
   </svg>
 </section>
 
-<!-- ░░ Filters + resources grid ░░ -->
 <section class="mx-auto max-w-6xl px-5 pb-16">
   <div class="grid gap-8 md:grid-cols-[240px_1fr] items-start">
 
-    <!-- ░░ Filters sidebar ░░ -->
     <aside class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6 md:sticky md:top-40">
       <h2 class="font-display text-xl font-bold mb-5">Filters</h2>
 
       <form method="get" class="space-y-6 text-sm">
-        <!-- Education level -->
-        <div>
-          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">Education level</p>
-          <ul class="space-y-2.5">
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="lvl-primary" name="level" value="primary" class="doodle-check" {% if "primary" in sel_levels %}checked{% endif %}>
-              <label for="lvl-primary" class="cursor-pointer">Primary</label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="lvl-lower" name="level" value="lower" class="doodle-check" {% if "lower" in sel_levels %}checked{% endif %}>
-              <label for="lvl-lower" class="cursor-pointer">Lower Secondary</label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="lvl-upper" name="level" value="upper" class="doodle-check" {% if "upper" in sel_levels %}checked{% endif %}>
-              <label for="lvl-upper" class="cursor-pointer">Upper Secondary</label>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Subject -->
         <div>
           <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">Subject</p>
           <ul class="space-y-2.5">
             <li class="flex items-center gap-3">
               <input type="checkbox" id="sub-math" name="subject" value="maths" class="doodle-check" {% if "maths" in sel_subjects %}checked{% endif %}>
-              <label for="sub-math" class="cursor-pointer">Mathematics</label>
+              <label for="sub-math" class="cursor-pointer">Math</label>
             </li>
             <li class="flex items-center gap-3">
               <input type="checkbox" id="sub-eng" name="subject" value="english" class="doodle-check" {% if "english" in sel_subjects %}checked{% endif %}>
-              <label for="sub-eng" class="cursor-pointer">English Language</label>
+              <label for="sub-eng" class="cursor-pointer">English</label>
             </li>
           </ul>
         </div>
 
-        <!-- Resource type -->
         <div>
-          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">Resource</p>
+          <p class="font-bold uppercase tracking-widest text-xs text-inksoft mb-3">Resource type</p>
           <ul class="space-y-2.5">
             <li class="flex items-center gap-3">
-              <input type="checkbox" id="res-curr" name="resource" value="curriculum" class="doodle-check" {% if "curriculum" in sel_types %}checked{% endif %}>
-              <label for="res-curr" class="cursor-pointer">Curriculum</label>
-            </li>
-            <li class="flex items-center gap-3">
               <input type="checkbox" id="res-lesson" name="resource" value="lesson" class="doodle-check" {% if "lesson" in sel_types %}checked{% endif %}>
-              <label for="res-lesson" class="cursor-pointer">Lesson Plans</label>
+              <label for="res-lesson" class="cursor-pointer">Lessons</label>
             </li>
             <li class="flex items-center gap-3">
               <input type="checkbox" id="res-work" name="resource" value="worksheet" class="doodle-check" {% if "worksheet" in sel_types %}checked{% endif %}>
               <label for="res-work" class="cursor-pointer">Worksheets</label>
-            </li>
-            <li class="flex items-center gap-3">
-              <input type="checkbox" id="res-video" name="resource" value="video" class="doodle-check" {% if "video" in sel_types %}checked{% endif %}>
-              <label for="res-video" class="cursor-pointer">Video Guides</label>
             </li>
           </ul>
         </div>
@@ -93,7 +60,6 @@
       </form>
     </aside>
 
-    <!-- ░░ Resource cards ░░ -->
     <div class="space-y-6">
       {% for r in page_obj %}
         <article class="reveal rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-6">
@@ -108,7 +74,6 @@
             </p>
           </div>
 
-          <!-- Tags -->
           <div class="flex flex-wrap gap-2 mb-5 text-xs">
             {% for tag in r.tags %}
               <span class="rounded-full px-3 py-1 border-2 border-ink/10 font-bold
@@ -116,17 +81,23 @@
             {% endfor %}
           </div>
 
-          <!-- Preview + View -->
           <div class="flex items-stretch gap-3 mb-5">
-            <div class="flex-1 rounded-2xl bg-sky/30 border-2 border-ink/15 border-dashed grid place-items-center py-10 font-display font-bold text-2xl text-inksoft/70">
-              PREVIEW
-            </div>
+            <a href="{{ r.view_url }}" target="_blank" rel="noopener" class="flex-1 rounded-2xl border-2 border-ink/15 overflow-hidden bg-sky/20 group relative block">
+              {% if r.thumb_url %}
+                <img src="{{ r.thumb_url }}" alt="Preview of {{ r.title }}" loading="lazy"
+                     class="w-full h-44 object-cover object-top"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-44 items-center justify-center font-display font-bold text-2xl text-inksoft/70" style="display:none;">PREVIEW</div>
+              {% else %}
+                <div class="w-full h-44 flex items-center justify-center font-display font-bold text-2xl text-inksoft/70">PREVIEW</div>
+              {% endif %}
+              <span class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors"></span>
+            </a>
             <a href="{{ r.view_url }}" target="_blank" rel="noopener" class="grid place-items-center rounded-2xl bg-butter border-2 border-ink px-6 font-display font-bold hover:bg-butter/70 transition-colors">
               View
             </a>
           </div>
 
-          <!-- Download / size / answer key -->
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex flex-wrap items-center gap-3">
               <a href="{{ r.download_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-1.5 text-sm font-bold hover:bg-butter transition-colors">
@@ -159,7 +130,6 @@
         <p class="reveal text-center text-inksoft italic py-16">No resources match these filters. Try clearing some.</p>
       {% endfor %}
 
-      <!-- ░░ Pagination ░░ -->
       {% if page_obj.has_other_pages %}
         <nav class="reveal flex flex-wrap items-center justify-between gap-4 pt-6" aria-label="Pagination">
           {% if page_obj.has_previous %}
