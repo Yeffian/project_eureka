@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% translate "Project Eureka — For Teachers" %}{% endblock %}
 
@@ -15,18 +16,23 @@
       {% translate "Explore a growing library of ready-to-teach lessons, worksheets, and printables — free for everyone teaching refugee students." %}
     </p>
 
-    <a href="{% url 'teachers:resources' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink mb-8">
+    <a href="{% url 'teachers:resources' %}" class="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3 font-bold hover:bg-ink/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink mb-10">
       {% translate "Browse the resource library" %}
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-
-    <svg viewBox="0 0 600 14" class="w-full max-w-lg mx-auto block" aria-hidden="true">
-      <path d="M8 8 C 60 4 110 12 170 7 C 230 3 290 11 350 7 C 410 4 470 11 530 7 C 555 6 575 8 592 7" fill="none" stroke="#3E4C54" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 12"/>
-    </svg>
   </div>
+
+  <!-- Classroom photo -->
+  <figure class="reveal max-w-4xl mx-auto">
+    <div class="rounded-blob bg-cream border-2 border-ink/15 shadow-[6px_6px_0_0_rgba(62,76,84,0.18)] p-2 overflow-hidden">
+      <img src="https://i.imgur.com/AGx4u3M.jpeg" alt="{% translate 'A Project Eureka volunteer teaching students one-on-one' %}"
+           class="w-full h-auto rounded-[14px] object-cover" loading="lazy">
+    </div>
+    <figcaption class="text-center text-sm text-inksoft mt-3">{% translate "One-on-one learning, in a real Project Eureka session." %}</figcaption>
+  </figure>
 </section>
 
-<svg viewBox="0 0 1440 90" class="w-full block" preserveAspectRatio="none" aria-hidden="true">
+<svg viewBox="0 0 1440 90" class="w-full block mt-6" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 45 C 180 90 360 0 540 40 C 720 80 900 10 1080 45 C 1260 80 1350 30 1440 50 L1440 90 L0 90 Z" fill="#F791A9"/>
 </svg>
 
@@ -171,7 +177,8 @@
         <path d="M0 22V12C0 5 4 1 11 0v5c-3 1-5 3-5 7h5v10H0Zm17 0V12c0-7 4-11 11-12v5c-3 1-5 3-5 7h5v10H17Z" fill="#3E4C54" opacity=".3"/>
       </svg>
       <blockquote class="leading-relaxed text-ink/90">
-        My time teaching at Project Eureka has undoubtedly been a transformative and rewarding experience; from guiding the GIS volunteers to explaining grammatical concepts to students, project eureka has provided me with a platform to express all forms of creativity as well as truly give back to the community.  A memorable moment throughout Project Eureka’s many fruitful experiences was teaching a student named Kim Kim, who first arrived to the session with very little knowledge on sentence structures and communicating her thoughts in English, yet after working with her throughout the lesson I could see a large improvement in confidence and her understanding of the past and present tense. I was beyond impressed with the effort she put within such a short amount of time, as well as her perseverance despite the language barriers we faced. Proud of you Kim Kim!
+        I taught a student named Chloe during her time in Project Eureka, and her progress was so inspiring. She started off struggling with basic reading comprehension and frequently got confused with simple tense pairs. But Chloe was incredibly hardworking, always asking for extra practice sheets and writing exercises during class. The highlight of her journey was writing a full letter entirely on her own, beautifully describing people and places with great detail and accuracy. I was so proud of her dedication and growth!
+      </blockquote>
       <figcaption class="mt-6 flex items-center gap-3">
         <span class="grid place-items-center w-10 h-10 rounded-full bg-blush border-2 border-ink font-display font-bold">E</span>
         <span class="text-sm font-bold text-inksoft">{% translate "A Project Eureka volunteer teacher" %}</span>
